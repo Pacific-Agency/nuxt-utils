@@ -1,0 +1,6 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "assignees": ["@ExEr7um"],
+  "extends": ["github>Pacific-Agency/renovate-config"],
+  "reviewers": ["@ExEr7um"]
+}

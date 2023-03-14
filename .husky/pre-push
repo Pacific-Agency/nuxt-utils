@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+pnpm enforce-branch-name '((feat|fix|refactor|dev|deps|other)\/[0-9]+-.+|main|release)'

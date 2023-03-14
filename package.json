@@ -1,0 +1,60 @@
+{
+  "name": "@pacific-agency/frontend-composables",
+  "version": "0.0.1",
+  "description": "Frontend composables for Nuxt",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pacific-Agency/frontend-composables"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "nuxi dev playground",
+    "dev:build": "nuxi build playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts --fix --ignore-path .gitignore",
+    "prepack": "nuxt-module-build",
+    "prepare": "husky install && nuxt prepare",
+    "prettier": "prettier --write *",
+    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,cjs,mjs,ts}": [
+      "eslint --cache --fix",
+      "prettier --write -u"
+    ],
+    "*.json": "prettier --write -u"
+  },
+  "prettier": "@pacific-agency/prettier-config",
+  "dependencies": {
+    "@nuxt/kit": "^3.2.3"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "^0.2.1",
+    "@nuxt/schema": "^3.2.3",
+    "@nuxt/test-utils": "^3.2.3",
+    "@pacific-agency/eslint-config": "0.1.1",
+    "@pacific-agency/prettier-config": "0.1.1",
+    "changelogen": "^0.5.1",
+    "enforce-branch-name": "1.1.2",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.0",
+    "nuxt": "^3.2.3",
+    "vitest": "^0.29.2"
+  },
+  "packageManager": "pnpm@7.29.1"
+}
