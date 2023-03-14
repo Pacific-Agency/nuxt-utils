@@ -1,5 +1,4 @@
 import { describe, expect, test } from "vitest"
-// import usePhoneFormatter from "../../src/runtime/composables/usePhoneFormatter"
 
 import usePhoneFormatter from "../../src/runtime/composables/usePhoneFormatter"
 
