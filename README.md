@@ -1,46 +1,69 @@
-# Frontend composables for Nuxt
+# Утилиты Nuxt
 
-## Установка модуля в проект
-
-1. Добавить `frontend-composables` в зависимости
+## Установка
 
 ```bash
-# Using pnpm
-pnpm add @pacific-agency/frontend-composables
+pnpm add @pacific-agency/nuxt-utils
 ```
 
-1. Добавить `frontend-composables` в `nuxt.config.ts` в поле `modules`
+```bash
+npm add @pacific-agency/nuxt-utils
+```
 
-```js
+```bash
+yarn add @pacific-agency/nuxt-utils
+```
+
+## Использование
+
+Для использования необходимо добавить `@pacific-agency/nuxt-utils` в файл `nuxt.config.ts` в поле `modules`:
+
+```ts
 export default defineNuxtConfig({
   modules: [
-    "@pacific-agency/frontend-composables"
+    "@pacific-agency/nuxt-utils",
   ]
 })
 ```
 
 ## Разработка
 
+Создание заглушек типов и подготовка разработки
+
 ```bash
-# Установка зависимостей
-pnpm install
-
-# Создание заглушек типов и подготовка разработки
 pnpm dev:prepare
+```
 
-# Запуск сервера разработки
+Запуск сервера разработки
+
+```bash
 pnpm dev
+```
 
-# Билд папки `playground`
+Билд папки `playground`
+
+```bash
 pnpm dev:build
+```
 
-# Запуск `eslint`
+### Линт
+
+Запуск ESLint
+
+```bash
 pnpm lint
+```
 
-# Запуск тестов
+Запуск Prettier
+
+```bash
+pnpm prettier
+```
+
+### Тестирование
+
+Запуск тестов
+
+```bash
 pnpm test
-pnpm test:watch
-
-# Релиз новой версии
-pnpm release
 ```
