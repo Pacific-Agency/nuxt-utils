@@ -2,8 +2,8 @@ import { addImportsDir, createResolver, defineNuxtModule } from "@nuxt/kit"
 
 export default defineNuxtModule({
   meta: {
-    configKey: "nuxt-utils",
-    name: "nuxt-utils",
+    configKey: "@pacific-agency/nuxt-utils",
+    name: "@pacific-agency/nuxt-utils",
   },
   setup() {
     const { resolve } = createResolver(import.meta.url)
