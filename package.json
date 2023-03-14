@@ -1,7 +1,7 @@
 {
   "name": "@pacific-agency/nuxt-utils",
   "version": "0.1.0",
-  "description": "Utils for Nuxt",
+  "description": "Утилиты Nuxt",
   "repository": {
     "type": "git",
     "url": "https://github.com/Pacific-Agency/nuxt-utils"
