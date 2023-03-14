@@ -1,6 +1,6 @@
 {
   "name": "@pacific-agency/frontend-composables",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Frontend composables for Nuxt",
   "repository": {
     "type": "git",
