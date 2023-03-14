@@ -1,10 +1,10 @@
 {
-  "name": "@pacific-agency/frontend-composables",
+  "name": "@pacific-agency/nuxt-utils",
   "version": "0.1.0",
-  "description": "Frontend composables for Nuxt",
+  "description": "Утилиты Nuxt",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Pacific-Agency/frontend-composables"
+    "url": "https://github.com/Pacific-Agency/nuxt-utils"
   },
   "license": "MIT",
   "type": "module",
