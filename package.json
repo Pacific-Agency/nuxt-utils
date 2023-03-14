@@ -53,7 +53,7 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.0",
     "nuxt": "^3.2.3",
-    "nuxt-vitest": "^0.6.8"
+    "vitest": "^0.29.2"
   },
   "packageManager": "pnpm@7.29.1"
 }

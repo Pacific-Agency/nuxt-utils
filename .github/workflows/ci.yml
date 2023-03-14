@@ -44,6 +44,7 @@ jobs:
         run: |
           pnpm pkg set scripts.prepare="nuxt prepare"
           pnpm install
+          pnpm dev:prepare
 
       - name: Запуск тестов
         run: pnpm vitest
