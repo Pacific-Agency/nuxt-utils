@@ -1,8 +1,9 @@
 /**
- * Функция, возвращающая форматированную цены
+ * Функция, возвращающая форматированную цену.
  *
  * @param price - цена
  * @returns форматированная цена
+ * @see https://pacific-agency.github.io/nuxt-utils/composables/use-price-formatter.html
  * @example
  * ```ts
  * // Вернет '1 000 ₽'
