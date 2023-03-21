@@ -1,6 +1,7 @@
 # Утилиты Nuxt
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pacific-agency/nuxt-utils)
+[![Документация](https://img.shields.io/badge/-Документация-%23aac811)](https://pacific-agency.github.io/nuxt-utils/)
 
 ## Установка
 
