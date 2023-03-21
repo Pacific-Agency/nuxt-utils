@@ -1,4 +1,9 @@
-import { addImportsDir, createResolver, defineNuxtModule } from "@nuxt/kit"
+import {
+  addComponentsDir,
+  addImportsDir,
+  createResolver,
+  defineNuxtModule,
+} from "@nuxt/kit"
 
 export default defineNuxtModule({
   meta: {
@@ -8,8 +13,10 @@ export default defineNuxtModule({
   setup() {
     const { resolve } = createResolver(import.meta.url)
 
+    const components = resolve("./runtime/components")
     const composables = resolve("./runtime/composables")
 
+    addComponentsDir({ path: components })
     addImportsDir(composables)
   },
 })

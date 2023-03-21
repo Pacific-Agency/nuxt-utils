@@ -1,8 +1,15 @@
+<script setup></script>
+
 <template>
   <div>
-    {{ usePriceFormatter(10000) }}
-    {{ usePhoneFormatter("+79998887766") }}
+    <div>
+      <h2>Компоненты</h2>
+      <MapWidget widget-id="widget-id" />
+    </div>
+    <div>
+      <h2>Composables</h2>
+      <p>{{ usePriceFormatter(10000) }}</p>
+      <p>{{ usePhoneFormatter("+79998887766") }}</p>
+    </div>
   </div>
 </template>
-
-<script setup></script>
