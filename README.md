@@ -1,5 +1,7 @@
 # Утилиты Nuxt
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pacific-agency/nuxt-utils)
+
 ## Установка
 
 ```bash
