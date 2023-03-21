@@ -3,8 +3,12 @@
 layout: home
 
 hero:
-  name: "Утилиты Nuxt"
+  name: Утилиты Nuxt
+  text: Pacific Agency
   tagline: Утилиты Nuxt от Pacific Agency
+  image:
+    src: /assets/logo.svg
+    alt: Pacific Agency
   actions:
     - theme: brand
       text: Документация

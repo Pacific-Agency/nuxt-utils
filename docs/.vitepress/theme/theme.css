@@ -1,0 +1,14 @@
+:root {
+  --vp-c-brand: #aac811;
+  --vp-c-brand-light: #caec22;
+  --vp-c-brand-lighter: #d5f051;
+  --vp-c-brand-dark: #839b0d;
+  --vp-c-brand-darker: #5b6c09;
+
+  --vp-home-hero-image-background-image: linear-gradient(
+    90deg,
+    rgba(213, 240, 81, 0.1) 0%,
+    rgba(213, 240, 81, 0.1) 100%
+  );
+  --vp-home-hero-image-filter: blur(40px);
+}
