@@ -1,12 +1,11 @@
 import { defineConfig } from "vitepress"
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/nuxt-utils/",
   description: "Утилиты Nuxt от Pacific Agency",
   lang: "ru-RU",
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    logo: "./assets/logo.svg",
     nav: [
       { link: "/", text: "Главная" },
       { link: "/components/map-widget", text: "Компоненты" },
