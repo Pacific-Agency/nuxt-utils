@@ -1,0 +1,29 @@
+name: Публикация на GitHub Pages
+on:
+  release:
+    types: [created]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Настройка NodeJS
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 7
+      - uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+
+      - name: Установка зависимостей
+        run: pnpm install
+
+      - name: Билд проекта
+        run: pnpm docs:build
+
+      - name: Деплой
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: docs/.vitepress/dist

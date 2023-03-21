@@ -24,6 +24,9 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "docs:build": "vitepress build docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:preview": "vitepress preview docs",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts --fix --ignore-path .gitignore",
     "prepack": "nuxt-module-build",
     "prepare": "husky install && nuxt prepare",
@@ -55,6 +58,7 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.0",
     "nuxt": "^3.2.3",
+    "vitepress": "1.0.0-alpha.61",
     "vitest": "^0.29.2"
   },
   "packageManager": "pnpm@7.30.0"

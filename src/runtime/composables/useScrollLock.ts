@@ -1,8 +1,20 @@
 import { onMounted, onUnmounted } from "vue"
 
 /**
- * Функция блокирует скролл при монтировании компонента на страницу,
- * либо разблокирует его при размонтированнии компонента.
+ * Данная функция используется для блокирования скролла при открытие открытии модальных окон.
+ *
+ * Она выполняет две вещи:
+ * - Блокирует скролл при монтировании компонента.
+ * - Разблокирует скролл при размонтированнии компонента.
+ *
+ * @see https://pacific-agency.github.io/nuxt-utils/composables/use-scroll-lock.html
+ * @example
+ * При монтировании компонента с этой функцией в `script setup`, скролл будет заблокирован.
+ * ```vue
+ * <script setup>
+ * useScrollLock()
+ * </script>
+```
  */
 export default function useScrollLock(): void {
   onMounted(() => {
