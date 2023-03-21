@@ -7,7 +7,7 @@ hero:
   text: Pacific Agency
   tagline: Утилиты Nuxt от Pacific Agency
   image:
-    src: /assets/logo.svg
+    src: /logo.svg
     alt: Pacific Agency
   actions:
     - theme: brand

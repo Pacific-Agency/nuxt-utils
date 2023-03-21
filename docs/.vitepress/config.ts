@@ -5,7 +5,7 @@ export default defineConfig({
   description: "Утилиты Nuxt от Pacific Agency",
   lang: "ru-RU",
   themeConfig: {
-    logo: "./assets/logo.svg",
+    logo: "/logo.svg",
     nav: [
       { link: "/", text: "Главная" },
       { link: "/components/map-widget", text: "Компоненты" },
