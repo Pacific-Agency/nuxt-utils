@@ -5,7 +5,7 @@ specifiers:
   '@nuxt/module-builder': ^0.2.1
   '@nuxt/schema': ^3.2.3
   '@nuxt/test-utils': ^3.2.3
-  '@pacific-agency/eslint-config': 0.1.1
+  '@pacific-agency/eslint-config': 0.2.1
   '@pacific-agency/prettier-config': 0.1.1
   '@vue/test-utils': ^2.3.2
   changelogen: ^0.5.1
@@ -14,7 +14,7 @@ specifiers:
   husky: 8.0.3
   lint-staged: 13.2.0
   nuxt: ^3.2.3
-  vitepress: 1.0.0-alpha.61
+  vitepress: 1.0.0-alpha.63
   vitest: ^0.29.2
 
 dependencies:
@@ -24,7 +24,7 @@ devDependencies:
   '@nuxt/module-builder': 0.2.1
   '@nuxt/schema': 3.3.1_rollup@3.19.1
   '@nuxt/test-utils': 3.3.1_rollup@3.19.1+vue@3.2.47
-  '@pacific-agency/eslint-config': 0.1.1_mtllbxqju4hs562nr57cxfeuqi
+  '@pacific-agency/eslint-config': 0.2.1_mtllbxqju4hs562nr57cxfeuqi
   '@pacific-agency/prettier-config': 0.1.1_keraks55kawg6chhu5lqdk6qxy
   '@vue/test-utils': 2.3.2_vue@3.2.47
   changelogen: 0.5.1
@@ -33,7 +33,7 @@ devDependencies:
   husky: 8.0.3
   lint-staged: 13.2.0
   nuxt: 3.3.1_kia7aohlro4uhd75etgbmtpffe
-  vitepress: 1.0.0-alpha.61_2xdflmy6sc2qhwxavtux3g5lt4
+  vitepress: 1.0.0-alpha.63_2xdflmy6sc2qhwxavtux3g5lt4
   vitest: 0.29.3_happy-dom@8.9.0
 
 packages:
@@ -1235,8 +1235,8 @@ packages:
       - vue-tsc
     dev: true
 
-  /@pacific-agency/eslint-config/0.1.1_mtllbxqju4hs562nr57cxfeuqi:
-    resolution: {integrity: sha512-hYkYUzyqgeOpbk8XjoB5Kcqa3fLDyk3ztauHaxUmDV0Mwjze8XiyBLRQs07UQvhjw5uKVP1A646yiSBWgV9/1g==, tarball: download/@pacific-agency/eslint-config/0.1.1/b292f482403a51f8aa37782fdeda67a081b19a5f}
+  /@pacific-agency/eslint-config/0.2.1_mtllbxqju4hs562nr57cxfeuqi:
+    resolution: {integrity: sha512-7unoMTSAkA+4cl2Q3k1RYlfvhVYrIKfHyzwQM1tOVfwd43dC82ys1S0JxMv06yAO+TbonNz+quyVGUfQJMMciQ==, tarball: download/@pacific-agency/eslint-config/0.2.1/cb213b1db3509d42e76f3ea720222bd71b7ca78f}
     peerDependencies:
       '@nuxt/eslint-config': '*'
       eslint: '*'
@@ -6419,7 +6419,7 @@ packages:
       mlly: 1.2.0
       pathe: 1.1.0
       picocolors: 1.0.0
-      vite: 4.2.0
+      vite: 4.2.1
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6440,7 +6440,7 @@ packages:
       mlly: 1.2.0
       pathe: 1.1.0
       picocolors: 1.0.0
-      vite: 4.2.0_@types+node@18.15.3
+      vite: 4.2.1_@types+node@18.15.3
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -6536,39 +6536,6 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite/4.2.0:
-    resolution: {integrity: sha512-AbDTyzzwuKoRtMIRLGNxhLRuv1FpRgdIw+1y6AQG73Q5+vtecmvzKo/yk8X/vrHDpETRTx01ABijqUHIzBXi0g==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': '>= 14'
-      less: '*'
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.17.12
-      postcss: 8.4.21
-      resolve: 1.22.1
-      rollup: 3.19.1
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
-
   /vite/4.2.0_@types+node@18.15.3:
     resolution: {integrity: sha512-AbDTyzzwuKoRtMIRLGNxhLRuv1FpRgdIw+1y6AQG73Q5+vtecmvzKo/yk8X/vrHDpETRTx01ABijqUHIzBXi0g==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -6636,8 +6603,42 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.61_2xdflmy6sc2qhwxavtux3g5lt4:
-    resolution: {integrity: sha512-NvzERVS3/TU9YkYcaiK7yNSe0zY9UcSV58tx3mxbvVLCuwRykzO4OWbl6vQT6Ut6YGuZU1y3Z5WcSS+fHfaxJA==}
+  /vite/4.2.1_@types+node@18.15.3:
+    resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': '>= 14'
+      less: '*'
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 18.15.3
+      esbuild: 0.17.12
+      postcss: 8.4.21
+      resolve: 1.22.1
+      rollup: 3.19.1
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
+  /vitepress/1.0.0-alpha.63_2xdflmy6sc2qhwxavtux3g5lt4:
+    resolution: {integrity: sha512-7QMwjT9888S64SkmJqSmRlP417yniCj4IqawIpzYSQMnlJ5CjBWOTbzXKvmzRZkjOJGTcaYr2C88+1/z8ERG+g==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3
