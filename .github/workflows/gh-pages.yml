@@ -11,7 +11,7 @@ jobs:
       - name: Настройка NodeJS
         uses: pnpm/action-setup@v2.2.4
         with:
-          version: 7
+          version: 8
       - uses: actions/setup-node@v3
         with:
           cache: "pnpm"
@@ -30,6 +30,5 @@ jobs:
       - name: Деплой
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: docs/.vitepress/dist
+          branch: gh-pages
+          folder: docs/.vitepress/dist
