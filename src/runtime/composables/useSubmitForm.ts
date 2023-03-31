@@ -6,6 +6,7 @@
  * - `isLoading` - Находится ли форма в состоянии загрузки
  * - `isSent` - Отправлена ли форма
  * - `sendRequest` - функция для отправки формы
+ * @see https://pacific-agency.github.io/nuxt-utils/composables/use-submit-form.html
  * @example
  * ```ts
  * const { sendRequest, isSent, isLoading } = useSubmitForm('faq')
