@@ -33,6 +33,10 @@ export default defineConfig({
         ],
         text: "Composables",
       },
+      {
+        items: [{ link: "/api/sitemap", text: "Sitemap" }],
+        text: "Серверные эндпоинты",
+      },
     ],
     socialLinks: [
       { icon: "github", link: "https://github.com/Pacific-Agency/nuxt-utils" },

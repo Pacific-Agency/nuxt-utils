@@ -1,3 +1,10 @@
+/**
+ * Данный серверный эндпоинт нужен для генерации Sitemap.
+ *
+ * Он делает запрос на эндпоинт с бекенда, преобразует данные в формат для Sitemap и возвращает список страниц.
+ *
+ * @see https://pacific-agency.github.io/nuxt-utils/api/sitemap.html
+ */
 export default eventHandler(async () => {
   /** Ответ от эндпоинта `/sitemap/` */
   type Sitemap = Record<
