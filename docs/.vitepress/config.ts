@@ -30,6 +30,10 @@ export default defineConfig({
             link: "/composables/use-scroll-lock",
             text: "useScrollLock",
           },
+          {
+            link: "/composables/use-submit-form",
+            text: "useSubmitForm",
+          },
         ],
         text: "Composables",
       },
