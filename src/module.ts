@@ -16,7 +16,7 @@ export default defineNuxtModule({
     const components = resolve("./runtime/components")
     const composables = resolve("./runtime/composables")
 
-    addComponentsDir({ path: components })
+    void addComponentsDir({ path: components })
     addImportsDir(composables)
   },
 })
