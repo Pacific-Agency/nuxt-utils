@@ -1,6 +1,7 @@
 import {
   addComponentsDir,
   addImportsDir,
+  addServerHandler,
   createResolver,
   defineNuxtModule,
 } from "@nuxt/kit"
@@ -13,10 +14,19 @@ export default defineNuxtModule({
   setup() {
     const { resolve } = createResolver(import.meta.url)
 
+    /** Компоненты */
     const components = resolve("./runtime/components")
-    const composables = resolve("./runtime/composables")
-
     void addComponentsDir({ path: components })
+
+    /** Composables */
+    const composables = resolve("./runtime/composables")
     addImportsDir(composables)
+
+    /** Серверные эндпоинты */
+    addServerHandler({
+      handler: resolve("./runtime/api/sitemap-routes.ts"),
+      lazy: true,
+      route: "/api/sitemap-routes",
+    })
   },
 })
