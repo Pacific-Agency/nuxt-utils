@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup lang="ts">
+import { usePhoneFormatter, usePriceFormatter } from "#imports"
+</script>
 
 <template>
   <div>
