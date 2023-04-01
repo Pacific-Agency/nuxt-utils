@@ -31,7 +31,6 @@
     "prepack": "nuxt-module-build",
     "prepare": "husky install && nuxt prepare",
     "prettier": "prettier --write *",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "test": "vitest"
   },
   "lint-staged": {
@@ -52,7 +51,6 @@
     "@pacific-agency/eslint-config": "0.2.1",
     "@pacific-agency/prettier-config": "0.1.1",
     "@vue/test-utils": "^2.3.2",
-    "changelogen": "^0.5.2",
     "enforce-branch-name": "1.1.2",
     "happy-dom": "^8.9.0",
     "husky": "8.0.3",

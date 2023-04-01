@@ -1,3 +1,5 @@
+import { Ref, ref, useFetch, useRuntimeConfig } from "#imports"
+
 /**
  * Функция для отправки данных формы
  *
@@ -12,7 +14,11 @@
  * const { sendRequest, isSent, isLoading } = useSubmitForm('faq')
  * ```
  */
-export default function useSubmitForm(url: string) {
+export default function useSubmitForm(url: string): {
+  isLoading: Ref<boolean>
+  isSent: Ref<boolean>
+  sendRequest(event: Event): Promise<void>
+} {
   /** Находится ли форма в состоянии загрузки */
   const isLoading = ref(false)
   /** Отправлена ли форма */

@@ -1,4 +1,4 @@
-import { onMounted, onUnmounted } from "vue"
+import { onMounted, onUnmounted } from "#imports"
 
 /**
  * Данная функция используется для блокирования скролла при открытие открытии модальных окон.

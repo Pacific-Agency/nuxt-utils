@@ -1,3 +1,6 @@
+import { useRuntimeConfig } from "#app"
+import { eventHandler } from "h3"
+
 /**
  * Данный серверный эндпоинт нужен для генерации Sitemap.
  *
