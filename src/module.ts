@@ -24,8 +24,7 @@ export default defineNuxtModule({
 
     /** Серверные эндпоинты */
     addServerHandler({
-      handler: resolve("./runtime/api/sitemap-routes.ts"),
-      lazy: true,
+      handler: resolve("./runtime/api/sitemap-routes"),
       route: "/api/sitemap-routes",
     })
   },
