@@ -23,6 +23,8 @@ export default eventHandler(async () => {
   /** Карта сайта от API */
   const data = await $fetch<Sitemap>("/sitemap/", {
     baseURL: useRuntimeConfig().public.apiBase,
+  }).catch(() => {
+    return []
   })
 
   /** Массив всех ссылок */
