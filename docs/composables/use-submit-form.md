@@ -2,7 +2,7 @@
 
 Функция, которая упрощает отправку данных с формы.
 
-Функция принимает название эндпоинта, добавляя перед названием `/api/mail/`.
+Функция принимает 1 параметр `url` - название эндпоинта, добавляя перед названием `/api/mail/`. Параметр может быть реактивным либо обычной строкой.
 
 ## Возвращаемые методы
 
@@ -30,6 +30,11 @@
 ## Использование
 
 ```ts
+/** С реактивным параметром `url` */
+const reactiveUrl = computed(() => condition ? 'faq' : 'appointment')
+const { sendRequest, isLoading, isSent } = useSubmitForm(reactiveUrl)
+
+/** С обычной строкой */
 const { sendRequest, isLoading, isSent } = useSubmitForm("faq")
 
 <form @submit.prevent="sendRequest">

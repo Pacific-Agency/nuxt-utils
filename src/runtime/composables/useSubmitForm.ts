@@ -1,4 +1,11 @@
-import { Ref, ref, useFetch, useRuntimeConfig } from "#imports"
+import {
+  ComputedRef,
+  Ref,
+  ref,
+  unref,
+  useFetch,
+  useRuntimeConfig,
+} from "#imports"
 
 /**
  * Функция для отправки данных формы
@@ -14,7 +21,7 @@ import { Ref, ref, useFetch, useRuntimeConfig } from "#imports"
  * const { sendRequest, isSent, isLoading } = useSubmitForm('faq')
  * ```
  */
-export default function useSubmitForm(url: string): {
+export default function useSubmitForm(url: ComputedRef<string> | string): {
   isLoading: Ref<boolean>
   isSent: Ref<boolean>
   sendRequest(event: Event): Promise<void>
@@ -37,7 +44,7 @@ export default function useSubmitForm(url: string): {
     const formData = new FormData(form)
 
     // Отправка запроса к API
-    await useFetch(`/mail/${url}/`, {
+    await useFetch(`/mail/${unref(url)}/`, {
       baseURL: useRuntimeConfig().public.apiBase,
       body: Object.fromEntries(formData.entries()),
       method: "POST",
