@@ -54,10 +54,10 @@
     "enforce-branch-name": "1.1.2",
     "happy-dom": "^9.0.0",
     "husky": "8.0.3",
-    "lint-staged": "13.2.0",
+    "lint-staged": "13.2.1",
     "nuxt": "^3.3.2",
-    "vitepress": "1.0.0-alpha.64",
-    "vitest": "^0.29.8"
+    "vitepress": "1.0.0-alpha.65",
+    "vitest": "^0.30.0"
   },
-  "packageManager": "pnpm@8.1.0"
+  "packageManager": "pnpm@8.2.0"
 }
