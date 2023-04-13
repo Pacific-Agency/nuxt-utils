@@ -2,7 +2,10 @@
 
 Функция, которая упрощает отправку данных с формы.
 
-Функция принимает 1 параметр `url` - название эндпоинта, добавляя перед названием `/api/mail/`. Параметр может быть реактивным либо обычной строкой.
+Функция принимает 2 параметра:
+
+- `url` - название эндпоинта, добавляя перед названием `/api/mail/`. Параметр может быть реактивным либо обычной строкой.
+- `options` - объект с параметрами, которые будут переданы в функцию. Является необязательным, поэтому если не нужно передавать никаких параметров, он просто не указывается.
 
 ## Возвращаемые методы
 
@@ -26,17 +29,41 @@
 ## Параметры
 
 - `url` - Название эндпоинта для отправки данных
+- `options` - Объект с параметрами для функции
+
+### Параметры для функции
+
+- `body` - Объект, который будет передан в `body` запроса
 
 ## Использование
 
+### С обычной строкой
+
 ```ts
-/** С реактивным параметром `url` */
-const reactiveUrl = computed(() => condition ? 'faq' : 'appointment')
-const { sendRequest, isLoading, isSent } = useSubmitForm(reactiveUrl)
-
-/** С обычной строкой */
 const { sendRequest, isLoading, isSent } = useSubmitForm("faq")
+```
 
+### С реактивным параметром `url`
+
+```ts
+const reactiveUrl = computed(() => condition ? 'faq' : 'appointment')
+
+const { sendRequest, isLoading, isSent } = useSubmitForm(reactiveUrl)
+```
+
+### С дополнительными параметрами
+
+```ts
+const { sendRequest, isLoading, isSent } = useSubmitForm("faq", {
+  body: {
+    requestUrl: location.href,
+  }
+})
+```
+
+### Пример формы
+
+```html
 <form @submit.prevent="sendRequest">
   <input type="text" name="name" />
   <input type="text" name="phone" />

@@ -1,10 +1,17 @@
 import type { ComputedRef, Ref } from "#imports"
 import { ref, unref, useFetch, useRuntimeConfig } from "#imports"
 
+/** Параметры функции */
+interface Options {
+  /** Объект, который будет передан в `body` запроса */
+  body: Record<string, unknown>
+}
+
 /**
  * Функция для отправки данных формы
  *
  * @param url - Эндпоинт для отправки данных
+ * @param options - Объект с параметрами для функции
  * @returns Объект с методами для работы с формой
  * - `isLoading` - Находится ли форма в состоянии загрузки
  * - `isSent` - Отправлена ли форма
@@ -15,7 +22,10 @@ import { ref, unref, useFetch, useRuntimeConfig } from "#imports"
  * const { sendRequest, isSent, isLoading } = useSubmitForm('faq')
  * ```
  */
-export default function useSubmitForm(url: ComputedRef<string> | string): {
+export default function useSubmitForm(
+  url: ComputedRef<string> | string,
+  options?: Partial<Options>
+): {
   isLoading: Ref<boolean>
   isSent: Ref<boolean>
   sendRequest(event: Event): Promise<void>
@@ -40,7 +50,10 @@ export default function useSubmitForm(url: ComputedRef<string> | string): {
     // Отправка запроса к API
     await useFetch(`/mail/${unref(url)}/`, {
       baseURL: useRuntimeConfig().public.apiBase,
-      body: Object.fromEntries(formData.entries()),
+      body: {
+        ...Object.fromEntries(formData.entries()),
+        ...options?.body,
+      },
       method: "POST",
       onRequest() {
         /** Меняем состояние загрузки */
