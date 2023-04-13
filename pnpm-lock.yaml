@@ -16,8 +16,8 @@ devDependencies:
     specifier: ^3.3.2
     version: 3.3.2(rollup@3.20.2)(vue@3.2.47)
   '@pacific-agency/eslint-config':
-    specifier: 0.2.1
-    version: 0.2.1(@nuxt/eslint-config@0.1.1)(eslint-config-prettier@8.8.0)(eslint-plugin-jsdoc@40.1.2)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tsdoc@0.2.17)(eslint-plugin-typescript-sort-keys@2.3.0)(eslint-plugin-vue@9.10.0)(eslint@8.38.0)
+    specifier: 0.3.0
+    version: 0.3.0(@nuxt/eslint-config@0.1.1)(eslint-config-prettier@8.8.0)(eslint-plugin-jsdoc@40.1.2)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tsdoc@0.2.17)(eslint-plugin-typescript-sort-keys@2.3.0)(eslint-plugin-vue@9.10.0)(eslint@8.38.0)
   '@pacific-agency/prettier-config':
     specifier: 0.1.1
     version: 0.1.1(prettier-plugin-css-order@1.3.0)(prettier-plugin-packagejson@2.4.3)(prettier-plugin-sort-json@1.0.0)(prettier-plugin-tailwindcss@0.2.7)(prettier@2.8.7)
@@ -1043,8 +1043,8 @@ packages:
       - vue-tsc
     dev: true
 
-  /@pacific-agency/eslint-config@0.2.1(@nuxt/eslint-config@0.1.1)(eslint-config-prettier@8.8.0)(eslint-plugin-jsdoc@40.1.2)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tsdoc@0.2.17)(eslint-plugin-typescript-sort-keys@2.3.0)(eslint-plugin-vue@9.10.0)(eslint@8.38.0):
-    resolution: {integrity: sha512-7unoMTSAkA+4cl2Q3k1RYlfvhVYrIKfHyzwQM1tOVfwd43dC82ys1S0JxMv06yAO+TbonNz+quyVGUfQJMMciQ==, tarball: https://npm.pkg.github.com/download/@pacific-agency/eslint-config/0.2.1/cb213b1db3509d42e76f3ea720222bd71b7ca78f}
+  /@pacific-agency/eslint-config@0.3.0(@nuxt/eslint-config@0.1.1)(eslint-config-prettier@8.8.0)(eslint-plugin-jsdoc@40.1.2)(eslint-plugin-sort-keys-fix@1.1.2)(eslint-plugin-tsdoc@0.2.17)(eslint-plugin-typescript-sort-keys@2.3.0)(eslint-plugin-vue@9.10.0)(eslint@8.38.0):
+    resolution: {integrity: sha512-hEJvnwR2ot/U7TvFU0o36GW6wLeo3aknz1xlajMS9Am2ifQ1Z9Xff71j7TwJWGSy154kJS639Z61szQsFuSVuA==, tarball: https://npm.pkg.github.com/download/@pacific-agency/eslint-config/0.3.0/78d8b8eb01db2626d78ebcef8e45eafb045e4aa2}
     peerDependencies:
       '@nuxt/eslint-config': '*'
       eslint: '*'

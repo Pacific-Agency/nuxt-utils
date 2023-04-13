@@ -1,11 +1,5 @@
-import {
-  ComputedRef,
-  Ref,
-  ref,
-  unref,
-  useFetch,
-  useRuntimeConfig,
-} from "#imports"
+import type { ComputedRef, Ref } from "#imports"
+import { ref, unref, useFetch, useRuntimeConfig } from "#imports"
 
 /**
  * Функция для отправки данных формы
