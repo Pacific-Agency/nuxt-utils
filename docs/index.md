@@ -18,7 +18,7 @@ hero:
       link: /components/map-widget
     - theme: alt
       text: Composables
-      link: /composables/use-phone-formatter
+      link: /composables/use-fetch-auth
 
 features:
   - icon: ⚙️

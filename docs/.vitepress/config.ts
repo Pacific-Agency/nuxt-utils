@@ -9,7 +9,7 @@ export default defineConfig({
     nav: [
       { link: "/", text: "Главная" },
       { link: "/components/map-widget", text: "Компоненты" },
-      { link: "/composables/use-phone-formatter", text: "Composables" },
+      { link: "/composables/use-fetch-auth", text: "Composables" },
     ],
     sidebar: [
       {
@@ -18,6 +18,10 @@ export default defineConfig({
       },
       {
         items: [
+          {
+            link: "/composables/use-fetch-auth",
+            text: "useFetchAuth",
+          },
           {
             link: "/composables/use-phone-formatter",
             text: "usePhoneFormatter",
