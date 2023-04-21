@@ -10,7 +10,7 @@ pnpm add @pacific-agency/nuxt-utils
 ```
 
 ```bash
-npm add @pacific-agency/nuxt-utils
+npm install @pacific-agency/nuxt-utils
 ```
 
 ```bash
