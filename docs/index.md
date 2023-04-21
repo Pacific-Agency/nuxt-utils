@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Документация
-      link: /components/map-widget
+      link: /installation
     - theme: alt
       text: Компоненты
       link: /components/map-widget
