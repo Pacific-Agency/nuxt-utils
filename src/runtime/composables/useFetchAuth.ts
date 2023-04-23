@@ -12,7 +12,6 @@ type FetchParams = Parameters<typeof $fetch.raw>
  * - Проксит `cookie` клиента в серверные запросы при `SSR`
  * - Проксит `cookie` из серверных запросов на клиент
  * - Добавляет заголовок `X-CSRFToken` со значением из `cookie` `csrftoken`
- *
  * @param url - `URL` для запроса
  * @param event - событие запроса `h3`
  * @param options - параметры запроса
@@ -35,6 +34,7 @@ export default async function <TResponse>(
   try {
     /** Ответ от эндпоинта */
     const response = await $fetch.raw<TResponse>(url, {
+      credentials: "include",
       headers: {
         // Выставляем `csrftoken` из `cookie` в заголовок
         "X-CSRFToken": useCookie("csrftoken").value ?? "",
