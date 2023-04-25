@@ -2,6 +2,8 @@ import { useCookie, useFetch, useRequestHeaders } from "#imports"
 
 /** Параметры запроса от useFetch */
 type FetchParams<TResponse> = Parameters<typeof useFetch<TResponse>>
+/** Тип ответа от useFetch */
+type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
 
 /**
  * Функция для работы с эдпоинтами с авторизацией.
@@ -23,7 +25,7 @@ type FetchParams<TResponse> = Parameters<typeof useFetch<TResponse>>
 export default async function <TResponse>(
   url: FetchParams<TResponse>[0],
   options?: FetchParams<TResponse>[1]
-) {
+): FetchReturn<TResponse> {
   return useFetch<TResponse>(url, {
     credentials: "include",
     headers: {
