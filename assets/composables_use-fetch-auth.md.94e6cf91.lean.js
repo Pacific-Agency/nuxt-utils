@@ -1,0 +1,1 @@
+import{_ as s,o,c as e,O as a}from"./chunks/framework.52de2457.js";const F=JSON.parse('{"title":"useFetchAuth","description":"","frontmatter":{},"headers":[],"relativePath":"composables/use-fetch-auth.md"}'),l={name:"composables/use-fetch-auth.md"},c=a("",13),t=[c];function n(p,r,i,d,u,h){return o(),e("div",null,t)}const A=s(l,[["render",n]]);export{F as __pageData,A as default};
