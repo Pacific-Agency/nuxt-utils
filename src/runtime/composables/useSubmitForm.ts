@@ -4,7 +4,13 @@ import { ref, unref, useFetch, useRuntimeConfig } from "#imports"
 /** Параметры функции */
 interface Options {
   /** Объект, который будет передан в `body` запроса */
-  body: Record<string, unknown>
+  body: Record<string, string>
+  /** Является ли тип контента `multipart/form-data` */
+  isFormData: boolean
+  /** Функция, вызываемая при запросе */
+  onRequest: () => void
+  /** Функция, вызываемая при успешно полученном ответе спустя три секунды */
+  onResponse: () => void
 }
 
 /**
@@ -47,17 +53,25 @@ export default function useSubmitForm(
     /** Объект со всеми данными формы */
     const formData = new FormData(form)
 
+    // Добавление дополнительно переданных полей в данные формы
+    if (options?.body) {
+      for (const [key, value] of Object.entries(options.body)) {
+        formData.append(key, value)
+      }
+    }
+
     // Отправка запроса к API
     await useFetch(`/mail/${unref(url)}/`, {
       baseURL: useRuntimeConfig().public.apiBase,
-      body: {
-        ...Object.fromEntries(formData.entries()),
-        ...options?.body,
-      },
+      body: options?.isFormData
+        ? formData
+        : Object.fromEntries(formData.entries()),
       method: "POST",
       onRequest() {
         /** Меняем состояние загрузки */
         isLoading.value = true
+
+        options?.onRequest?.()
       },
       onRequestError({ error }) {
         // Если есть ошибка, то выводим об этом `alert`
@@ -77,6 +91,8 @@ export default function useSubmitForm(
         setTimeout(() => {
           // Очищаем форму
           form.reset()
+
+          options?.onResponse?.()
 
           // Сбрасываем состояние отправки
           isSent.value = false

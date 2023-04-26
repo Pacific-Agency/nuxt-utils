@@ -31,9 +31,12 @@
 - `url` - Название эндпоинта для отправки данных
 - `options` - Объект с параметрами для функции
 
-### Параметры для функции
+### Дополнительные параметры `options`:
 
-- `body` - Объект, который будет передан в `body` запроса
+- `body` - Объект, который будет передан в форму.
+- `isFormData` - Является ли тип контента `multipart/form-data` (по умолчанию форма отправляется в формате `JSON`).
+- `onRequest` - Функция, вызываемая при запросе.
+- `onResponse` - Функция, вызываемая при успешно полученном ответе спустя три секунды.
 
 ## Использование
 
@@ -46,7 +49,7 @@ const { sendRequest, isLoading, isSent } = useSubmitForm("faq")
 ### С реактивным параметром `url`
 
 ```ts
-const reactiveUrl = computed(() => condition ? 'faq' : 'appointment')
+const reactiveUrl = computed(() => (condition ? "faq" : "appointment"))
 
 const { sendRequest, isLoading, isSent } = useSubmitForm(reactiveUrl)
 ```
@@ -57,7 +60,14 @@ const { sendRequest, isLoading, isSent } = useSubmitForm(reactiveUrl)
 const { sendRequest, isLoading, isSent } = useSubmitForm("faq", {
   body: {
     requestUrl: location.href,
-  }
+    isFormData: true,
+    onResponse() {
+      // do something on response
+    },
+    onRequest() {
+      // do something on request
+    },
+  },
 })
 ```
 
