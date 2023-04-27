@@ -1,7 +1,7 @@
+import type { UseFetchOptions } from "#app"
 import { useCookie, useFetch, useRequestHeaders } from "#imports"
+import { defu } from "defu"
 
-/** Параметры запроса от useFetch */
-type FetchParams<TResponse> = Parameters<typeof useFetch<TResponse>>
 /** Тип ответа от useFetch */
 type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
 
@@ -23,10 +23,10 @@ type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
  * ```
  */
 export default async function <TResponse>(
-  url: FetchParams<TResponse>[0],
-  options?: FetchParams<TResponse>[1]
+  url: string,
+  options: UseFetchOptions<TResponse> = {}
 ): FetchReturn<TResponse> {
-  return useFetch<TResponse>(url, {
+  const defaults: UseFetchOptions<TResponse> = {
     credentials: "include",
     headers: {
       // Выставляем `csrftoken` из `cookie` в заголовок
@@ -34,6 +34,15 @@ export default async function <TResponse>(
       // Проксим `cookie` клиента на сервер
       cookie: useRequestHeaders(["cookie"]).cookie ?? "",
     },
-    ...options,
-  })
+  }
+
+  /**
+   * Параметры для функции.
+   *
+   * Для работы их как дефолтных используется `defu`.
+   */
+  const params = defu(defaults, options)
+
+  // @ts-expect-error - неправильная автоматическая типизация
+  return useFetch(url, params)
 }
