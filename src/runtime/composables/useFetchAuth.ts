@@ -2,6 +2,8 @@ import type { UseFetchOptions } from "#app"
 import { useCookie, useFetch, useRequestHeaders } from "#imports"
 import { defu } from "defu"
 
+/** Параметры useFetch */
+type FetchParams = Parameters<typeof useFetch>
 /** Тип ответа от useFetch */
 type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
 
@@ -23,7 +25,7 @@ type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
  * ```
  */
 export default async function <TResponse>(
-  url: string,
+  url: FetchParams[0],
   options: UseFetchOptions<TResponse> = {}
 ): FetchReturn<TResponse> {
   const defaults: UseFetchOptions<TResponse> = {
