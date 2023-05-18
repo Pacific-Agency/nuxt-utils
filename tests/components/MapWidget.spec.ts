@@ -1,15 +1,15 @@
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
 
-import MapWidget from "@/runtime/components/MapWidget.vue"
+import UtilsMapWidget from "@/runtime/components/UtilsMapWidget.vue"
 
-describe.concurrent("Компонент MapWidget", () => {
+describe.concurrent("Компонент UtilsMapWidget", () => {
   /** `ID` виджета */
   const widgetId = "widget-id"
   /** Список классов */
   const classList = "class-1 class-2"
 
-  const wrapper = mount(MapWidget, {
+  const wrapper = mount(UtilsMapWidget, {
     attrs: {
       class: classList,
     },

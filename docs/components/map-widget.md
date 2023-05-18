@@ -1,8 +1,8 @@
 <script setup>
-import MapWidget from '../../src/runtime/components/MapWidget.vue'
+import UtilsMapWidget from '../../src/runtime/components/UtilsMapWidget.vue'
 </script>
 
-# MapWidget
+# UtilsMapWidget
 
 Данный компонент выводит виджет Яндекс Карт.
 
@@ -26,11 +26,11 @@ import MapWidget from '../../src/runtime/components/MapWidget.vue'
 
 ```vue
 <template>
-  <MapWidget widget-id="widget-id" />
+  <UtilsMapWidget widget-id="widget-id" />
 </template>
 ```
 
-<MapWidget />
+<UtilsMapWidget />
 
 ## Стилизация
 
@@ -38,8 +38,8 @@ import MapWidget from '../../src/runtime/components/MapWidget.vue'
 
 ```vue
 <template>
-  <MapWidget style="height: 450px; border-radius: 1rem;" widget-id="widget-id" />
+  <UtilsMapWidget style="height: 450px; border-radius: 1rem;" widget-id="widget-id" />
 </template>
 ```
 
-<MapWidget style="height: 450px; border-radius: 1rem;" />
+<UtilsMapWidget style="height: 450px; border-radius: 1rem;" />

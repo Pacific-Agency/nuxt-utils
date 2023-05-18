@@ -6,7 +6,7 @@ import { usePhoneFormatter, usePriceFormatter } from "#imports"
   <div>
     <div>
       <h2>Компоненты</h2>
-      <MapWidget widget-id="widget-id" />
+      <UtilsMapWidget widget-id="widget-id" />
     </div>
     <div>
       <h2>Composables</h2>
