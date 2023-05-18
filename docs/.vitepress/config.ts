@@ -16,7 +16,10 @@ export default defineConfig({
         items: [{ link: "/installation", text: "Установка и настройка" }],
       },
       {
-        items: [{ link: "/components/map-widget", text: "UtilsMapWidget" }],
+        items: [
+          { link: "/components/input", text: "UtilsInput" },
+          { link: "/components/map-widget", text: "UtilsMapWidget" },
+        ],
         text: "Компоненты",
       },
       {
