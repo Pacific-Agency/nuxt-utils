@@ -20,6 +20,7 @@ export default defineConfig({
           { link: "/components/input", text: "UtilsInput" },
           { link: "/components/map-widget", text: "UtilsMapWidget" },
           { link: "/components/phone", text: "UtilsPhone" },
+          { link: "/components/textarea", text: "UtilsTextarea" },
         ],
         text: "Компоненты",
       },
