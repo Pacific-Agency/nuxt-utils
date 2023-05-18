@@ -16,7 +16,7 @@ export default defineConfig({
         items: [{ link: "/installation", text: "Установка и настройка" }],
       },
       {
-        items: [{ link: "/components/map-widget", text: "MapWidget" }],
+        items: [{ link: "/components/map-widget", text: "UtilsMapWidget" }],
         text: "Компоненты",
       },
       {
