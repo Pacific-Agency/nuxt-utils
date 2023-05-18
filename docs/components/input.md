@@ -57,7 +57,7 @@ const text = ref("")
 </script>
 
 <template>
-  <UtilsMapWidget
+  <UtilsInput
     v-model="text"
     id="test-field"
     placeholder="Тестовый плейсхолдер"

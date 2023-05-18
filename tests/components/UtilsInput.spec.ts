@@ -185,4 +185,21 @@ describe.concurrent("Компонент UiFormInputPhone", () => {
     // Проверяем значение инпута
     expect(input.element.value).toBe("Другой текст")
   })
+
+  test("Наличие классов для стилизации", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsInput, {
+      props: {
+        label: "Тестовый label",
+        ...defaultProps,
+      },
+    })
+
+    // Проверка классов контейнера
+    expect(wrapper.classes()).toContain("utils-input-container")
+    // Проверка классов у `label`
+    expect(wrapper.find("label").classes()).toContain("utils-input-label")
+    // Проверка классов у `input`
+    expect(wrapper.find("input").classes()).toContain("utils-input-input")
+  })
 })
