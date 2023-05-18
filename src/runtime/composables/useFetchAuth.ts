@@ -43,7 +43,7 @@ export default async function <TResponse>(
    *
    * Для работы их как дефолтных используется `defu`.
    */
-  const params = defu(defaults, options)
+  const params = defu(options, defaults)
 
   // @ts-expect-error - неправильная автоматическая типизация
   return useFetch(url, params)
