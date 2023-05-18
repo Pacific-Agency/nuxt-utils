@@ -24,7 +24,7 @@ yarn add @pacific-agency/nuxt-utils
 
 Для использования необходимо добавить `@pacific-agency/nuxt-utils` в файл `nuxt.config.ts` в поле `modules`.
 
-```ts [nuxt.]
+```ts
 export default defineNuxtConfig({
   modules: [
     "@pacific-agency/nuxt-utils", // [!code ++]

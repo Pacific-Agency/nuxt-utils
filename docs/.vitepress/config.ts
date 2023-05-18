@@ -8,7 +8,7 @@ export default defineConfig({
     logo: "/logo.svg",
     nav: [
       { link: "/", text: "Главная" },
-      { link: "/components/map-widget", text: "Компоненты" },
+      { link: "/components/input", text: "Компоненты" },
       { link: "/composables/use-fetch-auth", text: "Composables" },
     ],
     sidebar: [
@@ -16,7 +16,12 @@ export default defineConfig({
         items: [{ link: "/installation", text: "Установка и настройка" }],
       },
       {
-        items: [{ link: "/components/map-widget", text: "UtilsMapWidget" }],
+        items: [
+          { link: "/components/input", text: "UtilsInput" },
+          { link: "/components/map-widget", text: "UtilsMapWidget" },
+          { link: "/components/phone", text: "UtilsPhone" },
+          { link: "/components/textarea", text: "UtilsTextarea" },
+        ],
         text: "Компоненты",
       },
       {

@@ -4,6 +4,9 @@ dependencies:
   '@nuxt/kit':
     specifier: 3.5.0
     version: 3.5.0(rollup@3.22.0)
+  maska:
+    specifier: 2.1.9
+    version: 2.1.9
 
 devDependencies:
   '@nuxt/module-builder':
@@ -4180,6 +4183,10 @@ packages:
   /mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
     dev: true
+
+  /maska@2.1.9:
+    resolution: {integrity: sha512-LlAHN/ivh1NpwQSDrOWkj4PJlbMXkH2X0r1L4Pm9k6laO/0vxORLfogeLDPKLAbkJEugjfGS5wjhGE96iRpqbw==}
+    dev: false
 
   /md5-hex@3.0.1:
     resolution: {integrity: sha512-BUiRtTtV39LIJwinWBjqVsU9xhdnz7/i889V859IBFpuqGAj6LuOvHv5XLbgZ2R7ptJoJaEcxkv88/h25T7Ciw==}
