@@ -15,7 +15,7 @@ hero:
       link: /installation
     - theme: alt
       text: Компоненты
-      link: /components/map-widget
+      link: /components/input
     - theme: alt
       text: Composables
       link: /composables/use-fetch-auth

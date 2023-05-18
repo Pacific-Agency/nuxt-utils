@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest"
 
 import UtilsInput from "@/runtime/components/UtilsInput.vue"
 
-describe.concurrent("Компонент UiFormInputPhone", () => {
+describe.concurrent("Компонент UtilsInput", () => {
   const defaultProps = {
     id: "test-field",
   }
@@ -195,11 +195,25 @@ describe.concurrent("Компонент UiFormInputPhone", () => {
       },
     })
 
+    /** Классы `wrapper` */
+    const wrapperClasses = wrapper.classes()
+    /** Классы `label` */
+    const labelClasses = wrapper.find("label").classes()
+    /** Классы `input` */
+    const inputClasses = wrapper.find("input").classes()
+
+    // Глобальный класс контейнера
+    expect(wrapperClasses).toContain("utils-form-container")
+    // Глобальный класс `label`
+    expect(labelClasses).toContain("utils-form-label")
+    // Глобальный класс поля ввода
+    expect(inputClasses).toContain("utils-form-input")
+
     // Проверка классов контейнера
-    expect(wrapper.classes()).toContain("utils-input-container")
+    expect(wrapperClasses).toContain("utils-input-container")
     // Проверка классов у `label`
-    expect(wrapper.find("label").classes()).toContain("utils-input-label")
+    expect(labelClasses).toContain("utils-input-label")
     // Проверка классов у `input`
-    expect(wrapper.find("input").classes()).toContain("utils-input-input")
+    expect(inputClasses).toContain("utils-input-input")
   })
 })

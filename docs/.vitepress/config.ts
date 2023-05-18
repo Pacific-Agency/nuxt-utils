@@ -8,7 +8,7 @@ export default defineConfig({
     logo: "/logo.svg",
     nav: [
       { link: "/", text: "Главная" },
-      { link: "/components/map-widget", text: "Компоненты" },
+      { link: "/components/input", text: "Компоненты" },
       { link: "/composables/use-fetch-auth", text: "Composables" },
     ],
     sidebar: [

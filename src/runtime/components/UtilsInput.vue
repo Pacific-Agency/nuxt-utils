@@ -46,12 +46,17 @@ const modelValue = defineModel<string>()
 </script>
 
 <template>
-  <div class="utils-input-container">
-    <label v-if="label" class="utils-input-label" :for="id" v-text="label" />
+  <div class="utils-input-container utils-form-container">
+    <label
+      v-if="label"
+      class="utils-input-label utils-form-label"
+      :for="id"
+      v-text="label"
+    />
     <input
       :id="id"
       v-model="modelValue"
-      class="utils-input-input"
+      class="utils-input-input utils-form-input"
       :name="id"
       :placeholder="placeholder"
       :required="required"

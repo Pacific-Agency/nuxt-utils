@@ -1,4 +1,4 @@
-# UtilsTextarea
+# UtilsTextArea
 
 Данный компонент выводит многострочное текстовое поле.
 
@@ -49,6 +49,14 @@ export default defineNuxtConfig({
 
 При этом `label` и `textarea` можно стилизовать просто используя их селекторы.
 
+::: info
+Также для стилизации можно использовать глобальные классы, которые стилизуют все компоненты формы.
+
+- `utils-form-container`. Его стилизация влияет на контейнер, в котором находится текстовое поле.
+- `utils-form-label`. Его стилизация влияет на `label`.
+- `utils-form-input`. Его стилизация влияет на поле ввода.
+:::
+
 ## Использование
 
 ```vue
@@ -57,7 +65,7 @@ const text = ref("")
 </script>
 
 <template>
-  <UtilsTextarea
+  <UtilsTextArea
     v-model="text"
     id="test-field"
     :rows="5"

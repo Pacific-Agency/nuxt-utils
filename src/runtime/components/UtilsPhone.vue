@@ -41,14 +41,19 @@ const modelValue = defineModel<string>()
 </script>
 
 <template>
-  <div class="utils-phone-container">
-    <label v-if="label" class="utils-phone-label" :for="id" v-text="label" />
+  <div class="utils-phone-container utils-form-container">
+    <label
+      v-if="label"
+      class="utils-phone-label utils-form-label"
+      :for="id"
+      v-text="label"
+    />
     <input
       :id="id"
       v-model="modelValue"
       v-maska
       autocomplete="tel"
-      class="utils-phone-input"
+      class="utils-phone-input utils-form-input"
       :data-maska="mask"
       maxlength="16"
       :name="id"
