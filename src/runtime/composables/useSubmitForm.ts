@@ -75,32 +75,37 @@ export default function useSubmitForm(
       },
       onRequestError({ error }) {
         // Если есть ошибка, то выводим об этом `alert`
-        alert(`Ошибка: ${error}`)
+        alert(`Ошибка: ${error.message}`)
 
         /** Меняем состояние загрузки */
         isLoading.value = false
       },
-      onResponse() {
-        /** Меняем состояние загрузки */
-        isLoading.value = false
+      onResponse({ response }) {
+        // Если запрос выполнен успешно
+        if (response.ok) {
+          /** Меняем состояние загрузки */
+          isLoading.value = false
 
-        /** Меняем состояние отправки */
-        isSent.value = true
+          /** Меняем состояние отправки */
+          isSent.value = true
 
-        // Выставляем таймер на 3 секунды
-        setTimeout(() => {
-          // Очищаем форму
-          form.reset()
+          // Выставляем таймер на 3 секунды
+          setTimeout(() => {
+            // Очищаем форму
+            form.reset()
 
-          options?.onResponse?.()
+            options?.onResponse?.()
 
-          // Сбрасываем состояние отправки
-          isSent.value = false
-        }, 3000)
+            // Сбрасываем состояние отправки
+            isSent.value = false
+          }, 3000)
+        }
       },
-      onResponseError({ error }) {
+      onResponseError({ response }) {
         // Если есть ошибка, то выводим об этом `alert`
-        alert(`Ошибка: ${error}`)
+        if (!response.ok) {
+          alert(response.statusText)
+        }
 
         /** Меняем состояние загрузки */
         isLoading.value = false
