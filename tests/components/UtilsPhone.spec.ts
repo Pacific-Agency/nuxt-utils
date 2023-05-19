@@ -159,6 +159,53 @@ describe.concurrent("Компонент UtilsPhone", () => {
     expect(parentComponent.find("input").element.value).toBe("+7 321")
   })
 
+  test("Работа через `formData`", async () => {
+    const parentComponent = mount({
+      components: {
+        UtilsPhone,
+      },
+      data() {
+        return {
+          formData: new FormData(),
+        }
+      },
+      methods: {
+        submit(event: Event) {
+          /** Форма */
+          const form = event.target as HTMLFormElement
+
+          /** Объект со всеми данными формы */
+          this.formData = new FormData(form)
+        },
+      },
+      template: `
+        <form @submit="submit">
+          <UtilsPhone />
+        </form>
+      `,
+    })
+
+    /** Текстовое поле */
+    const input = parentComponent.find("input")
+
+    /** Форма с полями */
+    const form = parentComponent.find("form")
+
+    // Выставляем значения поля
+    await input.setValue("+7 999")
+
+    // Триггерим отправку формы
+    await form.trigger("submit")
+
+    /** Данные формы */
+    const formData = Object.fromEntries(parentComponent.vm.formData.entries())
+
+    // Проверяем, что правильно выставлены все данные
+    expect(formData).toStrictEqual({
+      phone: "+7 999",
+    })
+  })
+
   test("Правильный формат номера", async () => {
     /** Компонент */
     const wrapper = mount(UtilsPhone)

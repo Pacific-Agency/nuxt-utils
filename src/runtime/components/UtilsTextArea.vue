@@ -42,7 +42,9 @@ withDefaults(
 )
 
 /** Текущий текст поля */
-const modelValue = defineModel<string>()
+const modelValue = defineModel<string>({
+  local: true,
+})
 </script>
 
 <template>

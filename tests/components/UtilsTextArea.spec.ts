@@ -186,6 +186,53 @@ describe.concurrent("Компонент UtilsTextArea", () => {
     expect(textarea.element.value).toBe("Другой текст")
   })
 
+  test("Работа через `formData`", async () => {
+    const parentComponent = mount({
+      components: {
+        UtilsTextArea,
+      },
+      data() {
+        return {
+          formData: new FormData(),
+        }
+      },
+      methods: {
+        submit(event: Event) {
+          /** Форма */
+          const form = event.target as HTMLFormElement
+
+          /** Объект со всеми данными формы */
+          this.formData = new FormData(form)
+        },
+      },
+      template: `
+        <form @submit="submit">
+          <UtilsTextArea id="test-field" />
+        </form>
+      `,
+    })
+
+    /** Текстовое поле */
+    const textarea = parentComponent.find("textarea")
+
+    /** Форма с полями */
+    const form = parentComponent.find("form")
+
+    // Выставляем значения поля
+    await textarea.setValue("Тест")
+
+    // Триггерим отправку формы
+    await form.trigger("submit")
+
+    /** Данные формы */
+    const formData = Object.fromEntries(parentComponent.vm.formData.entries())
+
+    // Проверяем, что правильно выставлены все данные
+    expect(formData).toStrictEqual({
+      "test-field": "Тест",
+    })
+  })
+
   test("Наличие классов для стилизации", () => {
     /** Компонент */
     const wrapper = mount(UtilsTextArea, {
