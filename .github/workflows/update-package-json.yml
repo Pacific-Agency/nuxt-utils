@@ -10,8 +10,9 @@ on:
 
 jobs:
   update-package-json:
-    uses: Pacific-Agency/workflows/.github/workflows/update-package-json.yml@v0.1.0
+    uses: Pacific-Agency/workflows/.github/workflows/update-package-json.yml@v0.1.1
     with:
       version: ${{ inputs.version }}
     secrets:
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      BOT_ACCESS_TOKEN: ${{ secrets.BOT_ACCESS_TOKEN }}
