@@ -124,6 +124,38 @@ describe.concurrent("Компонент UtilsTextArea", () => {
     expect(textarea.attributes("required")).toBeUndefined()
   })
 
+  test("Параметр `disabled` по умолчанию false", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsTextArea, {
+      props: {
+        ...defaultProps,
+      },
+    })
+
+    /** Текстовое поле */
+    const input = wrapper.find("textarea")
+
+    // Проверка отсутствия атрибута `disabled`.
+    expect(input.attributes("disabled")).toBeUndefined()
+  })
+
+  test("Выставление параметра `disabled`", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsTextArea, {
+      props: {
+        disabled: true,
+        ...defaultProps,
+      },
+    })
+
+    /** Текстовое поле */
+    const input = wrapper.find("textarea")
+
+    // Проверка существования атрибута `disabled`.
+    // При преобразовании в HTML, true заменяется на пустую строку.
+    expect(input.attributes("disabled")).toBe("")
+  })
+
   test("Параметр `rows` по умолчанию `3`", () => {
     /** Компонент */
     const wrapper = mount(UtilsTextArea, {

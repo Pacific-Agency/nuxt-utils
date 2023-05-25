@@ -94,6 +94,38 @@ describe.concurrent("Компонент UtilsInput", () => {
     expect(input.attributes("placeholder")).toBe("Тестовый placeholder")
   })
 
+  test("Параметр `disabled` по умолчанию false", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsInput, {
+      props: {
+        ...defaultProps,
+      },
+    })
+
+    /** Текстовое поле */
+    const input = wrapper.find("input")
+
+    // Проверка отсутствия атрибута `disabled`.
+    expect(input.attributes("disabled")).toBeUndefined()
+  })
+
+  test("Выставление параметра `disabled`", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsInput, {
+      props: {
+        disabled: true,
+        ...defaultProps,
+      },
+    })
+
+    /** Текстовое поле */
+    const input = wrapper.find("input")
+
+    // Проверка существования атрибута `disabled`.
+    // При преобразовании в HTML, true заменяется на пустую строку.
+    expect(input.attributes("disabled")).toBe("")
+  })
+
   test("Параметр `required` по умолчанию `true`", () => {
     /** Компонент */
     const wrapper = mount(UtilsInput, {
