@@ -3,6 +3,12 @@
 withDefaults(
   defineProps<{
     /**
+     * Является ли поле выключенным.
+     *
+     * Задает параметр `disabled`.
+     */
+    disabled?: boolean
+    /**
      * Идентификатор поля ввода.
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
@@ -59,6 +65,7 @@ const modelValue = defineModel<string>({
       :id="id"
       v-model="modelValue"
       class="utils-textarea-textarea utils-form-input"
+      :disabled="disabled"
       :name="id"
       :placeholder="placeholder"
       :required="required"

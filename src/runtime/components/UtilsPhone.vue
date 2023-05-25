@@ -5,6 +5,12 @@ import { vMaska } from "maska"
 withDefaults(
   defineProps<{
     /**
+     * Является ли поле выключенным.
+     *
+     * Задает параметр `disabled`.
+     */
+    disabled?: boolean
+    /**
      * Идентификатор поля ввода.
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
@@ -57,6 +63,7 @@ const modelValue = defineModel<string>({
       autocomplete="tel"
       class="utils-phone-input utils-form-input"
       :data-maska="mask"
+      :disabled="disabled"
       maxlength="16"
       :name="id"
       pattern="\+\d \d{3} \d{3}-\d{2}-\d{2}"

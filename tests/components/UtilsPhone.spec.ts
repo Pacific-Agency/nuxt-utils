@@ -102,6 +102,33 @@ describe.concurrent("Компонент UtilsPhone", () => {
     expect(label.element.textContent).toBe("Тестовый label")
   })
 
+  test("Параметр `disabled` по умолчанию false", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsPhone)
+
+    /** Текстовое поле */
+    const input = wrapper.find("input")
+
+    // Проверка отсутствия атрибута `disabled`.
+    expect(input.attributes("disabled")).toBeUndefined()
+  })
+
+  test("Выставление параметра `disabled`", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsPhone, {
+      props: {
+        disabled: true,
+      },
+    })
+
+    /** Текстовое поле */
+    const input = wrapper.find("input")
+
+    // Проверка существования атрибута `disabled`.
+    // При преобразовании в HTML, true заменяется на пустую строку.
+    expect(input.attributes("disabled")).toBe("")
+  })
+
   test("Параметр `required` по умолчанию `true`", () => {
     /** Компонент */
     const wrapper = mount(UtilsPhone)
