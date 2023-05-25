@@ -4,7 +4,6 @@ import { vMaska } from "maska"
 
 withDefaults(
   defineProps<{
-    // eslint-disable-line vue/require-default-prop
     /**
      * Является ли поле выключенным.
      *
@@ -24,7 +23,7 @@ withDefaults(
      *
      * Создает `label` и задает ему необходимый `id`.
      */
-    label?: string
+    label?: string // eslint-disable-line vue/require-default-prop
     /**
      * Является ли поле обязательным для заполнения.
      *
