@@ -2,6 +2,13 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
+    // eslint-disable-line vue/require-default-prop
+    /**
+     * Является ли поле выключенным.
+     *
+     * Задает параметр `disabled`.
+     */
+    disabled?: boolean
     /**
      * Идентификатор поля ввода.
      *
@@ -13,13 +20,14 @@ withDefaults(
      *
      * Создает `label` и задает ему необходимый `id`.
      */
-    label?: string // eslint-disable-line vue/require-default-prop
+    label?: string
+    // eslint-disable-line vue/require-default-prop
     /**
      * Плейсхолдер для поля.
      *
      * Задает параметр `placeholder`.
      */
-    placeholder?: string // eslint-disable-line vue/require-default-prop
+    placeholder?: string
     /**
      * Является ли поле обязательным для заполнения.
      *
@@ -59,6 +67,7 @@ const modelValue = defineModel<string>({
       :id="id"
       v-model="modelValue"
       class="utils-input-input utils-form-input"
+      :disabled="disabled"
       :name="id"
       :placeholder="placeholder"
       :required="required"

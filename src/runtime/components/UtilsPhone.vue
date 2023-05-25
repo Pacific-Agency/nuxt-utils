@@ -4,6 +4,13 @@ import { vMaska } from "maska"
 
 withDefaults(
   defineProps<{
+    // eslint-disable-line vue/require-default-prop
+    /**
+     * Является ли поле выключенным.
+     *
+     * Задает параметр `disabled`.
+     */
+    disabled?: boolean
     /**
      * Идентификатор поля ввода.
      *
@@ -17,7 +24,7 @@ withDefaults(
      *
      * Создает `label` и задает ему необходимый `id`.
      */
-    label?: string // eslint-disable-line vue/require-default-prop
+    label?: string
     /**
      * Является ли поле обязательным для заполнения.
      *
@@ -57,6 +64,7 @@ const modelValue = defineModel<string>({
       autocomplete="tel"
       class="utils-phone-input utils-form-input"
       :data-maska="mask"
+      :disabled="disabled"
       maxlength="16"
       :name="id"
       pattern="\+\d \d{3} \d{3}-\d{2}-\d{2}"
