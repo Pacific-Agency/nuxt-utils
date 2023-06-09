@@ -12,7 +12,6 @@
     "*.css": "tailwindcss"
   },
   "git.branchProtection": ["main"],
-  "git.branchValidationRegex": "(feat|fix|refactor|dev|deps|other)/[0-9]+-.+|main|release",
   "git.followTagsWhenSync": true,
   "gitlens.defaultDateFormat": "D MMMM YYYY в H:mm",
   "gitlens.defaultDateLocale": null,

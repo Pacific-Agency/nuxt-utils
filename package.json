@@ -52,7 +52,6 @@
     "@pacific-agency/eslint-config": "0.3.1",
     "@pacific-agency/prettier-config": "0.1.1",
     "@vue/test-utils": "2.3.2",
-    "enforce-branch-name": "1.1.2",
     "happy-dom": "9.20.3",
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
