@@ -1,4 +1,4 @@
-name: Релиз
+name: Публикация
 
 on:
   workflow_run:
