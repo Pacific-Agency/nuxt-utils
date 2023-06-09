@@ -1,0 +1,69 @@
+name: Публикация
+
+on:
+  workflow_run:
+    workflows: [Релиз проекта]
+    types: [completed]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+    env:
+      NODE_AUTH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Настройка NodeJS
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+
+      - uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+          registry-url: https://npm.pkg.github.com/
+
+      - name: Установка зависимостей
+        run: pnpm install
+
+      - name: Билд проекта
+        run: |
+          pnpm dev:prepare
+          pnpm prepack
+
+      - name: Деплой
+        run: pnpm publish --no-git-checks
+
+  gh-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Настройка NodeJS
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8
+
+      - uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+
+      - name: Авторизация в GitHub Packages
+        run: echo >> .npmrc "//npm.pkg.github.com/:_authToken=${{ github.token }}"
+
+      - name: Установка зависимостей
+        run: pnpm install
+
+      - name: Билд проекта
+        run: |
+          pnpm dev:prepare
+          pnpm docs:build
+
+      - name: Деплой
+        uses: JamesIves/github-pages-deploy-action@v4.4.2
+        with:
+          branch: gh-pages
+          folder: docs/.vitepress/dist
