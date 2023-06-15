@@ -48,7 +48,7 @@ withDefaults(
 )
 
 /** Текущий текст поля */
-const modelValue = defineModel<string>({
+const modelValue = defineModel<Date | number | string>({
   local: true,
 })
 </script>
