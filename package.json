@@ -57,7 +57,7 @@
     "lint-staged": "13.2.2",
     "nuxt": "3.5.3",
     "vitepress": "1.0.0-beta.2",
-    "vitest": "0.32.0"
+    "vitest": "0.32.2"
   },
-  "packageManager": "pnpm@8.6.2"
+  "packageManager": "pnpm@8.6.3"
 }
