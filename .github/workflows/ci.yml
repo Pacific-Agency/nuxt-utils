@@ -7,6 +7,6 @@ on:
 
 jobs:
   lint:
-    uses: Pacific-Agency/workflows/.github/workflows/frontend-lint.yml@v0.2.0
+    uses: Pacific-Agency/workflows/.github/workflows/frontend-lint.yml@v0.2.1
   test:
-    uses: Pacific-Agency/workflows/.github/workflows/frontend-test.yml@v0.2.0
+    uses: Pacific-Agency/workflows/.github/workflows/frontend-test.yml@v0.2.1

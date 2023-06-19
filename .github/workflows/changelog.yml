@@ -10,7 +10,7 @@ on:
 
 jobs:
   changelog:
-    uses: Pacific-Agency/workflows/.github/workflows/changelog.yml@v0.2.0
+    uses: Pacific-Agency/workflows/.github/workflows/changelog.yml@v0.2.1
     with:
       version: ${{ inputs.version }}
     secrets:
