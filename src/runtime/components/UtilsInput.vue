@@ -1,7 +1,15 @@
 <!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
+import { vMaska } from "maska"
+
 withDefaults(
   defineProps<{
+    /**
+     * Позволяет задать маску, которой будет соответствовать значение элемента формы
+     *
+     * Устанавливает атрибут `data-maska` у `input`.
+     */
+    dataMaska?: string // eslint-disable-line vue/require-default-prop
     /**
      * Является ли поле выключенным.
      *
@@ -20,6 +28,24 @@ withDefaults(
      * Создает `label` и задает ему необходимый `id`.
      */
     label?: string // eslint-disable-line vue/require-default-prop
+    /**
+     * Ограничитель максимального количества символов.
+     *
+     * Устанавливает атрибут `maxlength` у `input`.
+     */
+    maxlength?: number // eslint-disable-line vue/require-default-prop
+    /**
+     * Ограничитель минимального количества символов.
+     *
+     * Устанавливает атрибут `minlength` у `input`.
+     */
+    minlength?: number // eslint-disable-line vue/require-default-prop
+    /**
+     * Регулярное выражение, которому должно соответствовать значение у `input`.
+     *
+     * Устанавливает атрибут `pattern` у `input`.
+     */
+    pattern?: string // eslint-disable-line vue/require-default-prop
     /**
      * Плейсхолдер для поля.
      *
@@ -64,9 +90,14 @@ const modelValue = defineModel<Date | number | string>({
     <input
       :id="id"
       v-model="modelValue"
+      v-maska
       class="utils-input-input utils-form-input"
+      :data-maska="dataMaska"
       :disabled="disabled"
+      :maxlength="maxlength"
+      :minlength="minlength"
       :name="id"
+      :pattern="pattern"
       :placeholder="placeholder"
       :required="required"
       :type="type"
