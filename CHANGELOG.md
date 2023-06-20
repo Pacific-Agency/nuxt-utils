@@ -1,4 +1,17 @@
 
+## v0.8.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.7.3...v0.8.0)
+
+
+### 🚀 Улучшения
+
+  - Добавление новых атрибутов у `UtilsInput` ([#120](https://github.com/Pacific-Agency/nuxt-utils/pull/120))
+
+### ❤️  Contributors
+
+- Maxim Kuzin ([@Iskait](http://github.com/Iskait))
+
 ## v0.7.3
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.7.2...v0.7.3)
