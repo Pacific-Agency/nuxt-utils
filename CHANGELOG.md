@@ -1,4 +1,21 @@
 
+## v0.9.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.8.0...v0.9.0)
+
+
+### 🚀 Улучшения
+
+  - ⚠️  Компонент `UtilsInputMasked` ([#123](https://github.com/Pacific-Agency/nuxt-utils/pull/123))
+
+#### ⚠️  Breaking Changes
+
+  - ⚠️  Компонент `UtilsInputMasked` ([#123](https://github.com/Pacific-Agency/nuxt-utils/pull/123))
+
+### ❤️  Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.8.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.7.3...v0.8.0)
