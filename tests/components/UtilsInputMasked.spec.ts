@@ -1,16 +1,17 @@
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
 
-import UtilsInput from "@/runtime/components/UtilsInput.vue"
+import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 
-describe.concurrent("Компонент UtilsInput", () => {
+describe.concurrent("Компонент UtilsInputMasked", () => {
   const defaultProps = {
     id: "test-field",
+    mask: "##-##"
   }
 
   test("Рендер", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: defaultProps,
     })
 
@@ -20,7 +21,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Выставление атрибутов `id` и `name` на поле ввода", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: defaultProps,
     })
 
@@ -35,7 +36,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Отсутствие `label` в разметке без передачи пропса", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: defaultProps,
     })
 
@@ -48,7 +49,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Выставление атрибута `for` на `label`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         label: "Тестовый label",
         ...defaultProps,
@@ -64,7 +65,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Выставление текста `label`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         label: "Тестовый label",
         ...defaultProps,
@@ -80,7 +81,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Выставление текста `placeholder`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         placeholder: "Тестовый placeholder",
         ...defaultProps,
@@ -96,7 +97,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Параметр `disabled` по умолчанию false", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         ...defaultProps,
       },
@@ -111,7 +112,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Выставление параметра `disabled`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         disabled: true,
         ...defaultProps,
@@ -126,9 +127,27 @@ describe.concurrent("Компонент UtilsInput", () => {
     expect(input.attributes("disabled")).toBe("")
   })
 
+  test("Выставление параметра `pattern`", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsInputMasked, {
+      props: {
+        pattern: "\\+\\d \\d{3} \\d{3}-\\d{2}-\\d{2}",
+        ...defaultProps,
+      },
+    })
+
+    /** Текстовое поле */
+    const input = wrapper.find("input")
+
+    // Проверка атрибута `pattern`
+    expect(input.attributes("pattern")).toBe(
+      "\\+\\d \\d{3} \\d{3}-\\d{2}-\\d{2}"
+    )
+  })
+
   test("Выставление параметров `maxlength` и `minlength`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         maxlength: 12,
         minlength: 4,
@@ -148,7 +167,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Параметр `required` по умолчанию `true`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: defaultProps,
     })
 
@@ -162,7 +181,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Выставление параметра `required`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         required: false,
         ...defaultProps,
@@ -178,7 +197,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Параметр `type` по умолчанию `text`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: defaultProps,
     })
 
@@ -191,7 +210,7 @@ describe.concurrent("Компонент UtilsInput", () => {
 
   test("Выставление параметра `type`", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         type: "password",
         ...defaultProps,
@@ -205,10 +224,26 @@ describe.concurrent("Компонент UtilsInput", () => {
     expect(input.attributes("type")).toBe("password")
   })
 
+  test("Работа `v-maska`", async () => {
+    /** Компонент */
+    const wrapper = mount(UtilsInputMasked, {
+      props: {
+        ...defaultProps,
+        mask: "###-###",
+      },
+    })
+
+    // Выставляем значение инпута
+    await wrapper.find("input").setValue("1234asdas56789545")
+
+    // Проверяем значение инпута
+    expect(wrapper.find("input").element.value).toBe("123-456")
+  })
+
   test("Работа `v-model`", async () => {
     const parentComponent = mount({
       components: {
-        UtilsInput,
+        UtilsInputMasked,
       },
       data() {
         return {
@@ -216,7 +251,7 @@ describe.concurrent("Компонент UtilsInput", () => {
         }
       },
       template: `
-        <UtilsInput id="test-field" v-model="text" />
+        <UtilsInputMasked mask="##-##" id="test-field" v-model="text" />
       `,
     })
 
@@ -224,24 +259,24 @@ describe.concurrent("Компонент UtilsInput", () => {
     const input = parentComponent.find("input")
 
     // Выставляем значение инпута
-    await input.setValue("Текст")
+    await input.setValue("1234")
 
     // Проверяем значение переменной
-    expect(parentComponent.vm.text).toBe("Текст")
+    expect(parentComponent.vm.text).toBe("12-34")
 
     // Выставляем значение переменной
     await parentComponent.setData({
-      text: "Другой текст",
+      text: "43-21",
     })
 
     // Проверяем значение инпута
-    expect(input.element.value).toBe("Другой текст")
+    expect(input.element.value).toBe("43-21")
   })
 
   test("Работа через `formData`", async () => {
     const parentComponent = mount({
       components: {
-        UtilsInput,
+        UtilsInputMasked,
       },
       data() {
         return {
@@ -259,7 +294,7 @@ describe.concurrent("Компонент UtilsInput", () => {
       },
       template: `
         <form @submit="submit">
-          <UtilsInput id="test-field" />
+          <UtilsInputMasked mask="##-##" id="test-field" />
         </form>
       `,
     })
@@ -271,7 +306,7 @@ describe.concurrent("Компонент UtilsInput", () => {
     const form = parentComponent.find("form")
 
     // Выставляем значения поля
-    await input.setValue("Тест")
+    await input.setValue("1234")
 
     // Триггерим отправку формы
     await form.trigger("submit")
@@ -281,13 +316,13 @@ describe.concurrent("Компонент UtilsInput", () => {
 
     // Проверяем, что правильно выставлены все данные
     expect(formData).toStrictEqual({
-      "test-field": "Тест",
+      "test-field": "12-34",
     })
   })
 
   test("Наличие классов для стилизации", () => {
     /** Компонент */
-    const wrapper = mount(UtilsInput, {
+    const wrapper = mount(UtilsInputMasked, {
       props: {
         label: "Тестовый label",
         ...defaultProps,
@@ -309,10 +344,10 @@ describe.concurrent("Компонент UtilsInput", () => {
     expect(inputClasses).toContain("utils-form-input")
 
     // Проверка классов контейнера
-    expect(wrapperClasses).toContain("utils-input-container")
+    expect(wrapperClasses).toContain("utils-input-masked-container")
     // Проверка классов у `label`
-    expect(labelClasses).toContain("utils-input-label")
+    expect(labelClasses).toContain("utils-input-masked-label")
     // Проверка классов у `input`
-    expect(inputClasses).toContain("utils-input-input")
+    expect(inputClasses).toContain("utils-input-masked-input")
   })
 })
