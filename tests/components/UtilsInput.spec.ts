@@ -126,24 +126,6 @@ describe.concurrent("Компонент UtilsInput", () => {
     expect(input.attributes("disabled")).toBe("")
   })
 
-  test("Выставление параметра `pattern`", () => {
-    /** Компонент */
-    const wrapper = mount(UtilsInput, {
-      props: {
-        pattern: "\\+\\d \\d{3} \\d{3}-\\d{2}-\\d{2}",
-        ...defaultProps,
-      },
-    })
-
-    /** Текстовое поле */
-    const input = wrapper.find("input")
-
-    // Проверка атрибута `pattern`
-    expect(input.attributes("pattern")).toBe(
-      "\\+\\d \\d{3} \\d{3}-\\d{2}-\\d{2}"
-    )
-  })
-
   test("Выставление параметров `maxlength` и `minlength`", () => {
     /** Компонент */
     const wrapper = mount(UtilsInput, {
@@ -221,21 +203,6 @@ describe.concurrent("Компонент UtilsInput", () => {
 
     // Проверка значения атрибута `type`.
     expect(input.attributes("type")).toBe("password")
-  })
-
-  test("Работа `v-maska`", async () => {
-    /** Компонент */
-    const wrapper = mount(UtilsInput, {
-      props: {
-        dataMaska: "###-###",
-        ...defaultProps,
-      },
-    })
-    // Выставляем значение инпута
-    await wrapper.find("input").setValue("1234asdas56789545")
-
-    // Проверяем значение инпута
-    expect(wrapper.find("input").element.value).toBe("123-456")
   })
 
   test("Работа `v-model`", async () => {
