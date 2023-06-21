@@ -71,6 +71,7 @@ const props = withDefaults(
   }
 )
 
+/** Динамическая маска */
 const vMaska = props.dataMaska
   ? await import("maska").then(({ vMaska }) => vMaska)
   : {}
