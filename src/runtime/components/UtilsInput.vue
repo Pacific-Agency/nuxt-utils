@@ -1,8 +1,6 @@
 <!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
-import { vMaska } from "maska"
-
-withDefaults(
+const props = withDefaults(
   defineProps<{
     /**
      * Позволяет задать маску, которой будет соответствовать значение элемента формы
@@ -72,6 +70,10 @@ withDefaults(
     type: "text",
   }
 )
+
+const vMaska = props.dataMaska
+  ? await import("maska").then(({ vMaska }) => vMaska)
+  : {}
 
 /** Текущий текст поля */
 const modelValue = defineModel<Date | number | string>({
