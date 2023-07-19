@@ -1,4 +1,30 @@
 
+## v0.10.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.9.0...v0.10.0)
+
+### 🚀 Улучшения
+
+- Компонент `UtilsPassword` ([#132](https://github.com/Pacific-Agency/nuxt-utils/pull/132))
+
+### 🐞 Исправления
+
+- **deps:** Обновление зависимостей ([#124](https://github.com/Pacific-Agency/nuxt-utils/pull/124))
+- **deps:** Обновление зависимостей ([#126](https://github.com/Pacific-Agency/nuxt-utils/pull/126))
+- **deps:** Обновление зависимостей ([#130](https://github.com/Pacific-Agency/nuxt-utils/pull/130))
+
+### 📖 Документация
+
+- Обновление документации включения `defineModel` ([#133](https://github.com/Pacific-Agency/nuxt-utils/pull/133))
+
+### 🏡 Другие изменения
+
+- Удаление `assignees` и `reviewers` в конфигурации Renovate ([#134](https://github.com/Pacific-Agency/nuxt-utils/pull/134))
+
+### ❤️  Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.9.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.8.0...v0.9.0)
