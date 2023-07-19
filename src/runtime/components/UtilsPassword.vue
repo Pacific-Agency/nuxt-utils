@@ -18,8 +18,10 @@ withDefaults(
      * Идентификатор поля ввода.
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
+     *
+     * @defaultValue `password`
      */
-    id: string
+    id?: string // eslint-disable-line vue/require-default-prop
     /**
      * Подпись поля ввода.
      *
@@ -54,6 +56,7 @@ withDefaults(
     required?: boolean
   }>(),
   {
+    id: "password",
     minlength: 4,
     required: true
   },

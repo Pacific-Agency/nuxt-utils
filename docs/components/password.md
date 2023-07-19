@@ -36,6 +36,8 @@ export default defineNuxtConfig({
 
 - `id` — идентификатор поля ввода. Устанавливает `id` и `name`, которые используются в `formData`.
 
+  **По умолчанию:** `password`.
+
 - `label` — плейсхолдер для поля. Задает параметр `placeholder`.
 
 - `placeholder` — плейсхолдер для поля. Задает параметр `placeholder`.
