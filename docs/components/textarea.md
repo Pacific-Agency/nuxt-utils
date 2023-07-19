@@ -16,12 +16,8 @@
 
 ```ts
 export default defineNuxtConfig({
-  vite: {
-    vue: {
-      script: {
-        defineModel: true,
-      },
-    },
+  vue: {
+    defineModel: true,
   },
 })
 ```
