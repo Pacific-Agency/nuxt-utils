@@ -1,4 +1,17 @@
 
+## v0.10.1
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.10.0...v0.10.1)
+
+### 🐞 Исправления
+
+- Стандартное значение атрибута `ID` у `UtilsPassword` ([#135](https://github.com/Pacific-Agency/nuxt-utils/pull/135))
+- **deps:** Обновление зависимостей ([#136](https://github.com/Pacific-Agency/nuxt-utils/pull/136))
+
+### ❤️  Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.10.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.9.0...v0.10.0)
