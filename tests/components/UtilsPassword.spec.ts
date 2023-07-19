@@ -27,6 +27,19 @@ describe.concurrent("Компонент UtilsPassword", () => {
     expect(wrapper.element).toBeTruthy()
   })
 
+  test("Стандартные значения `id` и `name`", () => {
+    /** Компонент */
+    const wrapper = mount(UtilsPassword)
+
+    /** Текстовое поле */
+    const input = wrapper.find("input")
+
+    // Проверка атрибута `id`
+    expect(input.attributes("id")).toBe("password")
+    // Проверка атрибута `name`
+    expect(input.attributes("name")).toBe("password")
+  })
+
   test("Выставление атрибутов `id` и `name` на поле ввода", () => {
     /** Компонент */
     const wrapper = mount(UtilsPassword, {
