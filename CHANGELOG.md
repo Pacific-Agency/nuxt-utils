@@ -1,4 +1,16 @@
 
+## v0.11.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.10.1...v0.11.0)
+
+### 🚀 Улучшения
+
+- Функция `useScrollArrows` ([#139](https://github.com/Pacific-Agency/nuxt-utils/pull/139))
+
+### ❤️  Contributors
+
+- Maxim Kuzin ([@Iskait](http://github.com/Iskait))
+
 ## v0.10.1
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.10.0...v0.10.1)
