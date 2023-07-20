@@ -8,7 +8,7 @@ import type { ComputedRef, Ref } from "vue"
  * @returns - объект, с функциями скролла вправо и влево,
  * а также реактивные переменные для определения крайней левой и крайней правой точки
  */
-export default function useScrollButtons(
+export default function useScrollSlider(
   sliderRef: Ref<HTMLElement | undefined>
 ): {
   leftCorner: ComputedRef<boolean>
