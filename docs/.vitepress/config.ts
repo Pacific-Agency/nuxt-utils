@@ -48,6 +48,10 @@ export default defineConfig({
             link: "/composables/use-submit-form",
             text: "useSubmitForm",
           },
+          {
+            link: "/composables/use-scroll-slider",
+            text: "useScrollSlider",
+          },
         ],
         text: "Composables",
       },
