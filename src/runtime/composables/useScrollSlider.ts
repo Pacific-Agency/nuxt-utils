@@ -11,24 +11,25 @@ import type { ComputedRef, Ref } from "vue"
 export default function useScrollSlider(
   sliderRef: Ref<HTMLElement | undefined>
 ): {
-  leftCorner: ComputedRef<boolean>
-  rightCorner: ComputedRef<boolean | undefined>
+  isLeftCorner: ComputedRef<boolean>
+  isRightCorner: ComputedRef<boolean>
   scrollLeft: () => void
   scrollRight: () => void
 } {
   const sliderScrollLeft = ref(0)
 
   /** Проскроллен ли контейнер полностью влево */
-  const leftCorner = computed(() => !sliderScrollLeft.value)
+  const isLeftCorner = computed(() => !sliderScrollLeft.value)
 
   /** Проскроллен ли контейнер полностью вправо */
-  const rightCorner = computed(() => {
+  const isRightCorner = computed(() => {
     if (sliderRef.value) {
       return (
         sliderScrollLeft.value + sliderRef.value.offsetWidth ===
         sliderRef.value.scrollWidth
       )
     }
+    return false
   })
 
   /**
@@ -65,8 +66,8 @@ export default function useScrollSlider(
   })
 
   return {
-    leftCorner,
-    rightCorner,
+    isLeftCorner,
+    isRightCorner,
     scrollLeft,
     scrollRight,
   }
