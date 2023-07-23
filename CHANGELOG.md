@@ -1,4 +1,16 @@
 
+## v0.11.1
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.11.0...v0.11.1)
+
+### 🐞 Исправления
+
+- Замена названий переменных крайнего правого и левого края ([#141](https://github.com/Pacific-Agency/nuxt-utils/pull/141))
+
+### ❤️  Contributors
+
+- Maxim Kuzin ([@Iskait](http://github.com/Iskait))
+
 ## v0.11.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.10.1...v0.11.0)
