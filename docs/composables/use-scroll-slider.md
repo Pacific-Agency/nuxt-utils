@@ -8,8 +8,8 @@
 
 ## Возвращаемые методы
 
-- `leftCorner` - Проскроллен ли контейнер полностью влево.
-- `rightCorner` - Проскроллен ли контейнер полностью вправо.
+- `isLeftCorner` - Проскроллен ли контейнер полностью влево.
+- `isRightCorner` - Проскроллен ли контейнер полностью вправо.
 - `scrollLeft` - функция для скролла влево.
 - `scrollRight` - функция для скролла вправо.
 
@@ -19,16 +19,16 @@
 /** `ref` слайдера */
 const sliderRef = ref<HTMLElement>()
 
-const { leftCorner, rightCorner, scrollLeft, scrollRight } =
+const { isLeftCorner, isRightCorner, scrollLeft, scrollRight } =
   useScrollSlider(sliderRef)
 ```
 
 ```html
 <div ref="sliderRef">
-  <button :class="{ hidden: leftCorner }" @click="scrollLeft">
+  <button :class="{ hidden: isLeftCorner }" @click="scrollLeft">
     Скролл влево
   </button>
-  <button :class="{ hidden: rightCorner }" @click="scrollRight">
+  <button :class="{ hidden: isRightCorner }" @click="scrollRight">
     Скролл вправо
   </button>
 </div>
