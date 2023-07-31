@@ -11,8 +11,8 @@ describe.concurrent("Компонент UtilsPassword", () => {
   const stubs = {
     global: {
       stubs: {
-        Icon: true
-      }
+        Icon: true,
+      },
     },
   }
 
@@ -20,7 +20,7 @@ describe.concurrent("Компонент UtilsPassword", () => {
     /** Компонент */
     const wrapper = mount(UtilsPassword, {
       ...stubs,
-      props: defaultProps
+      props: defaultProps,
     })
 
     // Проверяем рендер компонента

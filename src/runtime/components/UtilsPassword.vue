@@ -1,6 +1,6 @@
 <!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from "vue"
 
 withDefaults(
   defineProps<{
@@ -58,8 +58,8 @@ withDefaults(
   {
     id: "password",
     minlength: 4,
-    required: true
-  },
+    required: true,
+  }
 )
 
 /** Текущий текст поля */
@@ -93,7 +93,11 @@ const isPasswordShown = ref(false)
         :required="required"
         :type="isPasswordShown ? 'text' : 'password'"
       />
-      <Icon class="utils-password-icon" :name="isPasswordShown ? 'heroicons:eye' : 'heroicons:eye-slash'" @click="isPasswordShown = !isPasswordShown" />
+      <Icon
+        class="utils-password-icon"
+        :name="isPasswordShown ? 'heroicons:eye' : 'heroicons:eye-slash'"
+        @click="isPasswordShown = !isPasswordShown"
+      />
     </div>
   </div>
 </template>
