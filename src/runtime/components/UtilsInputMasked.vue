@@ -1,6 +1,6 @@
 <!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
-import { vMaska } from "maska";
+import { vMaska } from "maska"
 
 withDefaults(
   defineProps<{
@@ -9,25 +9,25 @@ withDefaults(
      *
      * Задает параметр `disabled`.
      */
-    disabled?: boolean,
+    disabled?: boolean
     /**
      * Идентификатор поля ввода.
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
      */
-    id: string,
+    id: string
     /**
      * Подпись поля ввода.
      *
      * Создает `label` и задает ему необходимый `id`.
      */
-    label?: string, // eslint-disable-line vue/require-default-prop
+    label?: string // eslint-disable-line vue/require-default-prop
     /**
      * Позволяет задать маску, которой будет соответствовать значение элемента формы
      *
      * Устанавливает атрибут `data-maska` у `input`.
      */
-    mask: string,
+    mask: string
     /**
      * Ограничитель максимального количества символов.
      *

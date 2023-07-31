@@ -6,7 +6,7 @@ import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 describe.concurrent("Компонент UtilsInputMasked", () => {
   const defaultProps = {
     id: "test-field",
-    mask: "##-##"
+    mask: "##-##",
   }
 
   test("Рендер", () => {
