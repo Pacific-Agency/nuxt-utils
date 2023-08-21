@@ -33,6 +33,10 @@ export default defineConfig({
             text: "useFetchAuth",
           },
           {
+            link: "/composables/use-pagination",
+            text: "usePagination",
+          },
+          {
             link: "/composables/use-phone-formatter",
             text: "usePhoneFormatter",
           },
