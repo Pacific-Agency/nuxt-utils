@@ -1,4 +1,16 @@
 
+## v0.12.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.11.1...v0.12.0)
+
+### 🚀 Улучшения
+
+- Функция `usePagination` ([#148](https://github.com/Pacific-Agency/nuxt-utils/pull/148))
+
+### ❤️  Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.11.1
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.11.0...v0.11.1)
