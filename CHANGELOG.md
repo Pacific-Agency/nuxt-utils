@@ -1,4 +1,16 @@
 
+## v0.12.2
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.12.1...v0.12.2)
+
+### 🐞 Исправления
+
+- Добавление ключа в `usePagination` ([#152](https://github.com/Pacific-Agency/nuxt-utils/pull/152))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.12.1
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.12.0...v0.12.1)
