@@ -1,9 +1,7 @@
 import type { UseFetchOptions } from "#app"
 import type { Ref } from "#imports"
-import { ref, useFetch, watch } from "#imports"
-import { toReactive } from "@vueuse/core"
+import { ref, toReactive, useFetch, useFetchAuth, watch } from "#imports"
 import { defu } from "defu"
-import useFetchAuth from "./useFetchAuth"
 
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
