@@ -2,6 +2,7 @@ import type { UseFetchOptions } from "#app"
 import type { Ref } from "#imports"
 import { ref, toReactive, useFetch, useFetchAuth, watch } from "#imports"
 import { defu } from "defu"
+import { hash } from "ohash"
 
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
@@ -97,6 +98,12 @@ export default async function <TResponse>(
    * Для работы их как дефолтных используется `defu`.
    */
   const params = defu(options, defaults)
+
+  // Выставляем ключ состоящий из параметров
+  params.key = hash({
+    params,
+    url,
+  })
 
   /** Результат запроса */
   const { data, refresh } = params.auth // Проверяем параметр авторизации
