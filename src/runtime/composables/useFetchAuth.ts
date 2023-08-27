@@ -13,6 +13,7 @@ type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
  * Решает 2 задачи:
  * - Проксит `cookie` клиента в серверные запросы при `SSR`
  * - Добавляет заголовок `X-CSRFToken` со значением из `cookie` `csrftoken`
+ *
  * @param url - `URL` для запроса
  * @param options - параметры запроса
  * @returns Ответ от API, формат как у useFetch

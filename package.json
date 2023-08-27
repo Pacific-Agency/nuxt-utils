@@ -27,7 +27,8 @@
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs",
     "docs:preview": "vitepress preview docs",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.json --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.json --fix --ignore-path .gitignore",
     "prepack": "nuxt-module-build",
     "prepare": "husky install && nuxt prepare",
     "prettier": "prettier --check --ignore-unknown --no-error-on-unmatched-pattern *",
@@ -35,32 +36,29 @@
     "test": "vitest"
   },
   "lint-staged": {
-    "*.{vue,js,jsx,cjs,mjs,ts}": [
-      "eslint --cache --fix",
-      "prettier --write -u"
-    ],
-    "*.json": "prettier --write -u"
+    "*.{vue,js,jsx,cjs,mjs,ts,json}": "eslint --cache --fix",
+    "*": "prettier --write -u"
   },
   "prettier": "@pacific-agency/prettier-config",
   "dependencies": {
-    "@nuxt/kit": "3.6.5",
-    "@vueuse/core": "10.3.0",
+    "@nuxt/kit": "3.7.0",
+    "@vueuse/core": "10.4.0",
     "maska": "2.1.10"
   },
   "devDependencies": {
     "@nuxt/module-builder": "0.4.0",
-    "@nuxt/schema": "3.6.5",
-    "@nuxt/test-utils": "3.6.5",
-    "@pacific-agency/eslint-config": "0.4.0",
-    "@pacific-agency/prettier-config": "0.2.2",
+    "@nuxt/schema": "3.7.0",
+    "@nuxt/test-utils": "3.7.0",
+    "@pacific-agency/eslint-config": "0.6.0",
+    "@pacific-agency/prettier-config": "0.3.0",
     "@vue/test-utils": "2.4.1",
-    "happy-dom": "10.10.4",
+    "happy-dom": "10.11.0",
     "husky": "8.0.3",
-    "lint-staged": "14.0.0",
-    "nuxt": "3.6.5",
-    "typescript": "5.1.6",
-    "vitepress": "1.0.0-rc.4",
-    "vitest": "0.34.2"
+    "lint-staged": "14.0.1",
+    "nuxt": "3.7.0",
+    "typescript": "5.2.2",
+    "vitepress": "1.0.0-rc.7",
+    "vitest": "0.34.3"
   },
   "peerDependencies": {
     "nuxt-icon": "0.5.0"
