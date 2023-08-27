@@ -16,7 +16,7 @@ export default eventHandler(async () => {
       {
         /** `slug` сущности */
         slug: string
-      }
+      },
     ]
   >
 
