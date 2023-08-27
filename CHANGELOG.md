@@ -1,4 +1,20 @@
 
+## v0.12.1
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.12.0...v0.12.1)
+
+### 🐞 Исправления
+
+- Импорт в `usePagination` из `#imports` ([#150](https://github.com/Pacific-Agency/nuxt-utils/pull/150))
+
+### 🏡 Другие изменения
+
+- Обновление зависимостей ([#151](https://github.com/Pacific-Agency/nuxt-utils/pull/151))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.12.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.11.1...v0.12.0)
