@@ -14,7 +14,7 @@ jobs:
     env:
       NODE_AUTH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Настройка NodeJS
         uses: pnpm/action-setup@v2.4.0
@@ -40,7 +40,7 @@ jobs:
   gh-pages:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Настройка NodeJS
         uses: pnpm/action-setup@v2.4.0
