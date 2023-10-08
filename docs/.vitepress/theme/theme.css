@@ -1,9 +1,8 @@
 :root {
-  --vp-c-brand: #aac811;
-  --vp-c-brand-light: #caec22;
-  --vp-c-brand-lighter: #d5f051;
-  --vp-c-brand-dark: #839b0d;
-  --vp-c-brand-darker: #5b6c09;
+  --vp-c-brand-1: #aac811;
+  --vp-c-brand-2: #839b0d;
+  --vp-c-brand-3: #aac811;
+  --vp-c-brand-soft: #aac81120;
 
   --vp-home-hero-image-background-image: linear-gradient(
     90deg,
