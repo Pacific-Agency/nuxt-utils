@@ -1,5 +1,4 @@
 import { describe, expect, test } from "vitest"
-
 import usePhoneFormatter from "@/runtime/composables/usePhoneFormatter"
 
 describe.concurrent("Функция usePhoneFormatter", () => {

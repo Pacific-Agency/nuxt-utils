@@ -33,6 +33,10 @@ export default defineConfig({
             text: "useFetchAuth",
           },
           {
+            link: "/composables/use-highlighted-text",
+            text: "useHighlightedText",
+          },
+          {
             link: "/composables/use-pagination",
             text: "usePagination",
           },

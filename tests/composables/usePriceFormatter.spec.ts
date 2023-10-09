@@ -1,5 +1,4 @@
 import { describe, expect, test } from "vitest"
-
 import usePriceFormatter from "@/runtime/composables/usePriceFormatter"
 
 describe.concurrent("Функция usePriceFormatter", () => {
