@@ -1,11 +1,14 @@
 import type { UseFetchOptions } from "#app"
 import { useCookie, useFetch, useRequestHeaders } from "#imports"
 import { defu } from "defu"
+import { hash } from "ohash"
 
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
 /** Тип ответа от useFetch */
-type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
+type FetchReturn<TResponse> = Promise<ReturnType<
+  typeof useFetch<TResponse>
+> | null>
 
 /**
  * Функция для работы с эдпоинтами с авторизацией.
@@ -45,6 +48,12 @@ export default async function <TResponse>(
    * Для работы их как дефолтных используется `defu`.
    */
   const params = defu(options, defaults)
+
+  // Выставляем ключ состоящий из параметров
+  params.key = hash({
+    params,
+    url,
+  })
 
   // @ts-expect-error - неправильная автоматическая типизация
   return useFetch(url, params)
