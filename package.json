@@ -53,16 +53,16 @@
     "@pacific-agency/eslint-config": "0.7.0",
     "@pacific-agency/prettier-config": "0.3.0",
     "@vue/test-utils": "2.4.1",
-    "happy-dom": "12.9.0",
+    "happy-dom": "12.9.1",
     "husky": "8.0.3",
-    "lint-staged": "14.0.1",
+    "lint-staged": "15.0.1",
     "nuxt": "3.7.4",
     "typescript": "5.2.2",
-    "vitepress": "1.0.0-rc.20",
-    "vitest": "1.0.0-beta.1"
+    "vitepress": "1.0.0-rc.22",
+    "vitest": "1.0.0-beta.2"
   },
   "peerDependencies": {
     "nuxt-icon": "0.5.0"
   },
-  "packageManager": "pnpm@8.8.0"
+  "packageManager": "pnpm@8.9.2"
 }
