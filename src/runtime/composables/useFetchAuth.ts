@@ -1,6 +1,7 @@
 import type { UseFetchOptions } from "#app"
 import { useCookie, useFetch, useRequestHeaders } from "#imports"
 import { defu } from "defu"
+import { hash } from "ohash"
 
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
@@ -45,6 +46,12 @@ export default async function <TResponse>(
    * Для работы их как дефолтных используется `defu`.
    */
   const params = defu(options, defaults)
+
+  // Выставляем ключ состоящий из параметров
+  params.key = hash({
+    params,
+    url,
+  })
 
   // @ts-expect-error - неправильная автоматическая типизация
   return useFetch(url, params)
