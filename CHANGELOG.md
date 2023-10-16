@@ -1,4 +1,16 @@
 
+## v0.13.3
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.13.2...v0.13.3)
+
+### 🐞 Исправления
+
+- Исправление ключа useFetchAuth ([edbae03](https://github.com/Pacific-Agency/nuxt-utils/commit/edbae03))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.13.2
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.13.1...v0.13.2)
