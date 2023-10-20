@@ -43,6 +43,7 @@
   "dependencies": {
     "@nuxt/kit": "3.7.4",
     "@vueuse/core": "10.5.0",
+    "isomorphic-dompurify": "1.9.0",
     "maska": "2.1.10",
     "ohash": "1.1.3"
   },
