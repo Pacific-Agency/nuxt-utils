@@ -1,4 +1,20 @@
 
+## v0.14.1
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.0...v0.14.1)
+
+### 📖 Документация
+
+- Информация об `optimizeDeps` в `useSanitize` ([#169](https://github.com/Pacific-Agency/nuxt-utils/pull/169))
+
+### 🏡 Другие изменения
+
+- Обновление зависимостей ([#170](https://github.com/Pacific-Agency/nuxt-utils/pull/170))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.13.3...v0.14.0)
