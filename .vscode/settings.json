@@ -19,5 +19,11 @@
   "gitlens.statusBar.enabled": false,
   "markdown.extension.toc.levels": "2..6",
   "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs"
+  "tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
+  "cSpell.words": [
+    "эндпоинты",
+    "composables",
+    "dompurify",
+    "vitepress"
+  ]
 }
