@@ -36,6 +36,7 @@ interface PaginationOptions<TResponse>
  * - `isPageLast` - возвращает `true` если текущая страница последняя
  * - `results` - массив с результатами запроса
  * - `refresh` - функция для обновления запроса
+ * @see https://pacific-agency.github.io/nuxt-utils/composables/use-pagination.html
  */
 export default async function <TResponse>(
   url: FetchParams[0],

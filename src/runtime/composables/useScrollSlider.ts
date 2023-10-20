@@ -5,8 +5,8 @@ import type { ComputedRef, Ref } from "vue"
  * Данная функция позволяет скроллить контейнер вправо либо влево на ширину контейнера
  *
  * @param sliderRef - `ref` контейнера, который нужно скроллить
- * @returns - объект, с функциями скролла вправо и влево,
- * а также реактивные переменные для определения крайней левой и крайней правой точки
+ * @returns объект, с функциями скролла вправо и влево, а также реактивные переменные для определения крайней левой и крайней правой точки
+ * @see https://pacific-agency.github.io/nuxt-utils/composables/use-scroll-slider.html
  */
 export default function useScrollSlider(
   sliderRef: Ref<HTMLElement | undefined>
