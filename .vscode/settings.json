@@ -21,8 +21,11 @@
   "tailwindCSS.emmetCompletions": true,
   "tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
   "cSpell.words": [
+    "Проксит",
+    "эдпоинтами",
     "эндпоинты",
     "composables",
+    "csrftoken",
     "dompurify",
     "vitepress"
   ]
