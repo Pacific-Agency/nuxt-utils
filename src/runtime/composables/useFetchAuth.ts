@@ -1,5 +1,10 @@
 import type { UseFetchOptions } from "#app"
-import { useCookie, useFetch, useRequestHeaders } from "#imports"
+import {
+  useCookie,
+  useFetch,
+  useRequestHeaders,
+  useRuntimeConfig,
+} from "#imports"
 import { defu } from "defu"
 import { hash } from "ohash"
 
@@ -11,9 +16,10 @@ type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
 /**
  * Функция для работы с эдпоинтами с авторизацией.
  *
- * Решает 2 задачи:
+ * Решает 3 задачи:
  * - Проксит `cookie` клиента в серверные запросы при `SSR`
  * - Добавляет заголовок `X-CSRFToken` со значением из `cookie` `csrftoken`
+ * - В `dev`-режиме добавляет заголовок `Authorization` со значением из `.env`.
  *
  * @param url - `URL` для запроса
  * @param options - параметры запроса
@@ -33,6 +39,8 @@ export default async function <TResponse>(
   const defaults: UseFetchOptions<TResponse> = {
     credentials: "include",
     headers: {
+      // Токен авторизации из .env
+      Authorization: useRuntimeConfig().public.authToken as string,
       // Выставляем `csrftoken` из `cookie` в заголовок
       "X-CSRFToken": useCookie("csrftoken").value ?? "",
       // Проксим `cookie` клиента на сервер
