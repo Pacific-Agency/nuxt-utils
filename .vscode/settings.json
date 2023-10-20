@@ -1,5 +1,15 @@
 {
   "cSpell.language": "en,ru",
+  "cSpell.words": [
+    "проксит",
+    "рендера",
+    "эдпоинтами",
+    "эндпоинты",
+    "composables",
+    "csrftoken",
+    "dompurify",
+    "vitepress"
+  ],
   "editor.codeActionsOnSave": [
     "source.addMissingImports",
     "source.organizeImports",
@@ -19,12 +29,5 @@
   "gitlens.statusBar.enabled": false,
   "markdown.extension.toc.levels": "2..6",
   "tailwindCSS.emmetCompletions": true,
-  "tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs",
-  "cSpell.words": [
-    "рендера",
-    "эндпоинты",
-    "composables",
-    "dompurify",
-    "vitepress"
-  ]
+  "tailwindCSS.experimental.configFile": ".nuxt/tailwind.config.cjs"
 }
