@@ -4,6 +4,7 @@
  * @param text - текст строки, в которой нужно выделить текст.
  * @param query - текст, который нужно выделить.
  * @returns Строка для рендера с тегами `<mark>`.
+ * @see https://pacific-agency.github.io/nuxt-utils/composables/use-highlighted-text.html
  */
 export default function (text: string, query: string) {
   /**

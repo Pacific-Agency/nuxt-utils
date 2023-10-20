@@ -7,6 +7,7 @@ import { sanitize } from "isomorphic-dompurify"
  *
  * @param html - HTML-код, который необходимо очистить.
  * @returns очищенный HTML-код.
+ * @see https://pacific-agency.github.io/nuxt-utils/composables/use-sanitize.html
  */
 export default function (html: string | undefined) {
   // Возвращаем очищенный HTML-код
