@@ -1,0 +1,1 @@
+import{_ as s,o as a,c as n,Q as l}from"./chunks/framework.e94b2c38.js";const q=JSON.parse('{"title":"Sitemap","description":"","frontmatter":{},"headers":[],"relativePath":"api/sitemap.md","filePath":"api/sitemap.md"}'),p={name:"api/sitemap.md"},o=l("",12),e=[o];function t(c,r,E,i,y,u){return a(),n("div",null,e)}const g=s(p,[["render",t]]);export{q as __pageData,g as default};
