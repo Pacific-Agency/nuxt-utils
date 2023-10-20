@@ -49,6 +49,10 @@ export default defineConfig({
             text: "usePriceFormatter",
           },
           {
+            link: "/composables/use-sanitize",
+            text: "useSanitize",
+          },
+          {
             link: "/composables/use-scroll-lock",
             text: "useScrollLock",
           },
