@@ -1,4 +1,21 @@
 
+## v0.14.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.13.3...v0.14.0)
+
+### 🚀 Улучшения
+
+- Функция `useSanitize` ([#165](https://github.com/Pacific-Agency/nuxt-utils/pull/165))
+- Передача токена авторизации из `.env` в хедер `Authorization` ([#167](https://github.com/Pacific-Agency/nuxt-utils/pull/167))
+
+### 📖 Документация
+
+- Добавление ссылок на документацию в функции ([#168](https://github.com/Pacific-Agency/nuxt-utils/pull/168))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.13.3
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.13.2...v0.13.3)
