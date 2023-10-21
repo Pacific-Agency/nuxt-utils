@@ -1,4 +1,16 @@
 
+## v0.14.2
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.1...v0.14.2)
+
+### 🐞 Исправления
+
+- Исправление импорта DOMPurify ([009f722](https://github.com/Pacific-Agency/nuxt-utils/commit/009f722))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.1
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.0...v0.14.1)
