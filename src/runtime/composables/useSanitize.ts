@@ -1,4 +1,4 @@
-import { sanitize } from "isomorphic-dompurify"
+import DOMPurify from "isomorphic-dompurify"
 
 /**
  * Данная функция нужна для очистки HTML-кода, полученного от API.
@@ -11,5 +11,5 @@ import { sanitize } from "isomorphic-dompurify"
  */
 export default function (html: string | undefined) {
   // Возвращаем очищенный HTML-код
-  return sanitize(html ?? "", { USE_PROFILES: { html: true } })
+  return DOMPurify.sanitize(html ?? "", { USE_PROFILES: { html: true } })
 }
