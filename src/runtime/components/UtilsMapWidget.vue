@@ -1,5 +1,7 @@
 <script setup lang="ts">
 defineProps<{
+  /** Локализация виджета */
+  locale?: string
   /** `ID` виджета Яндекс.Карт */
   widgetId: string | undefined
 }>()
@@ -10,7 +12,9 @@ defineProps<{
     allowfullscreen="true"
     class="map-widget"
     height="100%"
-    :src="`https://yandex.ru/map-widget/v1/-/${widgetId}`"
+    :src="`https://yandex.ru/map-widget/v1/-/${widgetId}${
+      locale ? `?lang=${locale}` : ''
+    }`"
     width="100%"
   ></iframe>
 </template>

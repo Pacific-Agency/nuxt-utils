@@ -1,4 +1,4 @@
-# UtilsInput
+# UtilsInputMasked
 
 Данный компонент выводит текстовое поле с маской.
 

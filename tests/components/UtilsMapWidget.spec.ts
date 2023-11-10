@@ -38,4 +38,18 @@ describe.concurrent("Компонент UtilsMapWidget", () => {
     // Ожидается, что список классов содержит переданные на компонент
     expect(widgetClassList).toContain(classList)
   })
+
+  test("Добавляется параметр `lang` в ссылку при передаче локализации", async () => {
+    await wrapper.setProps({
+      locale: "en",
+    })
+
+    // Получение src карты
+    const widgetSrc = wrapper.get("iframe").attributes("src")
+
+    // Ожидается правильный src карты
+    expect(widgetSrc).toBe(
+      `https://yandex.ru/map-widget/v1/-/${widgetId}?lang=en`
+    )
+  })
 })

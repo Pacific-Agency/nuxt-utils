@@ -21,16 +21,17 @@ import UtilsMapWidget from '../../src/runtime/components/UtilsMapWidget.vue'
 ## Пропсы
 
 - `widgetId` — `ID` виджета Яндекс Карт.
+- `locale` — язык, на котором будет отображаться карта.
 
 ## Использование
 
 ```vue
 <template>
-  <UtilsMapWidget widget-id="widget-id" />
+  <UtilsMapWidget widget-id="widget-id" locale="en" />
 </template>
 ```
 
-<UtilsMapWidget />
+<UtilsMapWidget locale="en" />
 
 ## Стилизация
 
