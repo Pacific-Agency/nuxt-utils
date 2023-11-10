@@ -1,4 +1,17 @@
 
+## v0.14.3
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.2...v0.14.3)
+
+### 🐞 Исправления
+
+- **deps:** Обновление зависимостей ([#171](https://github.com/Pacific-Agency/nuxt-utils/pull/171))
+- Возможность выбора локализации `UtilsMapWidget` ([#173](https://github.com/Pacific-Agency/nuxt-utils/pull/173))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.2
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.1...v0.14.2)
