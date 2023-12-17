@@ -51,7 +51,7 @@ withDefaults(
      *
      * @defaultValue `text`
      */
-    type?: "date" | "email" | "number" | "password" | "text"
+    type?: "date" | "email" | "number" | "password" | "search" | "text"
   }>(),
   {
     required: true,
