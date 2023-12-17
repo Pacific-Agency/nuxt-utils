@@ -1,4 +1,17 @@
 
+## v0.14.4
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.3...v0.14.4)
+
+### 🐞 Исправления
+
+- **deps:** Обновление зависимостей ([#174](https://github.com/Pacific-Agency/nuxt-utils/pull/174))
+- Добавление типа `search` для `UtilsInput` ([#176](https://github.com/Pacific-Agency/nuxt-utils/pull/176))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.3
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.2...v0.14.3)
