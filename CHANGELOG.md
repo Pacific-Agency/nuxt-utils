@@ -1,4 +1,24 @@
 
+## v0.14.5
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.4...v0.14.5)
+
+### 🐞 Исправления
+
+- **deps:** Обновление зависимостей ([#177](https://github.com/Pacific-Agency/nuxt-utils/pull/177))
+
+### 💅 Рефактор кода
+
+- Обновление использования `defineModel` ([#179](https://github.com/Pacific-Agency/nuxt-utils/pull/179))
+
+### 🏡 Другие изменения
+
+- Обновление lock-файла ([375d050](https://github.com/Pacific-Agency/nuxt-utils/commit/375d050))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.4
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.3...v0.14.4)
