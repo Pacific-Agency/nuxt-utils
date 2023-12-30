@@ -3,13 +3,7 @@ import path from "path"
 import { defineConfig } from "vitest/config"
 
 export default defineConfig({
-  plugins: [
-    Vue({
-      script: {
-        defineModel: true,
-      },
-    }),
-  ],
+  plugins: [Vue()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -43,9 +43,7 @@ withDefaults(
 const mask = "+7 ### ###-##-##"
 
 /** Текущий текст поля */
-const modelValue = defineModel<string>({
-  local: true,
-})
+const modelValue = defineModel<string>()
 </script>
 
 <template>
