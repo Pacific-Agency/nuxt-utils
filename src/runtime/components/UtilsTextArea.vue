@@ -48,9 +48,7 @@ withDefaults(
 )
 
 /** Текущий текст поля */
-const modelValue = defineModel<string>({
-  local: true,
-})
+const modelValue = defineModel<string>()
 </script>
 
 <template>

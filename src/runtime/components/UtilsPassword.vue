@@ -63,9 +63,7 @@ withDefaults(
 )
 
 /** Текущий текст поля */
-const modelValue = defineModel<string>({
-  local: true,
-})
+const modelValue = defineModel<string>()
 
 /** Показан ли пароль */
 const isPasswordShown = ref(false)
