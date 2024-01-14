@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest"
 
 import UtilsPhone from "@/runtime/components/UtilsPhone.vue"
 
-describe.concurrent("Компонент UtilsPhone", () => {
+describe("Компонент UtilsPhone", () => {
   test("Рендер", () => {
     /** Компонент */
     const wrapper = mount(UtilsPhone)
