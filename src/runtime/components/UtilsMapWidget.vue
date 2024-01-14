@@ -14,7 +14,7 @@ defineProps<{
     height="100%"
     :src="`https://yandex.ru/map-widget/v1/-/${widgetId}${
       locale ? `?lang=${locale}` : ''
-    }`"
+    }${locale ? '&' : '?'}z=100`"
     width="100%"
   ></iframe>
 </template>
