@@ -1,10 +1,34 @@
 <script setup lang="ts">
-defineProps<{
+import { watch } from "vue"
+
+const props = defineProps<{
   /** Локализация виджета */
   locale?: string
   /** `ID` виджета Яндекс.Карт */
   widgetId: string | undefined
 }>()
+
+/** Ссылка на карту */
+const mapURL = new URL("https://yandex.ru/map-widget/v1/-/" + props.widgetId)
+
+watch(
+  [props],
+  () => {
+    // Если передана локализация
+    if (props.locale) {
+      // Выставляем параметр lang
+      mapURL.searchParams.set("lang", props.locale)
+    } else {
+      mapURL.searchParams.delete("lang")
+    }
+  },
+  {
+    immediate: true,
+  }
+)
+
+// Выставляем параметр z
+mapURL.searchParams.append("z", "16")
 </script>
 
 <template>
@@ -12,9 +36,7 @@ defineProps<{
     allowfullscreen="true"
     class="map-widget"
     height="100%"
-    :src="`https://yandex.ru/map-widget/v1/-/${widgetId}${
-      locale ? `?lang=${locale}` : ''
-    }${locale ? '&' : '?'}z=100`"
+    :src="mapURL.href"
     width="100%"
   ></iframe>
 </template>
