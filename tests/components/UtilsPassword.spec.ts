@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest"
 
 import UtilsPassword from "@/runtime/components/UtilsPassword.vue"
 
-describe.concurrent("Компонент UtilsPassword", () => {
+describe("Компонент UtilsPassword", () => {
   const defaultProps = {
     id: "test-field",
   }

@@ -12,5 +12,9 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     globals: true,
+    sequence: {
+      concurrent: true,
+    },
+    setupFiles: ["tests/setup.ts"],
   },
 })
