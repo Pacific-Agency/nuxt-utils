@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest"
 
 import UtilsInput from "@/runtime/components/UtilsInput.vue"
 
-describe.concurrent("Компонент UtilsInput", () => {
+describe("Компонент UtilsInput", () => {
   const defaultProps = {
     id: "test-field",
   }

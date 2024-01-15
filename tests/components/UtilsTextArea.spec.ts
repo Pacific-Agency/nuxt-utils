@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest"
 
 import UtilsTextArea from "@/runtime/components/UtilsTextArea.vue"
 
-describe.concurrent("Компонент UtilsTextArea", () => {
+describe("Компонент UtilsTextArea", () => {
   const defaultProps = {
     id: "test-field",
   }

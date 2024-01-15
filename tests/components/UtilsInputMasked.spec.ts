@@ -3,7 +3,7 @@ import { describe, expect, test } from "vitest"
 
 import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 
-describe.concurrent("Компонент UtilsInputMasked", () => {
+describe("Компонент UtilsInputMasked", () => {
   const defaultProps = {
     id: "test-field",
     mask: "##-##",

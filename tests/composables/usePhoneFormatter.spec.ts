@@ -1,7 +1,7 @@
-import { describe, expect, test } from "vitest"
 import usePhoneFormatter from "@/runtime/composables/usePhoneFormatter"
+import { describe, expect, test } from "vitest"
 
-describe.concurrent("Функция usePhoneFormatter", () => {
+describe("Функция usePhoneFormatter", () => {
   test("Возвращает правильный формат номера", () => {
     /** Отформатированный номер */
     const formattedNumber = usePhoneFormatter("+79998887766")
