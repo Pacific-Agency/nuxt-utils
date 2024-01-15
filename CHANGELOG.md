@@ -1,4 +1,16 @@
 
+## v0.14.7
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.6...v0.14.7)
+
+### 💅 Рефактор кода
+
+- Переработка ссылки на карту через `URL` ([#187](https://github.com/Pacific-Agency/nuxt-utils/pull/187))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.6
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.5...v0.14.6)
