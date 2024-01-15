@@ -1,4 +1,21 @@
 
+## v0.14.6
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.5...v0.14.6)
+
+### 🐞 Исправления
+
+- Добавление масштаба в карту ([#183](https://github.com/Pacific-Agency/nuxt-utils/pull/183))
+- **deps:** Обновление зависимостей ([#181](https://github.com/Pacific-Agency/nuxt-utils/pull/181))
+
+### ✅ Тестирование
+
+- Обновление тестов ([#184](https://github.com/Pacific-Agency/nuxt-utils/pull/184))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.5
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.4...v0.14.5)
