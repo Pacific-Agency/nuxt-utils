@@ -1,6 +1,15 @@
 import { useRuntimeConfig } from "#imports"
 import { eventHandler } from "h3"
 
+/** Ответ от эндпоинта `/sitemap/` */
+export type Sitemap = Record<
+  string,
+  {
+    /** `slug` сущности */
+    slug: string
+  }[]
+>
+
 /**
  * Данный серверный эндпоинт нужен для генерации Sitemap.
  *
@@ -9,17 +18,6 @@ import { eventHandler } from "h3"
  * @see https://pacific-agency.github.io/nuxt-utils/api/sitemap.html
  */
 export default eventHandler(async () => {
-  /** Ответ от эндпоинта `/sitemap/` */
-  type Sitemap = Record<
-    string,
-    [
-      {
-        /** `slug` сущности */
-        slug: string
-      },
-    ]
-  >
-
   /** Карта сайта от API */
   const data = await $fetch<Sitemap>("/sitemap/", {
     baseURL: useRuntimeConfig().public.apiBase as string,
