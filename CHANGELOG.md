@@ -1,4 +1,24 @@
 
+## v0.15.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.7...v0.15.0)
+
+### 🚀 Улучшения
+
+- ⚠️  Обновление эндпоинта `Sitemap` ([#188](https://github.com/Pacific-Agency/nuxt-utils/pull/188))
+
+### ✅ Тестирование
+
+- Тестирование эндпоинта `Sitemap` ([#189](https://github.com/Pacific-Agency/nuxt-utils/pull/189))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Обновление эндпоинта `Sitemap` ([#188](https://github.com/Pacific-Agency/nuxt-utils/pull/188))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.14.7
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.6...v0.14.7)
