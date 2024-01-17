@@ -10,7 +10,6 @@ describe("Эндпоинт Sitemap", async () => {
   })
 
   test("Правильный формат данных", async () => {
-    // Get response to a server-rendered page with `$fetch`.
     const sitemap = await $fetch("/api/sitemap-routes")
 
     expect(sitemap).toMatchInlineSnapshot(`
