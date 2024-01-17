@@ -11,13 +11,6 @@
 ## Использование
 
 - Подготовить эндпоинт с бекенда
-- Создать функцию `useSitemap.ts` с содержимым:
-
-  ```ts
-  export default async () => {
-    return await $fetch("/api/sitemap-routes")
-  }
-  ```
 
 - Добавить в `nuxt.config.ts`:
 
@@ -26,7 +19,7 @@
 
   export default defineNuxtConfig({
     sitemap: {
-      routes: useSitemap,
+      sources: ["/api/sitemap-routes"],
     },
   })
   ```
@@ -63,9 +56,9 @@
 
 ```json
 [
-  "entity/test-slug",
-  "entity/test-slug",
-  "second-entity/test-slug",
-  "second-entity/test-slug"
+  { "_i18nTransform": "true", "loc": "entity/test-slug" },
+  { "_i18nTransform": "true", "loc": "entity/test-slug" },
+  { "_i18nTransform": "true", "loc": "second-entity/test-slug" },
+  { "_i18nTransform": "true", "loc": "second-entity/test-slug" }
 ]
 ```
