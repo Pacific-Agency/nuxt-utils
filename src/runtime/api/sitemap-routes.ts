@@ -22,7 +22,7 @@ export default eventHandler(async () => {
 
   /** Карта сайта от API */
   const data = await $fetch<Sitemap>("/sitemap/", {
-    baseURL: useRuntimeConfig().public.apiBase,
+    baseURL: useRuntimeConfig().public.apiBase as string,
   }).catch(() => {
     return []
   })
@@ -30,7 +30,9 @@ export default eventHandler(async () => {
   /** Массив всех ссылок */
   const routes = Object.entries(data)
     .map(([entity, slugsArray]) =>
-      slugsArray.map((item) => `${entity}/${item.slug}`)
+      slugsArray.map((item) => {
+        return { _i18nTransform: true, loc: `${entity}/${item.slug}` }
+      })
     ) // `entity` — название сущности, `slugsArray` — массив слагов
     .reduce((acc, val) => acc.concat(val), []) // Объединение массивов. `acc` - аккумулятор, `val` - текущее значение
 
