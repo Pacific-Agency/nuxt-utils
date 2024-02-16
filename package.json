@@ -30,7 +30,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.json --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.json --fix --ignore-path .gitignore",
     "prepack": "nuxt-module-build",
-    "prepare": "husky install && nuxt prepare",
+    "prepare": "husky && nuxt prepare",
     "prettier": "prettier --check --ignore-unknown --no-error-on-unmatched-pattern *",
     "prettier:write": "prettier --write --ignore-unknown --no-error-on-unmatched-pattern *",
     "test": "vitest"
