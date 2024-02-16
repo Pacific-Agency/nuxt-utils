@@ -1,4 +1,24 @@
 
+## v0.16.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.15.0...v0.16.0)
+
+### 🚀 Улучшения
+
+- ⚠️  Переработка фукнции `useSubmitForm` ([#190](https://github.com/Pacific-Agency/nuxt-utils/pull/190))
+
+### 🐞 Исправления
+
+- **deps:** Обновление зависимостей ([#185](https://github.com/Pacific-Agency/nuxt-utils/pull/185))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Переработка фукнции `useSubmitForm` ([#190](https://github.com/Pacific-Agency/nuxt-utils/pull/190))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.15.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.14.7...v0.15.0)
