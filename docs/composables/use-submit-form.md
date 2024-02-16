@@ -2,10 +2,7 @@
 
 Функция, которая упрощает отправку данных с формы.
 
-Функция принимает 2 параметра:
-
-- `url` - название эндпоинта, добавляя перед названием `/api/mail/`. Параметр может быть реактивным либо обычной строкой.
-- `options` - объект с параметрами, которые будут переданы в функцию. Является необязательным, поэтому если не нужно передавать никаких параметров, он просто не указывается.
+Функция используется как `useFetch`, но возвращает методы для работы с отправкой формы.
 
 ## Возвращаемые методы
 
@@ -28,45 +25,39 @@
 
 ## Параметры
 
-- `url` - Название эндпоинта для отправки данных
-- `options` - Объект с параметрами для функции
+- `url` - `URL` для запроса
+- `options` - параметры запроса. Состоит из параметров `useFetch` и дополнительных параметров.
 
-### Дополнительные параметры `options`:
+### Дополнительные параметры `options`
 
-- `body` - Объект, который будет передан в форму.
+- `auth` - использовать ли авторизацию.
 - `isFormData` - Является ли тип контента `multipart/form-data` (по умолчанию форма отправляется в формате `JSON`).
 - `onRequest` - Функция, вызываемая при запросе.
 - `onResponse` - Функция, вызываемая при успешно полученном ответе спустя три секунды.
+- `submitFromBody` - Объект, который будет передан в `body` формы.
 
 ## Использование
 
-### С обычной строкой
-
 ```ts
-const { sendRequest, isLoading, isSent } = useSubmitForm("faq")
-```
-
-### С реактивным параметром `url`
-
-```ts
-const reactiveUrl = computed(() => (condition ? "faq" : "appointment"))
-
-const { sendRequest, isLoading, isSent } = useSubmitForm(reactiveUrl)
+const { sendRequest, isLoading, isSent } = useSubmitForm("/mail/faq/", {
+  baseURL: useRuntimeConfig().public.apiBase
+})
 ```
 
 ### С дополнительными параметрами
 
 ```ts
 const { sendRequest, isLoading, isSent } = useSubmitForm("faq", {
+  auth: true,
   body: {
     requestUrl: location.href,
-    isFormData: true,
-    onResponse() {
-      // do something on response
-    },
-    onRequest() {
-      // do something on request
-    },
+  },
+  isFormData: true,
+  onResponse() {
+    // do something on response
+  },
+  onRequest() {
+    // do something on request
   },
 })
 ```

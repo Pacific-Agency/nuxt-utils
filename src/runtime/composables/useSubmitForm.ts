@@ -1,23 +1,30 @@
-import { ref, unref, useFetch, useRuntimeConfig } from "#imports"
-import type { ComputedRef, Ref } from "vue"
+import type { UseFetchOptions } from "#app"
+import type { Ref } from "#imports"
+import { ref, useFetch, useFetchAuth } from "#imports"
+import { defu } from "defu"
 
-/** Параметры функции */
-interface Options {
-  /** Объект, который будет передан в `body` запроса */
-  body: Record<string, string>
+/** Параметры useFetch */
+type FetchParams = Parameters<typeof useFetch>
+
+/** Параметры пагинации */
+interface SubmitFormOptions extends UseFetchOptions<void> {
+  /** Использовать ли авторизацию */
+  auth: boolean
   /** Является ли тип контента `multipart/form-data` */
   isFormData: boolean
   /** Функция, вызываемая при запросе */
-  onRequest: () => void
+  onSubmitRequest: () => void
   /** Функция, вызываемая при успешно полученном ответе спустя три секунды */
-  onResponse: () => void
+  onSubmitResponse: () => void
+  /** Объект, который будет передан в `body` запроса */
+  submitFromBody: Record<string, string>
 }
 
 /**
  * Функция для отправки данных формы
  *
- * @param url - Эндпоинт для отправки данных
- * @param options - Объект с параметрами для функции
+ * @param url - Эндпоинт для отправки данных.
+ * @param options - Объект с параметрами для функции.
  * @returns Объект с методами для работы с формой
  * - `isLoading` - Находится ли форма в состоянии загрузки
  * - `isSent` - Отправлена ли форма
@@ -29,8 +36,8 @@ interface Options {
  * ```
  */
 export default function useSubmitForm(
-  url: ComputedRef<string> | string,
-  options?: Partial<Options>
+  url: FetchParams[0],
+  options?: Partial<SubmitFormOptions>
 ): {
   isLoading: Ref<boolean>
   isSent: Ref<boolean>
@@ -54,15 +61,14 @@ export default function useSubmitForm(
     const formData = new FormData(form)
 
     // Добавление дополнительно переданных полей в данные формы
-    if (options?.body) {
-      for (const [key, value] of Object.entries(options.body)) {
+    if (options?.submitFromBody) {
+      for (const [key, value] of Object.entries(options.submitFromBody)) {
         formData.append(key, value)
       }
     }
 
-    // Отправка запроса к API
-    await useFetch(`/mail/${unref(url)}/`, {
-      baseURL: useRuntimeConfig().public.apiBase,
+    /** Параметры по умолчанию */
+    const defaults: UseFetchOptions<void> = {
       body: options?.isFormData
         ? formData
         : Object.fromEntries(formData.entries()),
@@ -71,7 +77,7 @@ export default function useSubmitForm(
         /** Меняем состояние загрузки */
         isLoading.value = true
 
-        options?.onRequest?.()
+        options?.onSubmitRequest?.()
       },
       onRequestError({ error }) {
         // Если есть ошибка, то выводим об этом `alert`
@@ -94,7 +100,7 @@ export default function useSubmitForm(
             // Очищаем форму
             form.reset()
 
-            options?.onResponse?.()
+            options?.onSubmitResponse?.()
 
             // Сбрасываем состояние отправки
             isSent.value = false
@@ -110,7 +116,19 @@ export default function useSubmitForm(
         /** Меняем состояние загрузки */
         isLoading.value = false
       },
-    })
+    }
+
+    /**
+     * Параметры для функции.
+     *
+     * Для работы их как дефолтных используется `defu`.
+     */
+    const params = defu(options, defaults)
+
+    // Отправка запроса к API
+    params.auth // Проверяем параметр авторизации
+      ? await useFetchAuth(url, params) // Если параметр `true`, то делаем запрос с помощью useFetchAuth
+      : await useFetch(url, params)
   }
   return {
     isLoading,
