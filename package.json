@@ -41,7 +41,7 @@
   },
   "prettier": "@pacific-agency/prettier-config",
   "dependencies": {
-    "@nuxt/kit": "~3.10.0",
+    "@nuxt/kit": "~3.10.2",
     "@vueuse/core": "~10.7.2",
     "isomorphic-dompurify": "~2.3.0",
     "maska": "~2.1.11",
@@ -54,7 +54,7 @@
     "@pacific-agency/eslint-config": "0.7.1",
     "@pacific-agency/prettier-config": "0.3.0",
     "@vue/test-utils": "2.4.4",
-    "happy-dom": "~13.3.0",
+    "happy-dom": "~12.10.3",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
     "nuxt": "3.10.2",
