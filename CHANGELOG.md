@@ -1,4 +1,17 @@
 
+## v0.16.1
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.0...v0.16.1)
+
+### 🐞 Исправления
+
+- Исправление опечатки в `submitFormBody` ([#193](https://github.com/Pacific-Agency/nuxt-utils/pull/193))
+- **deps:** Обновление зависимостей ([#191](https://github.com/Pacific-Agency/nuxt-utils/pull/191))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.16.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.15.0...v0.16.0)
