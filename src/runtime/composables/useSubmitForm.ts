@@ -17,7 +17,7 @@ interface SubmitFormOptions extends UseFetchOptions<void> {
   /** Функция, вызываемая при успешно полученном ответе спустя три секунды */
   onSubmitResponse: () => void
   /** Объект, который будет передан в `body` запроса */
-  submitFromBody: Record<string, string>
+  submitFormBody: Record<string, string>
 }
 
 /**
@@ -61,8 +61,8 @@ export default function useSubmitForm(
     const formData = new FormData(form)
 
     // Добавление дополнительно переданных полей в данные формы
-    if (options?.submitFromBody) {
-      for (const [key, value] of Object.entries(options.submitFromBody)) {
+    if (options?.submitFormBody) {
+      for (const [key, value] of Object.entries(options.submitFormBody)) {
         formData.append(key, value)
       }
     }
