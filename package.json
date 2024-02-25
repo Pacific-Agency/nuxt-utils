@@ -54,7 +54,7 @@
     "@pacific-agency/eslint-config": "0.7.1",
     "@pacific-agency/prettier-config": "0.3.0",
     "@vue/test-utils": "2.4.4",
-    "happy-dom": "~12.10.3",
+    "happy-dom": "~13.5.0",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
     "nuxt": "3.10.3",
