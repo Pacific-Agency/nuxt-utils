@@ -100,9 +100,13 @@ export default async function <TResponse>(
    */
   const params = defu(options, defaults)
 
+  // Создаем объект для ключа, удалив из параметров хедеры
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { headers, ...paramsWithoutHeaders } = params
+
   // Выставляем ключ состоящий из параметров
   params.key = hash({
-    params,
+    paramsWithoutHeaders,
     url,
   })
 
