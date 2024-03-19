@@ -1,4 +1,16 @@
 
+## v0.16.2
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.1...v0.16.2)
+
+### 🐞 Исправления
+
+- Удаление `headers` из генерируемого ключа `usePagination` ([#197](https://github.com/Pacific-Agency/nuxt-utils/pull/197))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.16.1
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.0...v0.16.1)
