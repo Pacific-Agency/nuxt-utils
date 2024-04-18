@@ -1,4 +1,20 @@
 
+## v0.16.3
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.2...v0.16.3)
+
+### 🚀 Улучшения
+
+- Добавление props placeholder в компоненте `UtilsPhone` ([#198](https://github.com/Pacific-Agency/nuxt-utils/pull/198))
+
+### 📖 Документация
+
+- Добавление параметра `placeholder` в документацию `UtilsPhone` ([#199](https://github.com/Pacific-Agency/nuxt-utils/pull/199))
+
+### ❤️ Contributors
+
+- Igor Rogoza ([@f4lz](http://github.com/f4lz))
+
 ## v0.16.2
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.1...v0.16.2)
