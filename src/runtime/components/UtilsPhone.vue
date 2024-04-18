@@ -25,6 +25,14 @@ withDefaults(
      */
     label?: string // eslint-disable-line vue/require-default-prop
     /**
+     * Плейсхолдер поля.
+     *
+     * Задает параметр `placeholder`.
+     *
+     * @defaultValue `+7 999 888-77-66`
+     */
+    placeholder?: string
+    /**
      * Является ли поле обязательным для заполнения.
      *
      * Выставляет атрибут `required`.
@@ -35,6 +43,7 @@ withDefaults(
   }>(),
   {
     id: "phone",
+    placeholder: "+7 999 888-77-66",
     required: true,
   }
 )
@@ -65,7 +74,7 @@ const modelValue = defineModel<string>()
       maxlength="16"
       :name="id"
       pattern="\+\d \d{3} \d{3}-\d{2}-\d{2}"
-      placeholder="+7 999 888-77-66"
+      :placeholder="placeholder"
       :required="required"
       type="text"
     />
