@@ -42,6 +42,7 @@
   "prettier": "@pacific-agency/prettier-config",
   "dependencies": {
     "@nuxt/kit": "~3.10.2",
+    "@vuepic/vue-datepicker": "9.0.0",
     "@vueuse/core": "~10.8.0",
     "isomorphic-dompurify": "~2.4.0",
     "maska": "~2.1.11",
