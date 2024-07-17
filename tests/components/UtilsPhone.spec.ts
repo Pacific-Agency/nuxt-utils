@@ -1,7 +1,6 @@
+import UtilsPhone from "@/runtime/components/UtilsPhone.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
-
-import UtilsPhone from "@/runtime/components/UtilsPhone.vue"
 
 describe("Компонент UtilsPhone", () => {
   test("Рендер", () => {

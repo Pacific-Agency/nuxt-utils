@@ -1,4 +1,3 @@
-<!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
 import { ref } from "vue"
 
@@ -19,9 +18,9 @@ withDefaults(
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
      *
-     * @defaultValue `password`
+     * @default `password`
      */
-    id?: string // eslint-disable-line vue/require-default-prop
+    id?: string
     /**
      * Подпись поля ввода.
      *
@@ -39,7 +38,7 @@ withDefaults(
      *
      * Устанавливает атрибут `minlength` у `input`.
      */
-    minlength?: number // eslint-disable-line vue/require-default-prop
+    minlength?: number
     /**
      * Плейсхолдер для поля.
      *
@@ -51,7 +50,7 @@ withDefaults(
      *
      * Выставляет атрибут `required`.
      *
-     * @defaultValue `true`
+     * @default `true`
      */
     required?: boolean
   }>(),
@@ -79,16 +78,16 @@ const isPasswordShown = ref(false)
     />
     <div class="utils-password-inner-container">
       <input
-        :id="id"
+        :id
         v-model="modelValue"
-        :autocomplete="autocomplete"
+        :autocomplete
         class="utils-password-input utils-form-input"
-        :disabled="disabled"
-        :maxlength="maxlength"
-        :minlength="minlength"
+        :disabled
+        :maxlength
+        :minlength
         :name="id"
-        :placeholder="placeholder"
-        :required="required"
+        :placeholder
+        :required
         :type="isPasswordShown ? 'text' : 'password'"
       />
       <Icon

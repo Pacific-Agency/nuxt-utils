@@ -12,7 +12,7 @@
  * usePhoneFormatter('+79998887766')
  * ```
  */
-export default function (phone: string): string | null {
+export default function (phone: string): null | string {
   /** Номер, очищенный от символов, не являющихся цифрами */
   const cleaned = ("" + phone).replace(/\D/g, "")
 
