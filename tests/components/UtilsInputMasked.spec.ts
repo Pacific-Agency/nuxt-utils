@@ -1,7 +1,6 @@
+import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
-
-import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 
 describe("Компонент UtilsInputMasked", () => {
   const defaultProps = {
@@ -266,7 +265,7 @@ describe("Компонент UtilsInputMasked", () => {
 
     // Выставляем значение переменной
     await parentComponent.setData({
-      text: "43-21",
+      text: "4321",
     })
 
     // Проверяем значение инпута

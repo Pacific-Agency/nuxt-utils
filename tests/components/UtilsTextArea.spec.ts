@@ -1,7 +1,6 @@
+import UtilsTextArea from "@/runtime/components/UtilsTextArea.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
-
-import UtilsTextArea from "@/runtime/components/UtilsTextArea.vue"
 
 describe("Компонент UtilsTextArea", () => {
   const defaultProps = {

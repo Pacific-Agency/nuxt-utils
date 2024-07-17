@@ -1,5 +1,6 @@
 import type { UseFetchOptions } from "#app"
 import type { Ref } from "#imports"
+
 import { ref, toReactive, useFetch, useFetchAuth, watch } from "#imports"
 import { defu } from "defu"
 import { hash } from "ohash"
@@ -12,9 +13,9 @@ interface Pagination<TResponse> {
   /** Количество результатов */
   count: number
   /** Следующая страница */
-  next: string | null
+  next: null | string
   /** Предыдущая страница */
-  previous: string | null
+  previous: null | string
   /** Результаты запроса */
   results: TResponse
 }
@@ -62,7 +63,7 @@ export default async function <TResponse>(
    *
    * @param nextPage - Следующая страница
    */
-  function checkLastPage(nextPage?: string | null) {
+  function checkLastPage(nextPage?: null | string) {
     isPageLast.value = !nextPage
   }
 
@@ -101,7 +102,7 @@ export default async function <TResponse>(
   const params = defu(options, defaults)
 
   // Создаем объект для ключа, удалив из параметров хедеры
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   const { headers, ...paramsWithoutHeaders } = params
 
   // Выставляем ключ состоящий из параметров
