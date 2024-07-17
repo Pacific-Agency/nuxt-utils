@@ -266,7 +266,7 @@ describe("Компонент UtilsInputMasked", () => {
 
     // Выставляем значение переменной
     await parentComponent.setData({
-      text: "43-21",
+      text: "4321",
     })
 
     // Проверяем значение инпута
