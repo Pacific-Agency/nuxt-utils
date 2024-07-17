@@ -18,6 +18,10 @@ npm install @pacific-agency/nuxt-utils
 yarn add @pacific-agency/nuxt-utils
 ```
 
+```bash [bun]
+bun add @pacific-agency/nuxt-utils
+```
+
 :::
 
 ## Использование
