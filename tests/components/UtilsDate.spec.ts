@@ -166,8 +166,11 @@ describe("Компонент UtilsDate", () => {
     })
 
     // Проверяем значение инпута
-    expect(parentComponent.vm.date).toBe("07/08/2024")
+    expect(parentComponent.find("input").element.value).toBe(
+      "07/08/2024, 00:00"
+    )
   })
+
   test("Работа через `formData`", async () => {
     const parentComponent = mount({
       components: {

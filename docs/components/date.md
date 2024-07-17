@@ -7,6 +7,19 @@
 1. Можно использовать в форме с помощью `formData`. Для этого в компоненте предусмотрен пропс `id`
 2. Можно использовать через `v-model`.
 
+::: warning
+
+Для работы данного компонента нужно включить компонент в `build.transpile` в `nuxt.config`
+
+```ts
+export default defineNuxtConfig({
+  build: {
+    transpile: ['@vuepic/vue-datepicker']
+  }
+})
+```
+:::
+
 ## Пропсы
 
 - `id` — идентификатор поля ввода. Устанавливает `id` и `name`, которые используются в `formData`.
@@ -57,16 +70,4 @@ const date = ref("")
     v-model="date"
   />
 </template>
-```
-
-## Nuxt
-
-Для того чтобы использовать в `nuxt` нужно включить компонент в `build.transpile` в `nuxt.config`
-
-```ts
-export default defineNuxtConfig({
-    build: {
-        transpile: ['@vuepic/vue-datepicker']
-    }
-})
 ```

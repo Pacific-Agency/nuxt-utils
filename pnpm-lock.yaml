@@ -15,7 +15,7 @@ importers:
         specifier: ~3.12.3
         version: 3.12.3(magicast@0.3.4)(rollup@4.18.1)
       '@vuepic/vue-datepicker':
-        specifier: 9.0.0
+        specifier: ~9.0.0
         version: 9.0.0(vue@3.4.32(typescript@5.5.3))
       '@vueuse/core':
         specifier: ~10.11.0
