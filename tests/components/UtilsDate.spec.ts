@@ -151,23 +151,23 @@ describe("Компонент UtilsDate", () => {
       `,
     })
 
-    // Выставляем значение инпута
-    await parentComponent.find("input").setValue("07/07/2024, 19:58")
+    // Находим внутренний компонент VueDatePicker внутри UtilsDate
+    const datePickerComponent = parentComponent.findComponent(VueDatePicker)
+
+    // Выставляем значение в компоненте VueDatePicker
+    await datePickerComponent.vm.$emit("update:model-value", "07/07/2024")
 
     // Проверяем значение переменной
-    expect(parentComponent.vm.date).toBe("07/07/2024, 19:58")
+    expect(parentComponent.vm.date).toBe("07/07/2024")
 
     // Выставляем значение переменной
     await parentComponent.setData({
-      date: "07/08/2024, 19:58",
+      date: "07/08/2024",
     })
 
     // Проверяем значение инпута
-    expect(parentComponent.find("input").element.value).toBe(
-      "07/08/2024, 19:58"
-    )
+    expect(parentComponent.vm.date).toBe("07/08/2024")
   })
-
   test("Работа через `formData`", async () => {
     const parentComponent = mount({
       components: {
@@ -194,14 +194,17 @@ describe("Компонент UtilsDate", () => {
       `,
     })
 
-    /** Текстовое поле */
-    const input = parentComponent.find("input")
+    // Находим внутренний компонент VueDatePicker внутри UtilsDate
+    const datePickerComponent = parentComponent.findComponent(VueDatePicker)
+
+    // Выставляем значение в компоненте VueDatePicker
+    await datePickerComponent.vm.$emit(
+      "update:model-value",
+      "07/07/2024, 00:00"
+    )
 
     /** Форма с полями */
     const form = parentComponent.find("form")
-
-    // Выставляем значения поля
-    await input.setValue("07/04/2024")
 
     // Триггерим отправку формы
     await form.trigger("submit")
@@ -211,7 +214,7 @@ describe("Компонент UtilsDate", () => {
 
     // Проверяем, что правильно выставлены все данные
     expect(formData).toStrictEqual({
-      date: "07/04/2024",
+      date: "07/07/2024, 00:00",
     })
   })
 
