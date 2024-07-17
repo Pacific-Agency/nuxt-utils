@@ -1,7 +1,6 @@
+import UtilsInput from "@/runtime/components/UtilsInput.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
-
-import UtilsInput from "@/runtime/components/UtilsInput.vue"
 
 describe("Компонент UtilsInput", () => {
   const defaultProps = {

@@ -1,5 +1,6 @@
-import { computed, onMounted, onUnmounted, ref } from "#imports"
 import type { ComputedRef, Ref } from "vue"
+
+import { computed, onMounted, onUnmounted, ref } from "#imports"
 
 /**
  * Данная функция позволяет скроллить контейнер вправо либо влево на ширину контейнера

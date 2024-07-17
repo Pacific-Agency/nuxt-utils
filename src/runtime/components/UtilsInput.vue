@@ -1,4 +1,3 @@
-<!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
 withDefaults(
   defineProps<{
@@ -43,13 +42,13 @@ withDefaults(
      *
      * Выставляет атрибут `required`.
      *
-     * @defaultValue `true`
+     * @default `true`
      */
     required?: boolean
     /**
      * Тип поля.
      *
-     * @defaultValue `text`
+     * @default `text`
      */
     type?: "date" | "email" | "number" | "password" | "search" | "text"
   }>(),
@@ -72,16 +71,16 @@ const modelValue = defineModel<Date | number | string>()
       v-text="label"
     />
     <input
-      :id="id"
+      :id
       v-model="modelValue"
       class="utils-input-input utils-form-input"
-      :disabled="disabled"
-      :maxlength="maxlength"
-      :minlength="minlength"
+      :disabled
+      :maxlength
+      :minlength
       :name="id"
-      :placeholder="placeholder"
-      :required="required"
-      :type="type"
+      :placeholder
+      :required
+      :type
     />
   </div>
 </template>

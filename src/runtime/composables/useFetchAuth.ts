@@ -1,4 +1,5 @@
 import type { UseFetchOptions } from "#app"
+
 import {
   useCookie,
   useFetch,

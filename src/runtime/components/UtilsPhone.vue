@@ -1,4 +1,3 @@
-<!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
 import { vMaska } from "maska/vue"
 
@@ -15,7 +14,7 @@ withDefaults(
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
      *
-     * @defaultValue `phone`
+     * @default `phone`
      */
     id?: string
     /**
@@ -29,7 +28,7 @@ withDefaults(
      *
      * Задает параметр `placeholder`.
      *
-     * @defaultValue `+7 999 888-77-66`
+     * @default `+7 999 888-77-66`
      */
     placeholder?: string
     /**
@@ -37,7 +36,7 @@ withDefaults(
      *
      * Выставляет атрибут `required`.
      *
-     * @defaultValue `true`
+     * @default `true`
      */
     required?: boolean
   }>(),
@@ -48,11 +47,11 @@ withDefaults(
   }
 )
 
-/** Маска для ввода телефона */
-const mask = "+7 ### ###-##-##"
-
 /** Текущий текст поля */
 const modelValue = defineModel<string>()
+
+/** Маска для ввода телефона */
+const mask = "+7 ### ###-##-##"
 </script>
 
 <template>
@@ -64,17 +63,17 @@ const modelValue = defineModel<string>()
       v-text="label"
     />
     <input
-      :id="id"
+      :id
       v-model="modelValue"
       v-maska="mask"
       autocomplete="tel"
       class="utils-phone-input utils-form-input"
-      :disabled="disabled"
+      :disabled
       maxlength="16"
       :name="id"
       pattern="\+\d \d{3} \d{3}-\d{2}-\d{2}"
-      :placeholder="placeholder"
-      :required="required"
+      :placeholder
+      :required
       type="text"
     />
   </div>

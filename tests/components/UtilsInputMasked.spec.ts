@@ -1,7 +1,6 @@
+import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
-
-import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 
 describe("Компонент UtilsInputMasked", () => {
   const defaultProps = {

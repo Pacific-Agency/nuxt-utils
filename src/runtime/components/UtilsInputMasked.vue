@@ -1,4 +1,3 @@
-<!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
 import { vMaska } from "maska/vue"
 
@@ -57,13 +56,13 @@ withDefaults(
      *
      * Выставляет атрибут `required`.
      *
-     * @defaultValue `true`
+     * @default `true`
      */
     required?: boolean
     /**
      * Тип поля.
      *
-     * @defaultValue `text`
+     * @default `text`
      */
     type?: "number" | "text"
   }>(),
@@ -86,18 +85,18 @@ const modelValue = defineModel<number | string>()
       v-text="label"
     />
     <input
-      :id="id"
+      :id
       v-model="modelValue"
       v-maska="mask"
       class="utils-input-masked-input utils-form-input"
-      :disabled="disabled"
-      :maxlength="maxlength"
-      :minlength="minlength"
+      :disabled
+      :maxlength
+      :minlength
       :name="id"
-      :pattern="pattern"
-      :placeholder="placeholder"
-      :required="required"
-      :type="type"
+      :pattern
+      :placeholder
+      :required
+      :type
     />
   </div>
 </template>

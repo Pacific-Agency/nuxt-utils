@@ -1,7 +1,6 @@
+import UtilsPassword from "@/runtime/components/UtilsPassword.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
-
-import UtilsPassword from "@/runtime/components/UtilsPassword.vue"
 
 describe.sequential("Компонент UtilsPassword", () => {
   const defaultProps = {

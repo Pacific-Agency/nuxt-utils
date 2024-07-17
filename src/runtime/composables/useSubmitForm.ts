@@ -1,5 +1,6 @@
 import type { UseFetchOptions } from "#app"
 import type { Ref } from "#imports"
+
 import { ref, useFetch, useFetchAuth } from "#imports"
 import { defu } from "defu"
 

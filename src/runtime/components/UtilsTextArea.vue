@@ -1,4 +1,3 @@
-<!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
 withDefaults(
   defineProps<{
@@ -31,13 +30,13 @@ withDefaults(
      *
      * Выставляет атрибут `required`.
      *
-     * @defaultValue `true`
+     * @default `true`
      */
     required?: boolean
     /**
      * Количество строк в поле.
      *
-     * @defaultValue `3`
+     * @default `3`
      */
     rows?: number
   }>(),
@@ -60,14 +59,14 @@ const modelValue = defineModel<string>()
       v-text="label"
     />
     <textarea
-      :id="id"
+      :id
       v-model="modelValue"
       class="utils-textarea-textarea utils-form-input"
-      :disabled="disabled"
+      :disabled
       :name="id"
-      :placeholder="placeholder"
-      :required="required"
-      :rows="rows"
+      :placeholder
+      :required
+      :rows
     />
   </div>
 </template>
