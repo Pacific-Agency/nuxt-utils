@@ -136,6 +136,38 @@ describe("Компонент UtilsDate", () => {
     expect(input.attributes("required")).toBeUndefined()
   })
 
+  test("Работа v-model", async () => {
+    const parentComponent = mount({
+      components: {
+        UtilsDate,
+      },
+      data() {
+        return {
+          date: "",
+        }
+      },
+      template: `
+        <UtilsDate v-model="date" />
+      `,
+    })
+
+    // Выставляем значение инпута
+    await parentComponent.find("input").setValue("07/07/2024, 19:58")
+
+    // Проверяем значение переменной
+    expect(parentComponent.vm.date).toBe("07/07/2024, 19:58")
+
+    // Выставляем значение переменной
+    await parentComponent.setData({
+      date: "07/08/2024, 19:58",
+    })
+
+    // Проверяем значение инпута
+    expect(parentComponent.find("input").element.value).toBe(
+      "07/08/2024, 19:58"
+    )
+  })
+
   test("Работа через `formData`", async () => {
     const parentComponent = mount({
       components: {
