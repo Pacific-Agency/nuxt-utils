@@ -1,6 +1,6 @@
 <!-- eslint-disable jsdoc/check-tag-names -->
 <script setup lang="ts">
-import { vMaska } from "maska"
+import { vMaska } from "maska/vue"
 
 withDefaults(
   defineProps<{
@@ -88,9 +88,8 @@ const modelValue = defineModel<number | string>()
     <input
       :id="id"
       v-model="modelValue"
-      v-maska
+      v-maska="mask"
       class="utils-input-masked-input utils-form-input"
-      :data-maska="mask"
       :disabled="disabled"
       :maxlength="maxlength"
       :minlength="minlength"
