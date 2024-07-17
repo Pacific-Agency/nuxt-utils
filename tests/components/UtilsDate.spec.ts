@@ -1,8 +1,7 @@
+import UtilsDate from "@/runtime/components/UtilsDate.vue"
 import { mount } from "@vue/test-utils"
 import VueDatePicker from "@vuepic/vue-datepicker"
 import { describe, expect, test } from "vitest"
-
-import UtilsDate from "@/runtime/components/UtilsDate.vue"
 
 describe("Компонент UtilsDate", () => {
   test("Рендер", () => {
@@ -182,21 +181,6 @@ describe("Компонент UtilsDate", () => {
     expect(formData).toStrictEqual({
       date: "07/04/2024",
     })
-  })
-
-  test("Проверка передаваемых параметров в VueDatePicker", () => {
-    /** Компонент */
-    const wrapper = mount(UtilsDate, {
-      props: {
-        enableTimePicker: false,
-        locale: "ru",
-        position: "left",
-      },
-    })
-    // Проверка, что props переданы и работают корректно
-    expect(wrapper.props().enableTimePicker).toBe(false)
-    expect(wrapper.props().locale).toBe("ru")
-    expect(wrapper.props().position).toBe("left")
   })
 
   test("Наличие классов для стилизации", () => {

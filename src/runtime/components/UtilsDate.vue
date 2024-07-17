@@ -14,7 +14,7 @@ withDefaults(
     /**
      * Отображать ли время в календаре.
      *
-     * @defaultValue `false`
+     * @default `false`
      */
     enableTimePicker?: boolean
     /**
@@ -22,7 +22,7 @@ withDefaults(
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
      *
-     * @defaultValue `date`
+     * @default `date`
      */
     id?: string
     /**
@@ -31,47 +31,27 @@ withDefaults(
      * Создает `label` и задает ему необходимый `id`.
      */
     label?: string
-    // eslint-disable-line vue/require-default-prop
-    /**
-     * Локализация календаря.
-     *
-     * Выставляет атрибут `locale`.
-     *
-     * @defaultValue `ru`
-     */
-    locale?: string
-    // eslint-disable-line vue/require-default-prop
+
     /**
      * Плейсхолдер поля.
      *
      * Задает параметр `placeholder`.
      *
-     * @defaultValue `Выберите дату`
+     * @default `Выберите дату`
      */
     placeholder?: string
-    /**
-     * Позиционирование календаря.
-     *
-     * Выставляет атрибут `position`.
-     *
-     * @defaultValue `left`
-     */
-    position?: "left" | "right" | "center"
     /**
      * Является ли поле обязательным для заполнения.
      *
      * Выставляет атрибут `required`.
      *
-     * @defaultValue `true`
+     * @default `true`
      */
     required?: boolean
   }>(),
   {
-    enableTimePicker: false,
     id: "date",
-    locale: "ru",
     placeholder: "Выберите дату",
-    position: "left",
     required: true,
   }
 )
@@ -89,21 +69,19 @@ const modelValue = defineModel<string>()
       v-text="label"
     />
     <VueDatePicker
+      v-bind="$attrs"
       v-model="modelValue"
       class="utils-date-picker"
-      :enable-time-picker="enableTimePicker"
-      :locale="locale"
-      :position="position"
     >
       <template #dp-input="{ value }">
         <input
-          :id="id"
+          :id
           class="utils-date-input utils-form-input"
-          :disabled="disabled"
+          :disabled
           :name="id"
-          :placeholder="placeholder"
-          :required="required"
-          :value="value"
+          :placeholder
+          :required
+          :value
         />
       </template>
     </VueDatePicker>

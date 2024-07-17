@@ -1,4 +1,4 @@
-# UtilsPhone
+# UtilsDate
 
 Данный компонент выводит поле для выбора даты.
 
@@ -15,27 +15,18 @@
 
 - `label` — заголовок для поля. Задает параметр `label`.
 
-- `locale` — локализация календаря. Задает параметр `locale`.
-
-  **По умолчанию:** `ru`.
 
 - `placeholder` — плейсхолдер для поля. Задает параметр `placeholder`.
   
    **По умолчанию:** `Выберите дату`.
 
-- `enableTimePicker` — отображать ли время в календаре. Задает параметр `enable-time-picker`.
-  
-   **По умолчанию:** `false`.
-
 - `disabled` — является ли поле выключенным. Задает параметр `disabled`.
   
-- `position` — позиционирование календаря. Задает параметр `position`.
-
-  **По умолчанию:** `left`.
-
 - `required` — является ли поле обязательным для заполнения. Выставляет атрибут `required`.
 
   **По умолчанию:** `true`.
+
+Помимо этого можно использовать любые `props` из документации https://vue3datepicker.com/
 
 ## Стилизация
 
@@ -66,4 +57,16 @@ const date = ref("")
     v-model="date"
   />
 </template>
+```
+
+## Nuxt
+
+Для того чтобы использовать в `nuxt` нужно включить компонент в `build.transpile` в `nuxt.config`
+
+```ts
+export default defineNuxtConfig({
+    build: {
+        transpile: ['@vuepic/vue-datepicker']
+    }
+})
 ```
