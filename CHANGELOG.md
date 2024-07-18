@@ -1,4 +1,30 @@
 
+## v0.17.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.3...v0.17.0)
+
+### 🚀 Улучшения
+
+- ⚠️  Обновление зависимостей ([#201](https://github.com/Pacific-Agency/nuxt-utils/pull/201))
+- Компонент `UtilsDate` ([#200](https://github.com/Pacific-Agency/nuxt-utils/pull/200))
+
+### 🐞 Исправления
+
+- Обновление конфигураций ESLint и Prettier ([#202](https://github.com/Pacific-Agency/nuxt-utils/pull/202))
+
+### 📖 Документация
+
+- Добавление `bun` в гайд по установке ([301b439](https://github.com/Pacific-Agency/nuxt-utils/commit/301b439))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Обновление зависимостей ([#201](https://github.com/Pacific-Agency/nuxt-utils/pull/201))
+
+### ❤️ Contributors
+
+- Igor Rogoza ([@f4lz](http://github.com/f4lz))
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.16.3
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.2...v0.16.3)
