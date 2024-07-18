@@ -17,6 +17,7 @@ export default defineConfig({
       },
       {
         items: [
+          { link: "/components/date", text: "UtilsDate" },
           { link: "/components/input", text: "UtilsInput" },
           { link: "/components/input-masked", text: "UtilsInputMasked" },
           { link: "/components/map-widget", text: "UtilsMapWidget" },
