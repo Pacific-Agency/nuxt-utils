@@ -15,7 +15,7 @@ hero:
       link: /installation
     - theme: alt
       text: Компоненты
-      link: /components/input
+      link: /components/date
     - theme: alt
       text: Composables
       link: /composables/use-fetch-auth
