@@ -1,4 +1,16 @@
 
+## v0.17.1
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.17.0...v0.17.1)
+
+### 🐞 Исправления
+
+- Обновление зависимостей ([8697388](https://github.com/Pacific-Agency/nuxt-utils/commit/8697388))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.17.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.16.3...v0.17.0)
