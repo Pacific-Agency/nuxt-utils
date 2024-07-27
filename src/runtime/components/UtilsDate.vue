@@ -18,6 +18,14 @@ withDefaults(
      */
     enableTimePicker?: boolean
     /**
+     * Формат отображение даты.
+     *
+     * Выставляет атрибут `format`.
+     *
+     * @default `dd.mm.yyyy`
+     */
+    format?: string
+    /**
      * Идентификатор поля ввода.
      *
      * Устанавливает `id` и `name`, которые используются в `formData`.
@@ -31,7 +39,6 @@ withDefaults(
      * Создает `label` и задает ему необходимый `id`.
      */
     label?: string // eslint-disable-line vue/require-default-prop
-
     /**
      * Плейсхолдер поля.
      *
@@ -50,6 +57,7 @@ withDefaults(
     required?: boolean
   }>(),
   {
+    format: "dd.mm.yyyy",
     id: "date",
     placeholder: "Выберите дату",
     required: true,
@@ -72,6 +80,7 @@ const modelValue = defineModel<string>()
       v-bind="$attrs"
       v-model="modelValue"
       class="utils-date-picker"
+      :format
     >
       <template #dp-input="{ value }">
         <input
