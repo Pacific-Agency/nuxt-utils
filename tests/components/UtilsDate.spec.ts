@@ -156,20 +156,18 @@ describe("Компонент UtilsDate", () => {
     const datePickerComponent = parentComponent.findComponent(VueDatePicker)
 
     // Выставляем значение в компоненте VueDatePicker
-    await datePickerComponent.vm.$emit("update:model-value", "07/07/2024")
+    await datePickerComponent.vm.$emit("update:model-value", "07.10.2024")
 
     // Проверяем значение переменной
-    expect(parentComponent.vm.date).toBe("07/07/2024")
+    expect(parentComponent.vm.date).toBe("07.10.2024")
 
     // Выставляем значение переменной
     await parentComponent.setData({
-      date: "07/08/2024",
+      date: "08.20.2024",
     })
 
     // Проверяем значение инпута
-    expect(parentComponent.find("input").element.value).toBe(
-      "07/08/2024, 00:00"
-    )
+    expect(parentComponent.find("input").element.value).toBe("20.08.2024")
   })
 
   test("Работа через `formData`", async () => {
@@ -203,10 +201,7 @@ describe("Компонент UtilsDate", () => {
     const datePickerComponent = parentComponent.findComponent(VueDatePicker)
 
     // Выставляем значение в компоненте VueDatePicker
-    await datePickerComponent.vm.$emit(
-      "update:model-value",
-      "07/07/2024, 00:00"
-    )
+    await datePickerComponent.vm.$emit("update:model-value", "12.16.2024")
 
     /** Форма с полями */
     const form = parentComponent.find("form")
@@ -220,7 +215,7 @@ describe("Компонент UtilsDate", () => {
 
     // Проверяем, что правильно выставлены все данные
     expect(formData).toStrictEqual({
-      date: "07/07/2024, 00:00",
+      date: "16.12.2024",
     })
   })
 
