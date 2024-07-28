@@ -44,29 +44,29 @@
     "@nuxt/kit": "^3.12.4",
     "@vuepic/vue-datepicker": "^9.0.1",
     "@vueuse/core": "^10.11.0",
-    "isomorphic-dompurify": "^2.13.0",
+    "isomorphic-dompurify": "^2.14.0",
     "maska": "^3.0.0",
     "ohash": "^1.1.3"
   },
   "devDependencies": {
     "@exer7um/eslint-config": "1.3.1",
-    "@exer7um/prettier-config": "0.4.3",
-    "@nuxt/eslint-config": "0.3.13",
+    "@exer7um/prettier-config": "0.4.4",
+    "@nuxt/eslint-config": "0.4.0",
     "@nuxt/module-builder": "0.8.1",
     "@nuxt/schema": "3.12.4",
-    "@nuxt/test-utils": "3.13.1",
+    "@nuxt/test-utils": "3.14.0",
     "@vue/test-utils": "2.4.6",
     "happy-dom": "^12.10.3",
-    "husky": "9.1.1",
+    "husky": "9.1.3",
     "lint-staged": "15.2.7",
     "nuxt": "3.12.4",
-    "typescript": "5.5.3",
+    "typescript": "5.5.4",
     "vitepress": "1.3.1",
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
-    "@nuxt/icon": "^1.2.0",
-    "vue": "^3.4.33"
+    "@nuxt/icon": "^1.3.1",
+    "vue": "^3.4.34"
   },
-  "packageManager": "pnpm@9.5.0"
+  "packageManager": "pnpm@9.6.0"
 }
