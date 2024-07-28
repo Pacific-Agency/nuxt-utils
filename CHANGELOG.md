@@ -1,4 +1,26 @@
 
+## v0.17.2
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.17.1...v0.17.2)
+
+### 🔥 Производительность
+
+- Использование `flatMap` в `sitemap-routes.ts` ([20f2a17](https://github.com/Pacific-Agency/nuxt-utils/commit/20f2a17))
+
+### 🐞 Исправления
+
+- Обновление конфигурации ESLint ([#204](https://github.com/Pacific-Agency/nuxt-utils/pull/204))
+- **UtilsDate:** Параметр `format` по умолчанию ([#203](https://github.com/Pacific-Agency/nuxt-utils/pull/203))
+
+### 🏡 Другие изменения
+
+- Обновление зависимостей ([9ba699f](https://github.com/Pacific-Agency/nuxt-utils/commit/9ba699f))
+
+### ❤️ Contributors
+
+- Igor Rogoza ([@f4lz](http://github.com/f4lz))
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.17.1
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.17.0...v0.17.1)
