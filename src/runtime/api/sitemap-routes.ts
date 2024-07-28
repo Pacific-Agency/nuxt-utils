@@ -25,14 +25,10 @@ export default eventHandler(async () => {
     return []
   })
 
-  /** Массив всех ссылок */
-  const routes = Object.entries(data)
-    .map(([entity, slugsArray]) =>
-      slugsArray.map((item) => {
-        return { _i18nTransform: true, loc: `${entity}/${item.slug}` }
-      })
-    ) // `entity` — название сущности, `slugsArray` — массив слагов
-    .reduce((acc, val) => acc.concat(val), []) // Объединение массивов. `acc` - аккумулятор, `val` - текущее значение
-
-  return routes
+  // Возвращаем массив всех ссылок
+  return Object.entries(data).flatMap(([entity, slugsArray]) =>
+    slugsArray.map((item) => {
+      return { _i18nTransform: true, loc: `${entity}/${item.slug}` }
+    })
+  )
 })
