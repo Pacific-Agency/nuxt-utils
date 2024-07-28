@@ -22,7 +22,7 @@ withDefaults(
      *
      * Выставляет атрибут `format`.
      *
-     * @default `dd.mm.yyyy`
+     * @default `dd.MM.yyyy`
      */
     format?: string
     /**
@@ -57,7 +57,7 @@ withDefaults(
     required?: boolean
   }>(),
   {
-    format: "dd.mm.yyyy",
+    format: "dd.MM.yyyy",
     id: "date",
     placeholder: "Выберите дату",
     required: true,

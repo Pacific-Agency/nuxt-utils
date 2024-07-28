@@ -41,7 +41,7 @@ export default defineNuxtConfig({
 
 - `format` — формат отображение даты. Выставляет атрибут `format`.
 
-  **По умолчанию:** `dd.mm.yyyy`.
+  **По умолчанию:** `dd.MM.yyyy`.
 
 Помимо этого можно использовать любые `props` из документации <https://vue3datepicker.com/>
 
