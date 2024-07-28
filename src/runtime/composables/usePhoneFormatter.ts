@@ -12,9 +12,9 @@
  * usePhoneFormatter('+79998887766')
  * ```
  */
-export default function (phone: string): null | string {
+export default function (phone: string) {
   /** Номер, очищенный от символов, не являющихся цифрами */
-  const cleaned = ("" + phone).replace(/\D/g, "")
+  const cleaned = ("" + phone).replaceAll(/\D/g, "")
 
   /**
    * Номер, разбитый на части
@@ -28,6 +28,4 @@ export default function (phone: string): null | string {
     const countryCode = match[1] ? "+7" : ""
     return `${countryCode}\u00A0${match[2]}\u00A0${match[3]}-${match[4]}-${match[5]}`
   }
-
-  return null
 }

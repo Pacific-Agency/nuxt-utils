@@ -1,5 +1,6 @@
-import useHighlightedText from "@/runtime/composables/useHighlightedText"
 import { describe, expect, test } from "vitest"
+
+import useHighlightedText from "~/src/runtime/composables/useHighlightedText"
 
 describe("Функция useHighlightedText", () => {
   test("Возвращает текст с выделением", () => {

@@ -1,7 +1,8 @@
-import UtilsDate from "@/runtime/components/UtilsDate.vue"
 import { mount } from "@vue/test-utils"
 import VueDatePicker from "@vuepic/vue-datepicker"
 import { describe, expect, test } from "vitest"
+
+import UtilsDate from "~/src/runtime/components/UtilsDate.vue"
 
 describe("Компонент UtilsDate", () => {
   test("Рендер", () => {
@@ -187,6 +188,7 @@ describe("Компонент UtilsDate", () => {
           const form = event.target as HTMLFormElement
 
           /** Объект со всеми данными формы */
+          // @ts-expect-error - неправильная автоматическая типизация
           this.formData = new FormData(form)
         },
       },
@@ -213,6 +215,7 @@ describe("Компонент UtilsDate", () => {
     await form.trigger("submit")
 
     /** Данные формы */
+    // @ts-expect-error - неправильная автоматическая типизация
     const formData = Object.fromEntries(parentComponent.vm.formData.entries())
 
     // Проверяем, что правильно выставлены все данные

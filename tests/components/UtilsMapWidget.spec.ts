@@ -1,6 +1,7 @@
-import UtilsMapWidget from "@/runtime/components/UtilsMapWidget.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
+
+import UtilsMapWidget from "~/src/runtime/components/UtilsMapWidget.vue"
 
 describe.sequential("Компонент UtilsMapWidget", () => {
   /** `ID` виджета */

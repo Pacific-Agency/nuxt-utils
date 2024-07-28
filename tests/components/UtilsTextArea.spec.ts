@@ -1,6 +1,7 @@
-import UtilsTextArea from "@/runtime/components/UtilsTextArea.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
+
+import UtilsTextArea from "~/src/runtime/components/UtilsTextArea.vue"
 
 describe("Компонент UtilsTextArea", () => {
   const defaultProps = {
@@ -233,6 +234,7 @@ describe("Компонент UtilsTextArea", () => {
           const form = event.target as HTMLFormElement
 
           /** Объект со всеми данными формы */
+          // @ts-expect-error - неправильная автоматическая типизация
           this.formData = new FormData(form)
         },
       },
@@ -256,6 +258,7 @@ describe("Компонент UtilsTextArea", () => {
     await form.trigger("submit")
 
     /** Данные формы */
+    // @ts-expect-error - неправильная автоматическая типизация
     const formData = Object.fromEntries(parentComponent.vm.formData.entries())
 
     // Проверяем, что правильно выставлены все данные

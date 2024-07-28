@@ -1,4 +1,4 @@
-import type { Sitemap } from "@/src/runtime/api/sitemap-routes"
+import type { Sitemap } from "~/src/runtime/api/sitemap-routes"
 
 export default defineEventHandler(() => {
   /** Тестовая карта сайта */

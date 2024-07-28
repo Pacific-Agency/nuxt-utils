@@ -1,5 +1,6 @@
-import usePhoneFormatter from "@/runtime/composables/usePhoneFormatter"
 import { describe, expect, test } from "vitest"
+
+import usePhoneFormatter from "~/src/runtime/composables/usePhoneFormatter"
 
 describe("Функция usePhoneFormatter", () => {
   test("Возвращает правильный формат номера", () => {
@@ -16,10 +17,10 @@ describe("Функция usePhoneFormatter", () => {
     expect(formattedNumber).toBe("+7 999 888-77-66")
   })
 
-  test("При вводе некорректного номера возвращает `null`", () => {
+  test("При вводе некорректного номера возвращает `undefined`", () => {
     /** Отформатированный номер */
     const formattedNumber = usePhoneFormatter("1234")
 
-    expect(formattedNumber).toBeNull()
+    expect(formattedNumber).toBeUndefined()
   })
 })

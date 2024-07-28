@@ -18,9 +18,7 @@ export default function (text: string, query: string) {
   const regex = new RegExp(`(${query})`, "gi")
 
   /** Строка с добавленными тегами `<mark>` */
-  const result = text.replace(regex, (match) =>
+  return text.replace(regex, (match) =>
     match ? "<mark>" + match + "</mark>" : match
   )
-
-  return result
 }

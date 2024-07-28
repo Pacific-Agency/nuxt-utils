@@ -1,6 +1,7 @@
-import UtilsPassword from "@/runtime/components/UtilsPassword.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
+
+import UtilsPassword from "~/src/runtime/components/UtilsPassword.vue"
 
 describe.sequential("Компонент UtilsPassword", () => {
   const defaultProps = {
@@ -329,6 +330,7 @@ describe.sequential("Компонент UtilsPassword", () => {
           const form = event.target as HTMLFormElement
 
           /** Объект со всеми данными формы */
+          // @ts-expect-error - неправильная автоматическая типизация
           this.formData = new FormData(form)
         },
       },
@@ -352,6 +354,7 @@ describe.sequential("Компонент UtilsPassword", () => {
     await form.trigger("submit")
 
     /** Данные формы */
+    // @ts-expect-error - неправильная автоматическая типизация
     const formData = Object.fromEntries(parentComponent.vm.formData.entries())
 
     // Проверяем, что правильно выставлены все данные
