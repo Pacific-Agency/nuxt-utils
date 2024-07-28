@@ -42,10 +42,10 @@ export default async function <TResponse>(
     headers: {
       // Токен авторизации из .env
       Authorization: useRuntimeConfig().public.authToken as string,
-      // Выставляем `csrftoken` из `cookie` в заголовок
-      "X-CSRFToken": useCookie("csrftoken").value ?? "",
       // Проксим `cookie` клиента на сервер
       cookie: useRequestHeaders(["cookie"]).cookie ?? "",
+      // Выставляем `csrftoken` из `cookie` в заголовок
+      "X-CSRFToken": useCookie("csrftoken").value ?? "",
     },
   }
 

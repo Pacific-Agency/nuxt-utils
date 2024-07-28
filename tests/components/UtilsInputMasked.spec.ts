@@ -1,6 +1,7 @@
-import UtilsInputMasked from "@/runtime/components/UtilsInputMasked.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
+
+import UtilsInputMasked from "~/src/runtime/components/UtilsInputMasked.vue"
 
 describe("Компонент UtilsInputMasked", () => {
   const defaultProps = {
@@ -130,7 +131,7 @@ describe("Компонент UtilsInputMasked", () => {
     /** Компонент */
     const wrapper = mount(UtilsInputMasked, {
       props: {
-        pattern: "\\+\\d \\d{3} \\d{3}-\\d{2}-\\d{2}",
+        pattern: String.raw`\+\d \d{3} \d{3}-\d{2}-\d{2}`,
         ...defaultProps,
       },
     })
@@ -140,7 +141,7 @@ describe("Компонент UtilsInputMasked", () => {
 
     // Проверка атрибута `pattern`
     expect(input.attributes("pattern")).toBe(
-      "\\+\\d \\d{3} \\d{3}-\\d{2}-\\d{2}"
+      String.raw`\+\d \d{3} \d{3}-\d{2}-\d{2}`
     )
   })
 
@@ -211,7 +212,7 @@ describe("Компонент UtilsInputMasked", () => {
     /** Компонент */
     const wrapper = mount(UtilsInputMasked, {
       props: {
-        type: "password",
+        type: "number",
         ...defaultProps,
       },
     })
@@ -220,7 +221,7 @@ describe("Компонент UtilsInputMasked", () => {
     const input = wrapper.find("input")
 
     // Проверка значения атрибута `type`.
-    expect(input.attributes("type")).toBe("password")
+    expect(input.attributes("type")).toBe("number")
   })
 
   test("Работа `v-maska`", async () => {
@@ -288,6 +289,7 @@ describe("Компонент UtilsInputMasked", () => {
           const form = event.target as HTMLFormElement
 
           /** Объект со всеми данными формы */
+          // @ts-expect-error - неправильная автоматическая типизация
           this.formData = new FormData(form)
         },
       },
@@ -311,6 +313,7 @@ describe("Компонент UtilsInputMasked", () => {
     await form.trigger("submit")
 
     /** Данные формы */
+    // @ts-expect-error - неправильная автоматическая типизация
     const formData = Object.fromEntries(parentComponent.vm.formData.entries())
 
     // Проверяем, что правильно выставлены все данные

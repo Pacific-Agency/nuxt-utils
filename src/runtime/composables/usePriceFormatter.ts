@@ -12,11 +12,9 @@
  */
 export default function (price: number): string {
   /** Форматированная цена */
-  const formattedPrice = price.toLocaleString("ru-RU", {
+  return price.toLocaleString("ru-RU", {
     currency: "RUB",
     minimumFractionDigits: 0,
     style: "currency",
   })
-
-  return formattedPrice
 }

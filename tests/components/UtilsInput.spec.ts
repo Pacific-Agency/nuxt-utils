@@ -1,6 +1,7 @@
-import UtilsInput from "@/runtime/components/UtilsInput.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
+
+import UtilsInput from "~/src/runtime/components/UtilsInput.vue"
 
 describe("Компонент UtilsInput", () => {
   const defaultProps = {
@@ -253,6 +254,7 @@ describe("Компонент UtilsInput", () => {
           const form = event.target as HTMLFormElement
 
           /** Объект со всеми данными формы */
+          // @ts-expect-error - неправильная автоматическая типизация
           this.formData = new FormData(form)
         },
       },
@@ -276,6 +278,7 @@ describe("Компонент UtilsInput", () => {
     await form.trigger("submit")
 
     /** Данные формы */
+    // @ts-expect-error - неправильная автоматическая типизация
     const formData = Object.fromEntries(parentComponent.vm.formData.entries())
 
     // Проверяем, что правильно выставлены все данные

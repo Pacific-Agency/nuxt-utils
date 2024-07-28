@@ -1,6 +1,7 @@
-import UtilsPhone from "@/runtime/components/UtilsPhone.vue"
 import { mount } from "@vue/test-utils"
 import { describe, expect, test } from "vitest"
+
+import UtilsPhone from "~/src/runtime/components/UtilsPhone.vue"
 
 describe("Компонент UtilsPhone", () => {
   test("Рендер", () => {
@@ -54,7 +55,7 @@ describe("Компонент UtilsPhone", () => {
     expect(input.attributes("maxlength")).toBe("16")
     // Проверка атрибута `pattern`
     expect(input.attributes("pattern")).toBe(
-      "\\+\\d \\d{3} \\d{3}-\\d{2}-\\d{2}"
+      String.raw`\+\d \d{3} \d{3}-\d{2}-\d{2}`
     )
     // Проверка атрибута `placeholder`
     expect(input.attributes("placeholder")).toBe("+7 999 888-77-66")
@@ -201,6 +202,7 @@ describe("Компонент UtilsPhone", () => {
           const form = event.target as HTMLFormElement
 
           /** Объект со всеми данными формы */
+          // @ts-expect-error - неправильная автоматическая типизация
           this.formData = new FormData(form)
         },
       },
@@ -224,6 +226,7 @@ describe("Компонент UtilsPhone", () => {
     await form.trigger("submit")
 
     /** Данные формы */
+    // @ts-expect-error - неправильная автоматическая типизация
     const formData = Object.fromEntries(parentComponent.vm.formData.entries())
 
     // Проверяем, что правильно выставлены все данные

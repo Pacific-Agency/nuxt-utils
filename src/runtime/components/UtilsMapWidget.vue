@@ -37,6 +37,7 @@ mapURL.searchParams.append("z", "16")
     class="map-widget"
     height="100%"
     :src="mapURL.href"
+    title="map"
     width="100%"
   ></iframe>
 </template>
