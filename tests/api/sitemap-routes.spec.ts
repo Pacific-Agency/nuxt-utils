@@ -4,6 +4,7 @@ import { describe, expect, test } from "vitest"
 
 // @vitest-environment node
 
+// eslint-disable-next-line vitest/valid-describe-callback
 describe("Эндпоинт Sitemap", async () => {
   await setup({
     rootDir: fileURLToPath(new URL("../fixtures/basic", import.meta.url)),

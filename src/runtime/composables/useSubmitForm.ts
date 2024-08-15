@@ -127,6 +127,7 @@ export default function useSubmitForm(
     const params = defu(options, defaults)
 
     // Отправка запроса к API
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     params.auth // Проверяем параметр авторизации
       ? await useFetchAuth(url, params) // Если параметр `true`, то делаем запрос с помощью useFetchAuth
       : await useFetch(url, params)

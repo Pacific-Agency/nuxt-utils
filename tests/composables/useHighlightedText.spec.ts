@@ -13,7 +13,7 @@ describe("Функция useHighlightedText", () => {
     const expected = "The quick brown <mark>fox</mark> jumps over the lazy dog"
 
     // Сравниваем результат с ожидаемым результатом
-    expect(useHighlightedText(text, query)).toEqual(expected)
+    expect(useHighlightedText(text, query)).toStrictEqual(expected)
   })
 
   test("Возвращает текст с несколькими выделениями", () => {
@@ -28,7 +28,7 @@ describe("Функция useHighlightedText", () => {
       "The quick brown <mark>fox</mark> jumps over the lazy dog. The quick brown <mark>fox</mark> jumps over the lazy dog again."
 
     // Сравниваем результат с ожидаемым результатом
-    expect(useHighlightedText(text, query)).toEqual(expected)
+    expect(useHighlightedText(text, query)).toStrictEqual(expected)
   })
 
   test("Возвращает текст с выделением вне зависимости от регистра", () => {
@@ -41,7 +41,7 @@ describe("Функция useHighlightedText", () => {
     const expected = "The quick brown <mark>fox</mark> jumps over the lazy dog"
 
     // Сравниваем результат с ожидаемым результатом
-    expect(useHighlightedText(text, query)).toEqual(expected)
+    expect(useHighlightedText(text, query)).toStrictEqual(expected)
   })
 
   test("Возвращает текст без выделения, если запрос не найден", () => {
@@ -54,7 +54,7 @@ describe("Функция useHighlightedText", () => {
     const expected = "The quick brown fox jumps over the lazy dog"
 
     // Сравниваем результат с ожидаемым результатом
-    expect(useHighlightedText(text, query)).toEqual(expected)
+    expect(useHighlightedText(text, query)).toStrictEqual(expected)
   })
 
   test("Возвращает текст без выделения, если запрос пустой", () => {
@@ -67,6 +67,6 @@ describe("Функция useHighlightedText", () => {
     const expected = "The quick brown fox jumps over the lazy dog"
 
     // Сравниваем результат с ожидаемым результатом
-    expect(useHighlightedText(text, query)).toEqual(expected)
+    expect(useHighlightedText(text, query)).toStrictEqual(expected)
   })
 })
