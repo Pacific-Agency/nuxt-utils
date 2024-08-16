@@ -1,6 +1,7 @@
 import type { UseFetchOptions } from "#app"
 import type { Ref } from "#imports"
 
+// @ts-expect-error - функция есть в итоговом проекте
 import { ref, useFetch, useFetchAuth } from "#imports"
 import { defu } from "defu"
 
