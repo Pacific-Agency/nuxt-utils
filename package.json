@@ -43,7 +43,7 @@
   "dependencies": {
     "@nuxt/kit": "^3.12.4",
     "@vuepic/vue-datepicker": "^9.0.2",
-    "@vueuse/core": "^10.11.1",
+    "@vueuse/core": "^11.0.0",
     "consola": "^3.2.3",
     "isomorphic-dompurify": "^2.14.0",
     "maska": "^3.0.0",
