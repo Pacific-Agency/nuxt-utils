@@ -1,13 +1,9 @@
 import type { UseFetchOptions } from "#app"
 
-import {
-  useCookie,
-  useFetch,
-  useRequestHeaders,
-  useRuntimeConfig,
-} from "#imports"
-import { defu } from "defu"
+import { useFetch } from "#imports"
 import { hash } from "ohash"
+
+import authHeaders from "../utils/authHeaders"
 
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
@@ -37,24 +33,8 @@ export default async function <TResponse>(
   url: FetchParams[0],
   options: UseFetchOptions<TResponse> = {}
 ): FetchReturn<TResponse> {
-  const defaults: UseFetchOptions<TResponse> = {
-    credentials: "include",
-    headers: {
-      // Токен авторизации из .env
-      Authorization: useRuntimeConfig().public.authToken as string,
-      // Проксим `cookie` клиента на сервер
-      cookie: useRequestHeaders(["cookie"]).cookie ?? "",
-      // Выставляем `csrftoken` из `cookie` в заголовок
-      "X-CSRFToken": useCookie("csrftoken").value ?? "",
-    },
-  }
-
-  /**
-   * Параметры для функции.
-   *
-   * Для работы их как дефолтных используется `defu`.
-   */
-  const params = defu(options, defaults)
+  /** Параметры для функции */
+  const params = authHeaders(options)
 
   // Выставляем ключ состоящий из параметров
   params.key = hash({

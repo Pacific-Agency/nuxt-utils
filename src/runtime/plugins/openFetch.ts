@@ -4,12 +4,11 @@ import {
   // @ts-expect-error - функция есть в итоговом проекте при установке соответствующего модуля
   createOpenFetch,
   defineNuxtPlugin,
-  useCookie,
   useRequestFetch,
-  useRequestHeaders,
   useRuntimeConfig,
 } from "#imports"
-import { defu } from "defu"
+
+import authHeaders from "../utils/authHeaders"
 
 export default defineNuxtPlugin({
   enforce: "pre",
@@ -24,25 +23,8 @@ export default defineNuxtPlugin({
     return {
       provide: Object.fromEntries(
         Object.entries(clients).map(([name, options]) => {
-          /** Параметры по умолчанию */
-          const defaults = {
-            credentials: "include",
-            headers: {
-              // Токен авторизации из .env
-              Authorization: useRuntimeConfig().public.authToken as string,
-              // Проксим `cookie` клиента на сервер
-              cookie: useRequestHeaders(["cookie"]).cookie ?? "",
-              // Выставляем `csrftoken` из `cookie` в заголовок
-              "X-CSRFToken": useCookie("csrftoken").value ?? "",
-            },
-          } as const
-
-          /**
-           * Параметры для функции.
-           *
-           * Для работы их как дефолтных используется `defu`.
-           */
-          const params = defu(options, defaults)
+          /** Параметры для функции */
+          const params = authHeaders(options)
 
           return [name, createOpenFetch(params, localFetch)]
         })
