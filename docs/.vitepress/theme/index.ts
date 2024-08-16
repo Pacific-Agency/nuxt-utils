@@ -1,3 +1,6 @@
+import DefaultTheme from "vitepress/theme"
+
 import "./theme.css"
 
-export { default } from "vitepress/theme"
+// eslint-disable-next-line unicorn/prefer-export-from
+export default DefaultTheme
