@@ -1,6 +1,8 @@
 import type { UseFetchOptions } from "#app"
 import type { Ref } from "#imports"
+import type { FetchError } from "ofetch"
 
+// @ts-expect-error - свойства добавятся в итоговом проекте
 import { ref, toReactive, useFetch, useFetchAuth, watch } from "#imports"
 import { defu } from "defu"
 import { hash } from "ohash"
@@ -132,7 +134,7 @@ export default async function <TResponse>(
           addResults(data.value?.results)
           checkLastPage(data.value?.next)
         })
-        .catch((error) => {
+        .catch((error: FetchError) => {
           alert(error)
         })
     }
@@ -150,7 +152,7 @@ export default async function <TResponse>(
         replaceResults(data.value?.results)
         checkLastPage(data.value?.next)
       })
-      .catch((error) => {
+      .catch((error: FetchError) => {
         alert(error)
       })
   })
