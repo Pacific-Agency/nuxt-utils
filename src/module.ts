@@ -8,7 +8,7 @@ import {
 
 export default defineNuxtModule({
   meta: {
-    configKey: "@pacific-agency/nuxt-utils",
+    configKey: "nuxtUtils",
     name: "@pacific-agency/nuxt-utils",
   },
   setup() {
