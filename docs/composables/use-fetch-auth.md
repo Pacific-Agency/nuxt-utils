@@ -21,7 +21,7 @@ $development: {
 
 После чего нужно добавить соответствующий токен в `.env`.
 
-```.env
+```dotenv
 NUXT_PUBLIC_AUTH_TOKEN=<token>
 ```
 

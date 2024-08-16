@@ -35,3 +35,25 @@ export default defineNuxtConfig({
   ]
 })
 ```
+
+## Конфигурация
+
+Изменять конфигурацию можно в файле `nuxt.config.ts` в поле `nuxtUtils`.
+
+```ts
+export default defineNuxtConfig({
+  nuxtUtils: {
+    // ...
+  }
+})
+```
+
+### `authNuxtOpenFetch`
+
+::: warning
+Для работы данной функции необходимо установить и настроить плагин `nuxt-open-fetch`.
+:::
+
+Добавить ли авторизацию для запросов с помощью Nuxt Open Fetch. Авторизация работает по такому же принципу, как в [`useFetchAuth`](/composables/use-fetch-auth).
+
+**По умолчанию:** `false`
