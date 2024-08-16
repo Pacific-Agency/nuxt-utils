@@ -1,4 +1,41 @@
 
+## v0.18.0
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.17.2...v0.18.0)
+
+### 🚀 Улучшения
+
+- ⚠️  Изменение ключа конфигурации на `nuxtUtils` ([39929b2](https://github.com/Pacific-Agency/nuxt-utils/commit/39929b2))
+- Авторизация для `nuxt-open-fetch` ([#206](https://github.com/Pacific-Agency/nuxt-utils/pull/206))
+
+### 🐞 Исправления
+
+- **deps:** Обновление зависимостей ([#196](https://github.com/Pacific-Agency/nuxt-utils/pull/196))
+
+### 💅 Рефактор кода
+
+- Вынесение параметров авторизации в отдельную функцию ([7886d03](https://github.com/Pacific-Agency/nuxt-utils/commit/7886d03))
+- Вынесение параметров модуля в интерфейс ([a0f5c78](https://github.com/Pacific-Agency/nuxt-utils/commit/a0f5c78))
+
+### 📖 Документация
+
+- Исправление цветов темы ([7bd583c](https://github.com/Pacific-Agency/nuxt-utils/commit/7bd583c))
+
+### 🏡 Другие изменения
+
+- Обновление зависимостей ([#205](https://github.com/Pacific-Agency/nuxt-utils/pull/205))
+- Исправление типизации в `useSubmitForm` ([87bb8ac](https://github.com/Pacific-Agency/nuxt-utils/commit/87bb8ac))
+- Исправление скрипта сборки проекта ([3b6b90b](https://github.com/Pacific-Agency/nuxt-utils/commit/3b6b90b))
+- Типизация в `usePagination` ([9eb6bad](https://github.com/Pacific-Agency/nuxt-utils/commit/9eb6bad))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Изменение ключа конфигурации на `nuxtUtils` ([39929b2](https://github.com/Pacific-Agency/nuxt-utils/commit/39929b2))
+
+### ❤️ Contributors
+
+- Vasily Kuzin ([@ExEr7um](http://github.com/ExEr7um))
+
 ## v0.17.2
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.17.1...v0.17.2)
