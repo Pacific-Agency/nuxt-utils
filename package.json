@@ -29,7 +29,7 @@
     "docs:preview": "vitepress preview docs",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --max-warnings=0 --fix",
-    "prepack": "nuxt-module-build",
+    "prepack": "nuxt-module-build build",
     "prepare": "husky && nuxt prepare",
     "prettier": "prettier --check --ignore-unknown --no-error-on-unmatched-pattern *",
     "prettier:write": "prettier --write --ignore-unknown --no-error-on-unmatched-pattern *",
