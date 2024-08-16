@@ -9,17 +9,22 @@ import {
 } from "@nuxt/kit"
 import { consola } from "consola"
 
-export default defineNuxtModule({
+/** Параметры модуля `@pacific-agency/nuxt-utils` */
+export interface ModuleOptions {
+  /**
+   * Добавить авторизацию для запросов с помощью Nuxt Open Fetch.
+   * Авторизация работает по такому же принципу, как в `useFetchAuth`.
+   *
+   * Для работы данной функции необходимо установить и настроить плагин `nuxt-open-fetch`.
+   *
+   * @default false
+   * @see https://pacific-agency.github.io/nuxt-utils/composables/use-fetch-auth.html
+   */
+  authNuxtOpenFetch: boolean
+}
+
+export default defineNuxtModule<ModuleOptions>({
   defaults: {
-    /**
-     * Добавить ли авторизацию для запросов с помощью Nuxt Open Fetch.
-     * Авторизация работает по такому же принципу, как в `useFetchAuth`.
-     *
-     * Для работы данной функции необходимо установить и настроить плагин `nuxt-open-fetch`.
-     *
-     * @default false
-     * @see https://pacific-agency.github.io/nuxt-utils/composables/use-fetch-auth.html
-     */
     authNuxtOpenFetch: false,
   },
   meta: {
