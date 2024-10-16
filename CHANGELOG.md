@@ -1,4 +1,16 @@
 
+## v0.18.1
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.18.0...v0.18.1)
+
+### 🚀 Улучшения
+
+- Добавление уменьшения страницы в функцию `usePagination` ([#209](https://github.com/Pacific-Agency/nuxt-utils/pull/209))
+
+### ❤️ Contributors
+
+- Igor Rogoza ([@f4lz](http://github.com/f4lz))
+
 ## v0.18.0
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.17.2...v0.18.0)
