@@ -61,6 +61,15 @@ export default async function <TResponse>(
   }
 
   /**
+   * Данная функция уменьшает номер страницы на `1`
+   */
+  function decreasePage() {
+    if (selectedPage.value !== 1) {
+      selectedPage.value--
+    }
+  }
+
+  /**
    * Данная функция проверяет, является ли страница последней
    *
    * @param nextPage - Следующая страница
@@ -157,5 +166,5 @@ export default async function <TResponse>(
       })
   })
 
-  return { increasePage, isPageLast, refresh, results }
+  return { decreasePage, increasePage, isPageLast, refresh, results }
 }
