@@ -2,7 +2,7 @@ import type { UseFetchOptions } from "#app"
 import type { Ref } from "#imports"
 
 // @ts-expect-error - функция есть в итоговом проекте
-import { ref, useFetch, useFetchAuth } from "#imports"
+import { ref, unref, useFetch, useFetchAuth } from "#imports"
 import { defu } from "defu"
 
 /** Параметры useFetch */
@@ -19,7 +19,7 @@ interface SubmitFormOptions extends UseFetchOptions<void> {
   /** Функция, вызываемая при успешно полученном ответе спустя три секунды */
   onSubmitResponse: () => void
   /** Объект, который будет передан в `body` запроса */
-  submitFormBody: Record<string, string>
+  submitFormBody: Record<string, string> | Ref<Record<string, string>>
 }
 
 /**
@@ -39,7 +39,7 @@ interface SubmitFormOptions extends UseFetchOptions<void> {
  */
 export default function useSubmitForm(
   url: FetchParams[0],
-  options?: Partial<SubmitFormOptions>
+  options?: Partial<SubmitFormOptions> | Ref<Partial<SubmitFormOptions>>
 ): {
   isLoading: Ref<boolean>
   isSent: Ref<boolean>
@@ -62,16 +62,19 @@ export default function useSubmitForm(
     /** Объект со всеми данными формы */
     const formData = new FormData(form)
 
+    const unReactiveOptions = unref(options)
+
     // Добавление дополнительно переданных полей в данные формы
-    if (options?.submitFormBody) {
-      for (const [key, value] of Object.entries(options.submitFormBody)) {
+    if (unReactiveOptions?.submitFormBody) {
+      const unReactiveBody = unref(unReactiveOptions.submitFormBody)
+      for (const [key, value] of Object.entries(unReactiveBody)) {
         formData.append(key, value)
       }
     }
 
     /** Параметры по умолчанию */
     const defaults: UseFetchOptions<void> = {
-      body: options?.isFormData
+      body: unReactiveOptions?.isFormData
         ? formData
         : Object.fromEntries(formData.entries()),
       method: "POST",
@@ -79,7 +82,7 @@ export default function useSubmitForm(
         /** Меняем состояние загрузки */
         isLoading.value = true
 
-        options?.onSubmitRequest?.()
+        unReactiveOptions?.onSubmitRequest?.()
       },
       onRequestError({ error }) {
         // Если есть ошибка, то выводим об этом `alert`
@@ -102,7 +105,7 @@ export default function useSubmitForm(
             // Очищаем форму
             form.reset()
 
-            options?.onSubmitResponse?.()
+            unReactiveOptions?.onSubmitResponse?.()
 
             // Сбрасываем состояние отправки
             isSent.value = false
@@ -125,7 +128,7 @@ export default function useSubmitForm(
      *
      * Для работы их как дефолтных используется `defu`.
      */
-    const params = defu(options, defaults)
+    const params = defu(unReactiveOptions, defaults)
 
     // Отправка запроса к API
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
