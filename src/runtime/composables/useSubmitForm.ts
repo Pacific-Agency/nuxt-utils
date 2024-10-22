@@ -1,5 +1,5 @@
 import type { UseFetchOptions } from "#app"
-import type { Ref } from "#imports"
+import type { MaybeRef, Ref } from "#imports"
 
 // @ts-expect-error - функция есть в итоговом проекте
 import { ref, unref, useFetch, useFetchAuth } from "#imports"
@@ -19,7 +19,7 @@ interface SubmitFormOptions extends UseFetchOptions<void> {
   /** Функция, вызываемая при успешно полученном ответе спустя три секунды */
   onSubmitResponse: () => void
   /** Объект, который будет передан в `body` запроса */
-  submitFormBody: Record<string, string> | Ref<Record<string, string>>
+  submitFormBody: MaybeRef<Record<string, string>>
 }
 
 /**
@@ -39,7 +39,7 @@ interface SubmitFormOptions extends UseFetchOptions<void> {
  */
 export default function useSubmitForm(
   url: FetchParams[0],
-  options?: Partial<SubmitFormOptions> | Ref<Partial<SubmitFormOptions>>
+  options?: MaybeRef<Partial<SubmitFormOptions>>
 ): {
   isLoading: Ref<boolean>
   isSent: Ref<boolean>
@@ -66,8 +66,9 @@ export default function useSubmitForm(
 
     // Добавление дополнительно переданных полей в данные формы
     if (unReactiveOptions?.submitFormBody) {
-      const unReactiveBody = unref(unReactiveOptions.submitFormBody)
-      for (const [key, value] of Object.entries(unReactiveBody)) {
+      for (const [key, value] of Object.entries(
+        unref(unReactiveOptions.submitFormBody)
+      )) {
         formData.append(key, value)
       }
     }
@@ -128,7 +129,7 @@ export default function useSubmitForm(
      *
      * Для работы их как дефолтных используется `defu`.
      */
-    const params = defu(unReactiveOptions, defaults)
+    const params = defu(unref(options), defaults)
 
     // Отправка запроса к API
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
