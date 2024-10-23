@@ -62,12 +62,12 @@ export default function useSubmitForm(
     /** Объект со всеми данными формы */
     const formData = new FormData(form)
 
-    const unReactiveOptions = unref(options)
+    const optionsRaw = unref(options)
 
     // Добавление дополнительно переданных полей в данные формы
-    if (unReactiveOptions?.submitFormBody) {
+    if (optionsRaw?.submitFormBody) {
       for (const [key, value] of Object.entries(
-        unref(unReactiveOptions.submitFormBody)
+        unref(optionsRaw.submitFormBody)
       )) {
         formData.append(key, value)
       }
@@ -75,7 +75,7 @@ export default function useSubmitForm(
 
     /** Параметры по умолчанию */
     const defaults: UseFetchOptions<void> = {
-      body: unReactiveOptions?.isFormData
+      body: optionsRaw?.isFormData
         ? formData
         : Object.fromEntries(formData.entries()),
       method: "POST",
@@ -83,7 +83,7 @@ export default function useSubmitForm(
         /** Меняем состояние загрузки */
         isLoading.value = true
 
-        unReactiveOptions?.onSubmitRequest?.()
+        optionsRaw?.onSubmitRequest?.()
       },
       onRequestError({ error }) {
         // Если есть ошибка, то выводим об этом `alert`
@@ -106,7 +106,7 @@ export default function useSubmitForm(
             // Очищаем форму
             form.reset()
 
-            unReactiveOptions?.onSubmitResponse?.()
+            optionsRaw?.onSubmitResponse?.()
 
             // Сбрасываем состояние отправки
             isSent.value = false
@@ -129,7 +129,7 @@ export default function useSubmitForm(
      *
      * Для работы их как дефолтных используется `defu`.
      */
-    const params = defu(unref(options), defaults)
+    const params = defu(optionsRaw, defaults)
 
     // Отправка запроса к API
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
