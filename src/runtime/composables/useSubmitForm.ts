@@ -64,11 +64,11 @@ export default function useSubmitForm(
 
     const optionsRaw = unref(options)
 
+    const submitFormBodyRaw = unref(optionsRaw?.submitFormBody)
+
     // Добавление дополнительно переданных полей в данные формы
-    if (optionsRaw?.submitFormBody) {
-      for (const [key, value] of Object.entries(
-        unref(optionsRaw.submitFormBody)
-      )) {
+    if (submitFormBodyRaw) {
+      for (const [key, value] of Object.entries(submitFormBodyRaw)) {
         formData.append(key, value)
       }
     }
