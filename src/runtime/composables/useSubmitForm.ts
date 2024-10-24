@@ -8,7 +8,7 @@ import { defu } from "defu"
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
 
-/** Параметры пагинации */
+/** Параметры отправки формы */
 interface SubmitFormOptions extends UseFetchOptions<void> {
   /** Использовать ли авторизацию */
   auth: boolean
@@ -62,8 +62,9 @@ export default function useSubmitForm(
     /** Объект со всеми данными формы */
     const formData = new FormData(form)
 
+    /** Нереактивные параметры функции */
     const optionsRaw = unref(options)
-
+    /** Нереактивное `body` запроса */
     const submitFormBodyRaw = unref(optionsRaw?.submitFormBody)
 
     // Добавление дополнительно переданных полей в данные формы
@@ -80,7 +81,7 @@ export default function useSubmitForm(
         : Object.fromEntries(formData.entries()),
       method: "POST",
       onRequest() {
-        /** Меняем состояние загрузки */
+        // Меняем состояние загрузки
         isLoading.value = true
 
         optionsRaw?.onSubmitRequest?.()
@@ -89,16 +90,16 @@ export default function useSubmitForm(
         // Если есть ошибка, то выводим об этом `alert`
         alert(`Ошибка: ${error.message}`)
 
-        /** Меняем состояние загрузки */
+        // Меняем состояние загрузки
         isLoading.value = false
       },
       onResponse({ response }) {
         // Если запрос выполнен успешно
         if (response.ok) {
-          /** Меняем состояние загрузки */
+          // Меняем состояние загрузки
           isLoading.value = false
 
-          /** Меняем состояние отправки */
+          // Меняем состояние отправки
           isSent.value = true
 
           // Выставляем таймер на 3 секунды
@@ -119,7 +120,7 @@ export default function useSubmitForm(
           alert(response.statusText)
         }
 
-        /** Меняем состояние загрузки */
+        // Меняем состояние загрузки
         isLoading.value = false
       },
     }
