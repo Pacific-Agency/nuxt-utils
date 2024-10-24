@@ -1,4 +1,16 @@
 
+## v0.18.2
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.18.1...v0.18.2)
+
+### 🐞 Исправления
+
+- Поле `submitFormBody` может быть реактивным ([#210](https://github.com/Pacific-Agency/nuxt-utils/pull/210))
+
+### ❤️ Contributors
+
+- Igor Rogoza ([@f4lz](http://github.com/f4lz))
+
 ## v0.18.1
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.18.0...v0.18.1)
