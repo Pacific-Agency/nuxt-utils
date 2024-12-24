@@ -1,4 +1,12 @@
 
+## v0.18.3
+
+[compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.18.2...v0.18.3)
+
+### 🐞 Исправления
+
+- **deps:** Обновление зависимостей ([#207](https://github.com/Pacific-Agency/nuxt-utils/pull/207))
+
 ## v0.18.2
 
 [compare changes](https://github.com/Pacific-Agency/nuxt-utils/compare/v0.18.1...v0.18.2)
