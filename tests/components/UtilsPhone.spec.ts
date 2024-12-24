@@ -55,7 +55,7 @@ describe("Компонент UtilsPhone", () => {
     expect(input.attributes("maxlength")).toBe("16")
     // Проверка атрибута `pattern`
     expect(input.attributes("pattern")).toBe(
-      String.raw`\+\d \d{3} \d{3}-\d{2}-\d{2}`
+      String.raw`\+\d \d{3} \d{3}-\d{2}-\d{2}`,
     )
     // Проверка атрибута `placeholder`
     expect(input.attributes("placeholder")).toBe("+7 999 888-77-66")

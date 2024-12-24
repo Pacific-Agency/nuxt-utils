@@ -42,32 +42,32 @@
   "prettier": "@exer7um/prettier-config",
   "dependencies": {
     "@nuxt/kit": "^3.12.4",
-    "@vuepic/vue-datepicker": "^9.0.2",
-    "@vueuse/core": "^11.0.0",
+    "@vuepic/vue-datepicker": "^10.0.0",
+    "@vueuse/core": "^12.0.0",
     "consola": "^3.2.3",
     "isomorphic-dompurify": "^2.14.0",
     "maska": "^3.0.0",
     "ohash": "^1.1.3"
   },
   "devDependencies": {
-    "@exer7um/eslint-config": "1.4.2",
-    "@exer7um/prettier-config": "0.4.5",
-    "@nuxt/eslint-config": "0.5.0",
-    "@nuxt/module-builder": "0.8.3",
-    "@nuxt/schema": "3.12.4",
-    "@nuxt/test-utils": "3.14.1",
+    "@exer7um/eslint-config": "1.4.7",
+    "@exer7um/prettier-config": "0.5.0",
+    "@nuxt/eslint-config": "0.7.4",
+    "@nuxt/module-builder": "0.8.4",
+    "@nuxt/schema": "3.14.1592",
+    "@nuxt/test-utils": "3.15.1",
     "@vue/test-utils": "2.4.6",
     "happy-dom": "^12.10.3",
-    "husky": "9.1.4",
-    "lint-staged": "15.2.9",
-    "nuxt": "3.12.4",
-    "typescript": "5.5.4",
-    "vitepress": "1.3.2",
+    "husky": "9.1.7",
+    "lint-staged": "15.2.11",
+    "nuxt": "3.14.1592",
+    "typescript": "5.7.2",
+    "vitepress": "1.5.0",
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
     "@nuxt/icon": "^1.3.1",
     "vue": "^3.4.34"
   },
-  "packageManager": "pnpm@9.7.1"
+  "packageManager": "pnpm@9.15.1"
 }

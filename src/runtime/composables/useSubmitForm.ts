@@ -39,7 +39,7 @@ interface SubmitFormOptions extends UseFetchOptions<void> {
  */
 export default function useSubmitForm(
   url: FetchParams[0],
-  options?: MaybeRef<Partial<SubmitFormOptions>>
+  options?: MaybeRef<Partial<SubmitFormOptions>>,
 ): {
   isLoading: Ref<boolean>
   isSent: Ref<boolean>

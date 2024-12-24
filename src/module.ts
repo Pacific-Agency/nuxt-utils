@@ -59,7 +59,7 @@ export default defineNuxtModule<ModuleOptions>({
         addPlugin(resolve("./runtime/plugins/openFetch"))
       } else {
         consola.warn(
-          "Плагин `nuxt-open-fetch` не установлен. Для работы данной функции необходимо установить и настроить плагин `nuxt-open-fetch`."
+          "Плагин `nuxt-open-fetch` не установлен. Для работы данной функции необходимо установить и настроить плагин `nuxt-open-fetch`.",
         )
       }
     }

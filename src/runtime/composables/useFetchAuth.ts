@@ -7,7 +7,11 @@ import authHeaders from "../utils/authHeaders"
 
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
-/** Тип ответа от useFetch */
+/**
+ * Тип ответа от useFetch
+ *
+ * @template TResponse Тип данных, возвращаемых сервером.
+ */
 type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
 
 /**
@@ -18,9 +22,10 @@ type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
  * - Добавляет заголовок `X-CSRFToken` со значением из `cookie` `csrftoken`
  * - В `dev`-режиме добавляет заголовок `Authorization` со значением из `.env`.
  *
- * @param url - `URL` для запроса
- * @param options - параметры запроса
- * @returns Ответ от API, формат как у useFetch
+ * @template TResponse Тип данных, возвращаемых сервером.
+ * @param url - `URL` для запроса.
+ * @param options - параметры запроса.
+ * @returns Ответ от API, формат как у useFetch.
  * @see https://pacific-agency.github.io/nuxt-utils/composables/use-fetch-auth.html
  * @example
  * ```ts
@@ -31,7 +36,7 @@ type FetchReturn<TResponse> = Promise<ReturnType<typeof useFetch<TResponse>>>
  */
 export default async function <TResponse>(
   url: FetchParams[0],
-  options: UseFetchOptions<TResponse> = {}
+  options: UseFetchOptions<TResponse> = {},
 ): FetchReturn<TResponse> {
   /** Параметры для функции */
   const params = authHeaders(options)

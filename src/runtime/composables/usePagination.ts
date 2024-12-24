@@ -10,7 +10,11 @@ import { hash } from "ohash"
 /** Параметры useFetch */
 type FetchParams = Parameters<typeof useFetch>
 
-/** Ответ от API с пагинацией */
+/**
+ *
+ * @template TResponse Тип данных, возвращаемых сервером.
+ * Ответ от API с пагинацией
+ */
 interface Pagination<TResponse> {
   /** Количество результатов */
   count: number
@@ -22,7 +26,10 @@ interface Pagination<TResponse> {
   results: TResponse
 }
 
-/** Параметры пагинации */
+/**
+ * @template TResponse Тип данных, возвращаемых сервером.
+ * Параметры пагинации
+ */
 interface PaginationOptions<TResponse>
   extends UseFetchOptions<Pagination<TResponse[]>> {
   /** Использовать ли авторизацию */
@@ -32,6 +39,7 @@ interface PaginationOptions<TResponse>
 /**
  * Данная функция возвращает объект с методами для работы с пагинацией.
  *
+ * @template TResponse Тип данных, возвращаемых сервером.
  * @param url - `URL` для запроса
  * @param options - параметры запроса
  * @returns Объект с методами для работы с пагинацией
@@ -43,7 +51,7 @@ interface PaginationOptions<TResponse>
  */
 export default async function <TResponse>(
   url: FetchParams[0],
-  options: PaginationOptions<TResponse> = {}
+  options: PaginationOptions<TResponse> = {},
 ) {
   /** Выбранная страница пагинации */
   const selectedPage = ref<number>(1)

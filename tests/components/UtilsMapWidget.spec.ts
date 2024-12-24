@@ -29,7 +29,7 @@ describe.sequential("Компонент UtilsMapWidget", () => {
 
     // Ожидается правильный src карты
     expect(widgetURL.href).toBe(
-      `https://yandex.ru/map-widget/v1/-/${widgetId}?z=16`
+      `https://yandex.ru/map-widget/v1/-/${widgetId}?z=16`,
     )
   })
 

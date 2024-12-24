@@ -29,6 +29,6 @@ export default eventHandler(async () => {
   return Object.entries(data).flatMap(([entity, slugsArray]) =>
     slugsArray.map((item) => {
       return { _i18nTransform: true, loc: `${entity}/${item.slug}` }
-    })
+    }),
   )
 })

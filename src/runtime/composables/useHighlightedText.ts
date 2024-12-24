@@ -19,6 +19,6 @@ export default function (text: string, query: string) {
 
   /** Строка с добавленными тегами `<mark>` */
   return text.replace(regex, (match) =>
-    match ? "<mark>" + match + "</mark>" : match
+    match ? "<mark>" + match + "</mark>" : match,
   )
 }

@@ -44,7 +44,7 @@ withDefaults(
     id: "phone",
     placeholder: "+7 999 888-77-66",
     required: true,
-  }
+  },
 )
 
 /** Текущий текст поля */
