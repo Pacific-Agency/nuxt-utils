@@ -27,7 +27,7 @@ export default defineNuxtPlugin({
           const params = authHeaders(options)
 
           return [name, createOpenFetch(params, localFetch)]
-        })
+        }),
       ),
     }
   },

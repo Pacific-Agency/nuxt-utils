@@ -10,7 +10,7 @@ import { computed, onMounted, onUnmounted, ref } from "#imports"
  * @see https://pacific-agency.github.io/nuxt-utils/composables/use-scroll-slider.html
  */
 export default function useScrollSlider(
-  sliderRef: Ref<HTMLElement | undefined>
+  sliderRef: Ref<HTMLElement | undefined>,
 ): {
   isLeftCorner: ComputedRef<boolean>
   isRightCorner: ComputedRef<boolean>

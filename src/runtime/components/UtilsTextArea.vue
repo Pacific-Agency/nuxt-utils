@@ -43,7 +43,7 @@ withDefaults(
   {
     required: true,
     rows: 3,
-  }
+  },
 )
 
 /** Текущий текст поля */

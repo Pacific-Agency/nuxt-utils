@@ -69,7 +69,7 @@ withDefaults(
   {
     required: true,
     type: "text",
-  }
+  },
 )
 
 /** Текущий текст поля */

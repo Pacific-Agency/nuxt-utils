@@ -61,7 +61,7 @@ withDefaults(
     id: "date",
     placeholder: "Выберите дату",
     required: true,
-  }
+  },
 )
 
 /** Текущий текст поля */

@@ -141,7 +141,7 @@ describe("Компонент UtilsInputMasked", () => {
 
     // Проверка атрибута `pattern`
     expect(input.attributes("pattern")).toBe(
-      String.raw`\+\d \d{3} \d{3}-\d{2}-\d{2}`
+      String.raw`\+\d \d{3} \d{3}-\d{2}-\d{2}`,
     )
   })
 

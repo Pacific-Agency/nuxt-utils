@@ -58,7 +58,7 @@ withDefaults(
     id: "password",
     minlength: 4,
     required: true,
-  }
+  },
 )
 
 /** Текущий текст поля */
