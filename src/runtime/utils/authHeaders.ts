@@ -11,6 +11,7 @@ import { defu } from "defu"
  * - Добавляет заголовок `X-CSRFToken` со значением из `cookie` `csrftoken`
  * - В `dev`-режиме добавляет заголовок `Authorization` со значением из `.env`.
  *
+ * @template TResponse - ответ сервера
  * @param options - параметры запроса
  * @returns параметры запроса с добавленными заголовками
  */
