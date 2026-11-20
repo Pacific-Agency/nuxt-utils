@@ -54,7 +54,7 @@
     "@exer7um/prettier-config": "0.5.0",
     "@nuxt/eslint-config": "0.7.4",
     "@nuxt/module-builder": "0.8.4",
-    "@nuxt/schema": "3.14.1592",
+    "@nuxt/schema": "4.6.4",
     "@nuxt/test-utils": "3.15.1",
     "@vue/test-utils": "2.4.6",
     "happy-dom": "^12.10.3",
